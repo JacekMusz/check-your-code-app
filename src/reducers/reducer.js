@@ -13,5 +13,7 @@ export default function bundleStore(state = initialState, action) {
       return { ...state, bundleId: action.jsCode };
     case "sessionToken":
       return { ...state, sessionToken: action.sessionToken };
+    default:
+      return state;
   }
 }
