@@ -1,41 +1,59 @@
 import React, { useRef, useState } from "react";
-import ReactDOM from "react-dom";
 import "../style/Editor.css";
+import { ControlledEditor } from "@monaco-editor/react";
+import actions from "../actions/actions.js";
+import { connect } from "react-redux";
 
-import Editor from "@monaco-editor/react";
+function EditorWrapper(props) {
+  const handleEditorChange = (ev, value) => {
+    console.log(value);
+    props.setCode(value);
+  };
 
-function EditorWrapper() {
-  const [isEditorReady, setIsEditorReady] = useState(false);
-  const valueGetter = useRef();
-
-  function handleEditorDidMount(_valueGetter) {
-    setIsEditorReady(true);
-    valueGetter.current = _valueGetter;
-  }
-
-  function handleShowValue() {
-    alert(valueGetter.current());
-  }
+  const [editorLanguage, setLanguage] = useState("plaintext");
 
   return (
     <div className="Editor__wrapper">
-      <button
-        className="button button--editor"
-        onClick={handleShowValue}
-        disabled={!isEditorReady}
-      >
-        Show value
-      </button>
-      <Editor
+      <select onChange={e => setLanguage(e.target.value)}>
+        <option value="txt">select language</option>
+        <option value="javascript">javascript</option>
+        <option value="java">java</option>
+        <option value="typescript">typescript</option>
+        <option value="html">html</option>
+        <option value="python">python</option>
+      </select>
+      <ControlledEditor
+        height="90vh"
+        width="100%"
+        value={"// write your code"}
+        onChange={handleEditorChange}
+        language={editorLanguage}
         theme="dark"
-        width="50vw"
-        height="80vh"
-        language="javascript"
-        value={"// write your code here"}
-        editorDidMount={handleEditorDidMount}
       />
     </div>
   );
 }
 
-export default EditorWrapper;
+const mapStateToProps = state => {
+  return {
+    editorLanguage2: state.editorLanguage
+  };
+};
+const mapDispatchToProps = dispatch => {
+  return {
+    setCode: code => dispatch(actions.reduxSetCode(code))
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(EditorWrapper);
+
+// `0: ".java" java
+// 1: ".es" js
+// 2: ".es6" js
+// 3: ".htm" ?
+// 4: ".html" html
+// 5: ".js" js
+// 6: ".jsx" js
+// 7: ".ts" js
+// 8: ".tsx" js
+// 9: ".vue"
+// 10: ".py"`

@@ -1,4 +1,4 @@
-import React, { Component, createFactory } from "react";
+import React from "react";
 import "../style/NavBar.css";
 
 const NavBar = () => {

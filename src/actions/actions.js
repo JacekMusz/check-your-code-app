@@ -3,18 +3,18 @@ const reduxSetBundleId = bundleId => ({
   bundleId
 });
 
-const reduxSetJsCode = jsCode => ({
-  type: "JS_CODE",
-  jsCode
+const reduxSetCode = code => ({
+  type: "SET_CODE",
+  code
 });
 
-const reduxSetSessionToken = jsCode => ({
-  type: "JS_CODE",
+const reduxSetSessionToken = sessionToken => ({
+  type: "SET_SESSION_TOKEN",
   sessionToken
 });
 
 export default {
   reduxSetBundleId,
-  reduxSetJsCode,
+  reduxSetCode,
   reduxSetSessionToken
 };

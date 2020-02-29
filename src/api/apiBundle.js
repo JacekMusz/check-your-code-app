@@ -1,7 +1,7 @@
 import { publicApi } from "./apiIndex";
 
-let kodJS =
-  "function clean(toClean, source){if (typeof(toClean) !== 'string') return true;if (typeof(source) !== 'string') return true;return source.replace(toClean, String('CLEANED')).toString();}";
+// let kodJS =
+//   "function clean(toClean, source){if (typeof(toClean) !== 'string') return true;if (typeof(source) !== 'string') return true;return source.replace(toClean, String('CLEANED')).toString();}";
 let kodJS2 = "true=false";
 export const apiFilters = () => {
   return publicApi

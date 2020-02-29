@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import {
   apiFilters,
   apiCreateBundle,
@@ -37,6 +37,7 @@ const RightPanel = () => {
       <button className="button" onClick={() => handleApiFilters()}>
         Get Filters
       </button>
+      <input placeholder="file name" type="text"></input>
       <button className="button" onClick={() => handleCreateBundle()}>
         Create Bundle
       </button>
