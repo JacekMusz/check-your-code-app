@@ -3,6 +3,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 20px;
   width: 50%;
   height: 90vh;
+}
+
+button:disabled {
+  opacity: 50%;
 }

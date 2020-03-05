@@ -1,3 +1,12 @@
 .right-panel {
   max-width: 50%;
 }
+
+.right-panel__session-token-info {
+  color: white;
+  font-size: 14px;
+}
+
+.right-panel__session-token-info span {
+  font-size: 12px;
+}

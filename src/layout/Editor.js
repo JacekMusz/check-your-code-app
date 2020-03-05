@@ -6,7 +6,6 @@ import { connect } from "react-redux";
 
 function EditorWrapper(props) {
   const handleEditorChange = (ev, value) => {
-    console.log(value);
     props.setCode(value);
   };
 
@@ -14,7 +13,7 @@ function EditorWrapper(props) {
 
   return (
     <div className="Editor__wrapper">
-      <select onChange={e => setLanguage(e.target.value)}>
+      <select className="button" onChange={e => setLanguage(e.target.value)}>
         <option value="txt">select language</option>
         <option value="javascript">javascript</option>
         <option value="java">java</option>

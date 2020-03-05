@@ -24,7 +24,9 @@ export const apiCreateBundle = () => {
       },
       files: [{ filePath: "/file.js", fileContent: kodJS2 }]
     })
-    .then(resp => console.log(resp.data.bundleId))
+    .then(resp => {
+      return resp;
+    })
     .catch(err => console.log(err));
 };
 
