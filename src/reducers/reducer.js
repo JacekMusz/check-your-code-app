@@ -6,16 +6,12 @@ const initialState = {
 };
 
 export default function bundleStore(state = initialState, action) {
-  console.log(action.type);
   switch (action.type) {
     case "SET_BUNDLE_ID":
-      console.log(action.bundleId, "reducer");
       return { ...state, bundleId: action.bundleId };
     case "SET_TOKEN":
-      console.log(action.sessionToken, "reducer");
       return { ...state, sessionToken: action.sessionToken };
     case "SET_CODE":
-      console.log(action.code, "reducer");
       return { ...state, code: action.code };
     default:
       return state;
