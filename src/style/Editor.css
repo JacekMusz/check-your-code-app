@@ -1,4 +1,4 @@
-.Editor__wrapper {
+.editor__wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -6,6 +6,11 @@
   padding-top: 20px;
   width: 50%;
   height: 90vh;
+}
+
+.editor__current-language-info {
+  font-size: 14px;
+  color: white;
 }
 
 button:disabled {

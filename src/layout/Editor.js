@@ -9,12 +9,16 @@ function EditorWrapper(props) {
     props.setCode(value);
   };
 
-  const [editorLanguage, setLanguage] = useState("plaintext");
-
   return (
-    <div className="Editor__wrapper">
-      <select className="button" onChange={e => setLanguage(e.target.value)}>
-        <option value="txt">select language</option>
+    <div className="editor__wrapper">
+      <p className="editor__current-language-info">
+        Current editor language: {props.editorLanguage}
+      </p>
+      <select
+        className="button"
+        onChange={e => props.setEditorLanguage(e.target.value)}
+      >
+        <option value="plaintext">select language</option>
         <option value="javascript">javascript</option>
         <option value="java">java</option>
         <option value="typescript">typescript</option>
@@ -22,11 +26,11 @@ function EditorWrapper(props) {
         <option value="python">python</option>
       </select>
       <ControlledEditor
-        height="90vh"
+        height="100%"
         width="100%"
         value={"// write your code"}
         onChange={handleEditorChange}
-        language={editorLanguage}
+        language={props.editorLanguage}
         theme="dark"
       />
     </div>
@@ -35,12 +39,14 @@ function EditorWrapper(props) {
 
 const mapStateToProps = state => {
   return {
-    editorLanguage2: state.editorLanguage
+    editorLanguage: state.mainStore.editorLanguage
   };
 };
 const mapDispatchToProps = dispatch => {
   return {
-    setCode: code => dispatch(actions.reduxSetCode(code))
+    setCode: code => dispatch(actions.reduxSetCode(code)),
+    setEditorLanguage: editorLanguage =>
+      dispatch(actions.reduxSetEditorLanguage(editorLanguage))
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(EditorWrapper);

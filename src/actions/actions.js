@@ -11,9 +11,14 @@ export const reduxSetCode = code => ({
   type: "SET_CODE",
   code
 });
+export const reduxSetEditorLanguage = editorLanguage => ({
+  type: "SET_EDITOR_LANGUAGE",
+  editorLanguage
+});
 
 export default {
   reduxSetBundleId,
   reduxSetToken,
-  reduxSetCode
+  reduxSetCode,
+  reduxSetEditorLanguage
 };

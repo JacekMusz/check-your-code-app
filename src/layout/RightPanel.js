@@ -78,9 +78,7 @@ class RightPanel extends Component {
         <button className="button" onClick={() => this.handleCreateBundle()}>
           Create Bundle
         </button>
-
         <br />
-
         <button className="button" onClick={() => this.handleCheckBundle()}>
           Check Bundle
         </button>
@@ -97,7 +95,7 @@ class RightPanel extends Component {
 
 const mapStateToProps = state => {
   return {
-    sessionToken: state.bundleStore.sessionToken
+    sessionToken: state.mainStore.sessionToken
   };
 };
 const mapDispatchToProps = dispatch => {

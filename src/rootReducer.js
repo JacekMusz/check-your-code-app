@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
-import bundleStore from "./reducers/reducer";
+import mainStore from "./reducers/reducer";
 
-const rootReducer = combineReducers({ bundleStore });
+const rootReducer = combineReducers({ mainStore });
 
 export default rootReducer;
