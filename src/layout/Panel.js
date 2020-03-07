@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PanelSessionToken from "./PanelSessionToken.js";
 import {
   apiFilters,
   apiCreateBundle,
@@ -11,29 +12,22 @@ import "../style/RightPanel.css";
 import { connect } from "react-redux";
 import actions from "../actions/actions.js";
 
-class RightPanel extends Component {
+class Panel extends Component {
   state = {
-    newSessionToken: ""
-  };
-  //local state
-  handleNewSessionToken = e => {
-    this.setState({
-      newSessionToken: e.target.value
-    });
-  };
-  //global store
-  handleConfirmSessionToken = () => {
-    let { newSessionToken } = this.state;
-    this.props.reduxSetToken(newSessionToken);
+    newFileName: ""
   };
 
   handleApiFilters = () => {
     apiFilters();
   };
   handleCreateBundle = () => {
-    apiCreateBundle().then(resp => {
-      this.props.reduxSetBundleId(resp.data.bundleId);
-    });
+    console.log(this.handleNewFilePath(), this.props.fileContent);
+    apiCreateBundle(this.handleNewFilePath(), this.props.fileContent).then(
+      resp => {
+        console.log(resp);
+        this.props.reduxSetBundleId(resp.data.bundleId);
+      }
+    );
   };
   handleCheckBundle = () => {
     apiCheckBundle(
@@ -51,30 +45,45 @@ class RightPanel extends Component {
       "gh/JacekMusz/DEEPCODE_PRIVATE_BUNDLE/0ffcd1f224a3667853052b78e2e57e5328d9972b96f50d015d9d056a2dadb233"
     );
   };
+
+  handleNewFilePath = () => {
+    const { newFileName } = this.state;
+    switch (this.props.editorLanguage) {
+      case "javascript":
+        return `/${newFileName}.js`;
+      case "java":
+        return `/${newFileName}.java`;
+      case "html":
+        return `/${newFileName}.html`;
+      case "python":
+        return `/${newFileName}.py`;
+      default:
+        return `/${newFileName}.txt`;
+    }
+  };
+
+  handleNewFileName = e => {
+    this.setState({
+      newFileName: e.target.value
+    });
+  };
   render() {
     return (
-      <div className="right-panel">
-        <p className="right-panel__session-token-info">
-          Your established Session-Token: <span>{this.props.sessionToken}</span>
-        </p>
-        <input
-          type="text"
-          placeholder="Session Token"
-          onChange={e => this.handleNewSessionToken(e)}
-        ></input>
-        <button
-          disabled={this.state.newSessionToken.length < 10}
-          className="button"
-          onClick={() => this.handleConfirmSessionToken()}
-        >
-          Confirm Session-Token
-        </button>
+      <div className="panel">
+        <PanelSessionToken
+          reduxSetToken={this.props.reduxSetToken}
+          sessionToken={this.props.sessionToken}
+        />
         <br />
         <button className="button" onClick={() => this.handleApiFilters()}>
           Get Filters
         </button>
         <br />
-        <input placeholder="file name" type="text"></input>
+        <input
+          onChange={e => this.handleNewFileName(e)}
+          placeholder="file name"
+          type="text"
+        ></input>
         <button className="button" onClick={() => this.handleCreateBundle()}>
           Create Bundle
         </button>
@@ -95,7 +104,9 @@ class RightPanel extends Component {
 
 const mapStateToProps = state => {
   return {
-    sessionToken: state.mainStore.sessionToken
+    sessionToken: state.mainStore.sessionToken,
+    editorLanguage: state.mainStore.editorLanguage,
+    fileContent: state.mainStore.code
   };
 };
 const mapDispatchToProps = dispatch => {
@@ -104,4 +115,4 @@ const mapDispatchToProps = dispatch => {
     reduxSetToken: sessionToken => dispatch(actions.reduxSetToken(sessionToken))
   };
 };
-export default connect(mapStateToProps, mapDispatchToProps)(RightPanel);
+export default connect(mapStateToProps, mapDispatchToProps)(Panel);

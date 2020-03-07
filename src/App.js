@@ -1,16 +1,16 @@
 import React from "react";
 import "./App.css";
 import NavBar from "./layout/NavBar";
-import RightPanel from "./layout/RightPanel";
+import Panel from "./layout/Panel";
 import Editor from "./layout/Editor";
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <NavBar />
-      <div className="App__editor-and-panel-wrapper">
+      <div className="app__editor-and-panel-wrapper">
         <Editor />
-        <RightPanel />
+        <Panel />
       </div>
     </div>
   );

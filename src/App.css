@@ -4,7 +4,7 @@
   padding: 0;
 }
 
-.App {
+.app {
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -14,7 +14,7 @@
   overflow: hidden;
 }
 
-.App__editor-and-panel-wrapper {
+.app__editor-and-panel-wrapper {
   display: flex;
   flex-direction: row;
 }

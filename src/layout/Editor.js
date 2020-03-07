@@ -18,10 +18,9 @@ function EditorWrapper(props) {
         className="button"
         onChange={e => props.setEditorLanguage(e.target.value)}
       >
-        <option value="plaintext">select language</option>
+        <option value="text">select language</option>
         <option value="javascript">javascript</option>
         <option value="java">java</option>
-        <option value="typescript">typescript</option>
         <option value="html">html</option>
         <option value="python">python</option>
       </select>
