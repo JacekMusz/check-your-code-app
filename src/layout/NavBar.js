@@ -15,7 +15,7 @@ const NavBar = props => {
       <p
         className={`nav-bar__bookmark-title nav-bar__bookmark-title${props.scrollClass}`}
       >
-        {"Check your code <3 /> App"}
+        {"Check your code <3 />"}
       </p>
       <div className="nav-links">
         <Link

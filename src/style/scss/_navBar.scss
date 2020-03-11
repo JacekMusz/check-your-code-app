@@ -10,7 +10,7 @@
   position: fixed;
   top: 0px;
   z-index: 1;
-  padding: 0 50px;
+  padding: 0 30px;
   transition: 0.5s;
   .link {
     color: white;
@@ -48,14 +48,16 @@
 }
 
 .nav-bar--top {
-  background-color: black;
+  background-color: none;
   .link {
     font-size: 16px;
   }
 }
 
 .nav-bar--scroll {
-  background-color: none;
+  border-bottom: 3px solid blue;
+  // border-image: linear-gradient(to bottom, red, rgba(0, 0, 0, 0)) 1 100%;
+  background-color: black;
   .link {
     font-size: 14px;
   }
