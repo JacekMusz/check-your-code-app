@@ -1,5 +1,4 @@
-import React, { useRef, useState } from "react";
-import "../style/Editor.css";
+import React from "react";
 import { ControlledEditor } from "@monaco-editor/react";
 import actions from "../actions/actions.js";
 import { connect } from "react-redux";
@@ -26,7 +25,7 @@ function EditorWrapper(props) {
       </select>
       <ControlledEditor
         height="100%"
-        width="100%"
+        width="100vw"
         value={"// write your code"}
         onChange={handleEditorChange}
         language={props.editorLanguage}

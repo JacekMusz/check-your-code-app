@@ -7,8 +7,6 @@ import {
   apiGetAnalysis,
   apiGetDiffAnalysis
 } from "../api/apiBundle";
-import "../style/ApiButtons.css";
-import "../style/RightPanel.css";
 import { connect } from "react-redux";
 import actions from "../actions/actions.js";
 
@@ -30,20 +28,14 @@ class Panel extends Component {
     );
   };
   handleCheckBundle = () => {
-    apiCheckBundle(
-      "gh/JacekMusz/DEEPCODE_PRIVATE_BUNDLE/0ffcd1f224a3667853052b78e2e57e5328d9972b96f50d015d9d056a2dadb233"
-    );
+    apiCheckBundle(this.props.currentBundleId);
   };
   handleGetAnalysis = () => {
-    apiGetAnalysis(
-      "gh/JacekMusz/DEEPCODE_PRIVATE_BUNDLE/0ffcd1f224a3667853052b78e2e57e5328d9972b96f50d015d9d056a2dadb233"
-    );
+    apiGetAnalysis(this.props.currentBundleId);
   };
 
   handleGetDiffAnalysis = () => {
-    apiGetDiffAnalysis(
-      "gh/JacekMusz/DEEPCODE_PRIVATE_BUNDLE/0ffcd1f224a3667853052b78e2e57e5328d9972b96f50d015d9d056a2dadb233"
-    );
+    apiGetDiffAnalysis(this.props.currentBundleId);
   };
 
   handleNewFilePath = () => {
@@ -84,7 +76,12 @@ class Panel extends Component {
           placeholder="file name"
           type="text"
         ></input>
-        <button className="button" onClick={() => this.handleCreateBundle()}>
+        <p>Your currentBundleID: {this.props.currentBundleId}</p>
+        <button
+          className="button"
+          disabled={!(this.props.fileContent !== "noData")}
+          onClick={() => this.handleCreateBundle()}
+        >
           Create Bundle
         </button>
         <br />
@@ -106,7 +103,8 @@ const mapStateToProps = state => {
   return {
     sessionToken: state.mainStore.sessionToken,
     editorLanguage: state.mainStore.editorLanguage,
-    fileContent: state.mainStore.code
+    fileContent: state.mainStore.code,
+    currentBundleId: state.mainStore.bundleId
   };
 };
 const mapDispatchToProps = dispatch => {
