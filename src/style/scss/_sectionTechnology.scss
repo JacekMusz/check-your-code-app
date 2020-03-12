@@ -1,0 +1,22 @@
+.section-technology {
+  padding: 10%;
+  width: 100%;
+  height: 200vh;
+  background-image: linear-gradient(to bottom, black, #222, #222, black);
+  &__header,
+  &__header-icon {
+    font-size: 30px;
+    color: white;
+  }
+  &__header-icon {
+    margin-top: 10vh;
+    font-size: 60px;
+  }
+}
+
+.section-technology__article {
+  width: 60vw;
+  height: 100vh;
+  margin: 0 auto;
+  background-color: blue;
+}

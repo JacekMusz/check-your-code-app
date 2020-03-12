@@ -33,7 +33,7 @@ const NavBar = props => {
             smooth={true}
             onClick={handleReturnToMainPage}
           >
-            O projekcie
+            Project
           </Link>
           <Link
             className="link"
@@ -41,7 +41,7 @@ const NavBar = props => {
             smooth={true}
             onClick={handleReturnToMainPage}
           >
-            Technologia
+            Technology
           </Link>
           <Link
             className="link"
@@ -49,10 +49,10 @@ const NavBar = props => {
             smooth={true}
             onClick={handleReturnToMainPage}
           >
-            O autorze
+            Author
           </Link>
           <NavLink className="link" to="/editor">
-            Edytor
+            Editor
           </NavLink>
         </div>
       </div>
