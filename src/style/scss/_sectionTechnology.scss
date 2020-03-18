@@ -1,22 +1,172 @@
+@mixin sectionTechnology-P($positionRow, $positionColumn) {
+  grid-row: $positionRow;
+  grid-column: $positionColumn;
+  //border: solid 1px white;
+  color: white;
+  text-align: justify;
+  display: flex;
+  font-size: 16px;
+  @content;
+}
+
 .section-technology {
   padding: 10%;
   width: 100%;
   height: 200vh;
   background-image: linear-gradient(to bottom, black, #222, #222, black);
-  &__header,
-  &__header-icon {
+  &__title,
+  &__title-icon {
     font-size: 30px;
     color: white;
   }
-  &__header-icon {
+  &__title {
+    position: relative;
+    font-size: 30px;
+  }
+  &__title-icon {
     margin-top: 10vh;
     font-size: 60px;
   }
+
+  &__title:after,
+  &__title:before {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 80px;
+    height: 2px;
+    border-radius: 10px;
+    bottom: 0;
+  }
+  &__title:after {
+    animation: title2AnimateAfter 8s infinite linear;
+    background-image: linear-gradient(to left, #c03da3, #493fa3, black);
+  }
+
+  &__title:before {
+    animation: title2AnimateBefore 8s infinite linear;
+    background-image: linear-gradient(to right, #493fa3, #c03da3, black);
+  }
 }
 
-.section-technology__article {
-  width: 60vw;
+.section-technology__articles {
+  width: 80vw;
   height: 100vh;
   margin: 0 auto;
-  background-color: blue;
+  display: grid;
+  grid-column: 3;
+  grid-row: 3;
+  grid-template-columns: 1.5fr 2.5fr 1.5fr;
+  grid-template-rows: 0.5fr 1.5fr 1fr;
+  .section-technology__img {
+    grid-row: 2;
+    grid-column: 2;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.1) url("../photos/deepcodeimage.png");
+    background-blend-mode: darken;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: solid 1px white;
+    border-radius: 50%;
+    animation: deepCodeImg 3s infinite linear;
+  }
+
+  .section-technology__p-1--hidden,
+  .section-technology__p-2--hidden,
+  .section-technology__p-3--hidden,
+  .section-technology__p-4--hidden {
+    display: none;
+  }
+
+  .section-technology__p-1--show {
+    @include sectionTechnology-P(1, 1);
+    animation: showP 3s 1s 1 both;
+    transform: translateY(70px);
+  }
+  .section-technology__p-2--show {
+    @include sectionTechnology-P(1, 3);
+    animation: showP 3s 2.5s 1 both;
+    transform: translateY(70px);
+  }
+  .section-technology__p-3--show {
+    @include sectionTechnology-P(3, 1);
+    animation: showP 3s 5s 1 both;
+    opacity: 1;
+    flex-direction: column;
+    align-items: center;
+    li {
+      list-style: none;
+    }
+  }
+  .section-technology__p-4--show {
+    @include sectionTechnology-P(3, 3);
+    animation: showP 3s 6.5s 1 both;
+  }
+}
+
+@keyframes showP {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes deepCodeImg {
+  0% {
+    box-shadow: 0 0 5px white;
+  }
+  50% {
+    box-shadow: 0 0 20px white;
+  }
+  100% {
+    box-shadow: 0 0 5px white;
+  }
+}
+
+@keyframes title2AnimateAfter {
+  0% {
+    transform: translate(10vw);
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.8;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  30% {
+    opacity: 0;
+    transform: translate(60vw);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(70vw);
+  }
+}
+
+@keyframes title2AnimateBefore {
+  0% {
+    transform: translate(60vw);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(60vw);
+    opacity: 0;
+  }
+  55% {
+    opacity: 0.8;
+  }
+  70% {
+    opacity: 0.8;
+  }
+  80% {
+    opacity: 0;
+    transform: translate(10vw);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(10vw);
+  }
 }

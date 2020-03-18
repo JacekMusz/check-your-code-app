@@ -27,6 +27,7 @@
     border-radius: 30px;
     padding: 3px 20px;
     max-width: 100%;
+    font-size: 30px;
   }
   .section-project__title:after,
   .section-project__title:before {
@@ -39,14 +40,13 @@
     bottom: 0;
   }
   .section-project__title:after {
-    animation: titleAnimateAfter 10s infinite linear;
+    animation: titleAnimateAfter 8s infinite linear;
     background-image: linear-gradient(to left, #c03da3, #493fa3, black);
   }
 
   .section-project__title:before {
-    animation: titleAnimateBefore 10s infinite linear;
-    transform: rotate(180deg);
-    background-image: linear-gradient(to left, #493fa3, #c03da3, black);
+    animation: titleAnimateBefore 8s infinite linear;
+    background-image: linear-gradient(to right, #493fa3, #c03da3, black);
   }
 
   &__article {
@@ -110,7 +110,7 @@
 
 @keyframes titleAnimateAfter {
   0% {
-    left: -10%;
+    transform: translate(-10vw);
     opacity: 0;
   }
   5% {
@@ -121,21 +121,21 @@
   }
   30% {
     opacity: 0;
-    left: 110%;
+    transform: translate(50vw);
   }
   100% {
     opacity: 0;
-    left: 110%;
+    transform: translate(50vw);
   }
 }
 
 @keyframes titleAnimateBefore {
   0% {
-    right: -10%;
+    transform: translate(50vw);
     opacity: 0;
   }
   50% {
-    right: -10%;
+    transform: translate(50vw);
     opacity: 0;
   }
   55% {
@@ -146,10 +146,10 @@
   }
   80% {
     opacity: 0;
-    right: 110%;
+    transform: translate(-10vw);
   }
   100% {
     opacity: 0;
-    right: 110%;
+    transform: translate(-10vw);
   }
 }
