@@ -1,15 +1,22 @@
-@mixin test() {
+@mixin imageProperites() {
   background-blend-mode: darken;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   @content;
 }
-
 @mixin widthAndHeight($width, $height) {
   width: $width;
   height: $height;
   @content;
+}
+@mixin AfterBeforeCross($width, $height) {
+  border-radius: 2px;
+  content: "";
+  display: block;
+  width: $width;
+  height: $height;
+  position: absolute;
 }
 .section-project {
   position: relative;
@@ -17,8 +24,8 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: 20vh 6vw 0vw 6vw;
-  min-height: 200vh;
+  padding: 0vh 6vw 0vw 6vw;
+  min-height: 100vh;
   background-color: black;
   .section-project__title {
     position: relative;
@@ -48,63 +55,72 @@
     animation: titleAnimateBefore 8s infinite linear;
     background-image: linear-gradient(to right, #493fa3, #c03da3, black);
   }
+}
 
+.articles {
+  display: flex;
+  flex-direction: column;
+  // border: 1px red solid;
+  color: white;
+  @include widthAndHeight(80vw, 120vh);
   &__article {
     display: flex;
-    position: relative;
-    margin-bottom: 10px;
-    @include widthAndHeight(100%, 50vh);
+    flex-direction: wrap;
   }
-}
-
-.article:nth-child(even) {
-  .article__text {
-    color: white;
-    padding: 40px;
-    @include widthAndHeight(50%, 10%);
+  &__article:nth-child(1) {
+    @include widthAndHeight(100%, 60%);
+    .article__text {
+      width: 60%;
+      padding: 10% 5%;
+      position: relative;
+      &::after {
+        background-image: linear-gradient(to right, #c03da3, #493fa3, black);
+        top: 0px;
+        left: -20px;
+        @include AfterBeforeCross(100px, 2px);
+      }
+      &::before {
+        background-image: linear-gradient(to bottom, #c03da3, #493fa3, black);
+        top: -20px;
+        left: 0px;
+        @include AfterBeforeCross(2px, 200px);
+      }
+    }
+    .article__img {
+      transform-origin: top;
+      transform: scale(0.5);
+      background: rgba(0, 0, 0, 0.5) url("../photos/picture3.jpg");
+      @include imageProperites();
+      @include widthAndHeight(40%, 140%);
+    }
   }
-  .article__img {
-    @include widthAndHeight(50%, 100%);
-    transform: translateY(-20%);
-  }
-}
-
-.article:nth-child(odd) {
-  .article__text {
-    color: white;
-    padding: 40px;
-    @include widthAndHeight(50%, 100%);
-  }
-  .article__img {
-    width: 40%;
-    height: 150%;
-    @include widthAndHeight(40%, 150%);
-  }
-}
-
-///Picture 1 in Section-Project
-.article:nth-child(2) {
-  .article__img {
-    background: rgba(0, 0, 0, 0.5) url("../photos/picture2.jpg");
-    @include test();
-  }
-}
-
-///Picture 2 in Section-Project
-.article:nth-child(3) {
-  .article__img {
-    background: rgba(0, 0, 0, 0.6) url("../photos/picture3.jpg");
-    transform: scale(-0.7, 0.7) translateY(-40%);
-    @include test();
-  }
-}
-
-///Picture 3 in Section-Project
-.article:nth-child(4) {
-  .article__img {
-    background: rgba(0, 0, 0, 0.5) url("../photos/picture4.jpg");
-    filter: grayscale(100%);
-    @include test();
+  &__article:nth-child(2) {
+    @include widthAndHeight(100%, 40%);
+    .article__img {
+      background: rgba(0, 0, 0, 0.5) url("../photos/picture2.jpg");
+      transform-origin: top;
+      transform: translateY(0%) scale(0.8);
+      @include imageProperites();
+      @include widthAndHeight(60%, 110%);
+    }
+    .article__text {
+      width: 40%;
+      padding: 5% 5%;
+      position: relative;
+      text-align: justify;
+      &::after {
+        background-image: linear-gradient(to left, #c03da3, #493fa3, black);
+        bottom: 0px;
+        right: -20px;
+        @include AfterBeforeCross(200px, 2px);
+      }
+      &::before {
+        background-image: linear-gradient(to top, #c03da3, #493fa3, black);
+        bottom: -20px;
+        right: 0px;
+        @include AfterBeforeCross(2px, 100px);
+      }
+    }
   }
 }
 

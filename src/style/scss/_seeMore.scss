@@ -1,0 +1,32 @@
+.SeeMore {
+  display: flex;
+  flex-direction: column;
+  span {
+    color: red;
+  }
+}
+
+.SeeMore__title {
+  color: white;
+  font-size: 20px;
+  span {
+    font-style: italic;
+  }
+}
+
+.SeeMore__button {
+  padding: 10px 20px;
+  background-color: transparent;
+  border: none;
+  font-size: 14px;
+  color: white;
+  margin: 30px;
+  font-style: italic;
+  cursor: pointer;
+}
+
+.SeeMore__section--show {
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+}

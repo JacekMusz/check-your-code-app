@@ -1,7 +1,12 @@
 .section-start {
   width: 100%;
   min-height: 120vh;
-  background: rgba(0, 0, 0, 0.1) url("../photos/picture1.jpg");
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.01),
+      rgba(0, 0, 0, 1)
+    ),
+    url("../photos/picture1.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
