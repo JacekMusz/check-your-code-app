@@ -19,14 +19,18 @@
   position: absolute;
 }
 .section-project {
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   padding: 0vh 6vw 0vw 6vw;
-  min-height: 100vh;
   background-color: black;
+  margin-bottom: 20vh;
+  &__triangle {
+    // background-image: linear-gradient(180deg, black, #493fa3);
+    width: 90%;
+    height: 50px;
+  }
   .section-project__title {
     position: relative;
     color: white;
@@ -36,33 +40,26 @@
     max-width: 100%;
     font-size: 30px;
   }
-  .section-project__title:after,
-  .section-project__title:before {
+  .section-project__title:after {
     position: absolute;
     content: "";
     display: block;
-    width: 80px;
+    width: 120%;
     height: 2px;
-    border-radius: 10px;
-    bottom: 0;
-  }
-  .section-project__title:after {
-    animation: titleAnimateAfter 8s infinite linear;
-    background-image: linear-gradient(to left, #c03da3, #493fa3, black);
-  }
 
-  .section-project__title:before {
-    animation: titleAnimateBefore 8s infinite linear;
-    background-image: linear-gradient(to right, #493fa3, #c03da3, black);
+    border-radius: 10px;
+    bottom: -3px;
+    transform: translateX(-10%);
+    background-image: linear-gradient(to left, black, #666, black);
   }
 }
 
 .articles {
   display: flex;
   flex-direction: column;
-  // border: 1px red solid;
+  position: relative;
   color: white;
-  @include widthAndHeight(80vw, 120vh);
+  @include widthAndHeight(80vw, 100vh);
   &__article {
     display: flex;
     flex-direction: wrap;
@@ -71,19 +68,21 @@
     @include widthAndHeight(100%, 60%);
     .article__text {
       width: 60%;
-      padding: 10% 5%;
-      position: relative;
+      padding: 5% 5%;
+      text-align: left;
       &::after {
-        background-image: linear-gradient(to right, #c03da3, #493fa3, black);
+        z-index: 2;
         top: 0px;
         left: -20px;
-        @include AfterBeforeCross(100px, 2px);
+        @include AfterBeforeCross(150px, 2px);
+        animation: sectionProject-firstFrameElement 10s linear infinite;
       }
       &::before {
         background-image: linear-gradient(to bottom, #c03da3, #493fa3, black);
         top: -20px;
         left: 0px;
-        @include AfterBeforeCross(2px, 200px);
+        @include AfterBeforeCross(2px, 150px);
+        animation: sectionProject-secondFrameElement 10s linear infinite;
       }
     }
     .article__img {
@@ -99,73 +98,117 @@
     .article__img {
       background: rgba(0, 0, 0, 0.5) url("../photos/picture2.jpg");
       transform-origin: top;
-      transform: translateY(0%) scale(0.8);
+      transform: translateY(-40%) scale(0.8);
       @include imageProperites();
       @include widthAndHeight(60%, 110%);
     }
     .article__text {
       width: 40%;
       padding: 5% 5%;
-      position: relative;
       text-align: justify;
       &::after {
         background-image: linear-gradient(to left, #c03da3, #493fa3, black);
-        bottom: 0px;
+        bottom: 0;
         right: -20px;
-        @include AfterBeforeCross(200px, 2px);
+        @include AfterBeforeCross(150px, 2px);
+        animation: sectionProject-thirdFrameElement 10s linear infinite;
       }
       &::before {
         background-image: linear-gradient(to top, #c03da3, #493fa3, black);
-        bottom: -20px;
+        bottom: 0;
         right: 0px;
-        @include AfterBeforeCross(2px, 100px);
+        @include AfterBeforeCross(2px, 150px);
+        animation: sectionProject-fourthFrameElement 10s linear infinite;
       }
     }
   }
 }
 
-@keyframes titleAnimateAfter {
+@keyframes sectionProject-firstFrameElement {
   0% {
-    transform: translate(-10vw);
-    opacity: 0;
+    background-image: linear-gradient(to right, #c03da3, #493fa3, black);
+    transform: translateX(0);
   }
-  5% {
-    opacity: 0.8;
-  }
-  20% {
-    opacity: 0.8;
-  }
-  30% {
-    opacity: 0;
-    transform: translate(50vw);
-  }
-  100% {
-    opacity: 0;
-    transform: translate(50vw);
-  }
-}
-
-@keyframes titleAnimateBefore {
-  0% {
-    transform: translate(50vw);
-    opacity: 0;
+  45% {
+    background-image: linear-gradient(to right, #c03da3, #493fa3, black);
+    transform: translateX(0);
   }
   50% {
-    transform: translate(50vw);
-    opacity: 0;
+    background-image: linear-gradient(to left, #c03da3, #493fa3, black);
+    transform: translateX(calc(80vw - 110px));
   }
-  55% {
-    opacity: 0.8;
-  }
-  70% {
-    opacity: 0.8;
-  }
-  80% {
-    opacity: 0;
-    transform: translate(-10vw);
+  95% {
+    background-image: linear-gradient(to left, #c03da3, #493fa3, black);
+    transform: translateX(calc(80vw - 110px));
   }
   100% {
-    opacity: 0;
-    transform: translate(-10vw);
+    background-image: linear-gradient(to right, #c03da3, #493fa3, black);
+    transform: translateX(0vw);
+  }
+}
+@keyframes sectionProject-secondFrameElement {
+  0% {
+    background-image: linear-gradient(to bottom, #c03da3, #493fa3, black);
+    transform: translateY(0);
+  }
+  45% {
+    background-image: linear-gradient(to bottom, #c03da3, #493fa3, black);
+    transform: translateY(0);
+  }
+  50% {
+    background-image: linear-gradient(to top, #c03da3, #493fa3, black);
+    transform: translateY(calc(100vh - 110px));
+  }
+  95% {
+    background-image: linear-gradient(to top, #c03da3, #493fa3, black);
+    transform: translateY(calc(100vh - 110px));
+  }
+  100% {
+    background-image: linear-gradient(to bottom, #c03da3, #493fa3, black);
+    transform: translateY(0vh);
+  }
+}
+@keyframes sectionProject-thirdFrameElement {
+  0% {
+    background-image: linear-gradient(to left, #c03da3, #493fa3, black);
+    transform: translateX(0);
+  }
+  45% {
+    background-image: linear-gradient(to left, #c03da3, #493fa3, black);
+    transform: translateX(0);
+  }
+  50% {
+    background-image: linear-gradient(to right, #c03da3, #493fa3, black);
+    transform: translateX(calc(-80vw + 110px));
+  }
+  95% {
+    background-image: linear-gradient(to right, #c03da3, #493fa3, black);
+    transform: translateX(calc(-80vw + 110px));
+  }
+  100% {
+    background-image: linear-gradient(to left, #c03da3, #493fa3, black);
+    transform: translateX(0vw);
+  }
+}
+@keyframes sectionProject-fourthFrameElement {
+  0% {
+    background-image: linear-gradient(to top, #c03da3, #493fa3, black);
+    transform: translateY(20px);
+  }
+  45% {
+    background-image: linear-gradient(to top, #c03da3, #493fa3, black);
+    transform: translateY(20px);
+  }
+  50% {
+    background-image: linear-gradient(to bottom, #c03da3, #493fa3, black);
+    transform: translateY(calc(-100vh + 130px));
+  }
+  95% {
+    background-image: linear-gradient(to bottom, #c03da3, #493fa3, black);
+    transform: translateY(calc(-100vh + 130px));
+  }
+  100% {
+    background-image: linear-gradient(to top, #c03da3, #493fa3, black);
+    transform: translateY(0vh);
   }
 }

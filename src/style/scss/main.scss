@@ -21,8 +21,9 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: #222;
+  background-color: black;
   overflow: hidden;
+  justify-content: center;
 }
 
 .app__editor-and-panel-wrapper {

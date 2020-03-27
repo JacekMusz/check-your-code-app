@@ -7,15 +7,18 @@ const SectionProject = () => {
         Improve your code skills with artificial inteligence
       </h2>
       <div className="articles">
-        <div className="articles__article article">
+        <div className="articles__article">
           <div className="article__text">
             Would you ever considered that artificial inteligence could help you
             make better code ? Now it's possible with{" "}
-            <a href="www.deepcode.com">Deep Code</a>.
+            <a target="blank" href="www.deepcode.com">
+              Deep Code
+            </a>
+            .
           </div>
           <div className="article__img"></div>
         </div>
-        <div className="articles__article article">
+        <div className="articles__article">
           <div className="article__img"></div>
           <div className="article__text">
             Make smile every senior developer in your team. Don't waste their

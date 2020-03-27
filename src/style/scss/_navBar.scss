@@ -10,6 +10,7 @@
   z-index: 1;
   padding: 0 30px;
   transition: 0.5s;
+  z-index: 5;
   .nav-bar__content-wrapper {
     display: flex;
     justify-content: left;
@@ -37,11 +38,11 @@
   flex-basis: 30%;
   font-weight: 600;
   transition: 1s;
-  font-size: 22px;
+  font-size: 20px;
 }
 
 .nav-bar__bookmark-title--top {
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .nav-bar--scroll:after {
@@ -62,16 +63,15 @@
     color: white;
     text-decoration: none;
     transition: 1s;
-    line-height: 26px;
+    line-height: 20px;
     overflow: hidden;
-    &:after,
-    &:before {
+    &:after {
       content: "";
       display: block;
       width: 100%;
       height: 2px;
       background-color: transparent;
-      transition: 0.4s;
+      transition: 1s;
       border-radius: 2px;
     }
     &:after {
@@ -83,16 +83,18 @@
     &:hover {
       cursor: pointer;
       position: relative;
-      transform: translateY(-10%);
-      transition: 0.3s;
-    }
-    &:hover:before {
-      background-image: linear-gradient(to right, #493fa3, black);
-      transform: translateX(0);
+      transform: translateY(-15%);
+      transition: 0.7s;
     }
     &:hover:after {
-      background-image: linear-gradient(to left, #c03da3, black);
-      transform: translateX(0);
+      background-image: linear-gradient(
+        to left,
+        transparent,
+        #c03da3,
+        #493fa3,
+        transparent
+      );
+      transform: translateX(100%);
     }
   }
 }
