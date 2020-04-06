@@ -79,7 +79,7 @@ class Panel extends Component {
         <p>Your currentBundleID: {this.props.currentBundleId}</p>
         <button
           className="button"
-          disabled={!(this.props.fileContent !== "noData")}
+          disabled={this.props.fileContent === "noData"}
           onClick={() => this.handleCreateBundle()}
         >
           Create Bundle

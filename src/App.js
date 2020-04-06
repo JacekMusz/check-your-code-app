@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./style/main.css";
 import NavBar from "./layout/NavBar";
-import Panel from "./layout/Panel";
 import { Route, Switch } from "react-router-dom";
 import PageMain from "./layout/PageMain";
 import PageEditor from "./layout/PageEditor";

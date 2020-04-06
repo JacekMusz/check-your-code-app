@@ -77,9 +77,6 @@
     &:after {
       transform: translateX(-100%);
     }
-    &:before {
-      transform: translateX(100%);
-    }
     &:hover {
       cursor: pointer;
       position: relative;

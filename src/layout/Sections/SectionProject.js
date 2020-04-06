@@ -12,9 +12,10 @@ const SectionProject = () => {
             Would you ever considered that artificial inteligence could help you
             make better code ? Now it's possible with{" "}
             <a target="blank" href="www.deepcode.com">
-              Deep Code
+              Deep Code.
             </a>
-            .
+            Arificial Inteligence can make automated code review based on
+            bestpracitses from around the world.
           </div>
           <div className="article__img"></div>
         </div>
