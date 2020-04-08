@@ -23,9 +23,9 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: 0 6vw 0vw 6vw;
-  background-color: black;
+  padding: 0 6vw 0 6vw;
   margin-bottom: 20vh;
+  background-color: black;
   &__triangle {
     width: 90%;
     height: 50px;
@@ -33,11 +33,11 @@
   .section-project__title {
     position: relative;
     color: white;
-    margin-bottom: 20vh;
-    border-radius: 30px;
-    padding: 3px 20px;
     max-width: 100%;
+    margin-bottom: 20vh;
+    padding: 3px 20px;
     font-size: 30px;
+    border-radius: 30px;
   }
   .section-project__title:after {
     position: absolute;
@@ -45,9 +45,9 @@
     display: block;
     width: 120%;
     height: 2px;
-    border-radius: 10px;
     bottom: -3px;
     transform: translateX(-10%);
+    border-radius: 10px;
     background-image: linear-gradient(to left, black, #666, black);
   }
 }
@@ -114,7 +114,7 @@
       &::before {
         background-image: linear-gradient(to top, #c03da3, #493fa3, black);
         bottom: 0;
-        right: 0px;
+        right: 0;
         @include AfterBeforeCross(2px, 150px);
         animation: sectionProject-fourthFrameElement 10s linear infinite;
       }
@@ -141,7 +141,7 @@
   }
   100% {
     background-image: linear-gradient(to right, #c03da3, #493fa3, black);
-    transform: translateX(0vw);
+    transform: translateX(0);
   }
 }
 @keyframes sectionProject-secondFrameElement {
@@ -163,7 +163,7 @@
   }
   100% {
     background-image: linear-gradient(to bottom, #c03da3, #493fa3, black);
-    transform: translateY(0vh);
+    transform: translateY(0);
   }
 }
 @keyframes sectionProject-thirdFrameElement {
@@ -185,7 +185,7 @@
   }
   100% {
     background-image: linear-gradient(to left, #c03da3, #493fa3, black);
-    transform: translateX(0vw);
+    transform: translateX(0);
   }
 }
 @keyframes sectionProject-fourthFrameElement {
@@ -207,6 +207,6 @@
   }
   100% {
     background-image: linear-gradient(to top, #c03da3, #493fa3, black);
-    transform: translateY(0vh);
+    transform: translateY(0);
   }
 }

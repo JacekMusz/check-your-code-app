@@ -1,16 +1,15 @@
 .nav-bar {
-  width: 100vw;
-  height: 10vh;
-  color: white;
   display: flex;
   flex-direction: column;
   position: -webkit-sticky;
   position: fixed;
-  top: 0px;
-  z-index: 1;
+  width: 100vw;
+  height: 10vh;
   padding: 0 30px;
+  top: 0px;
   transition: 0.5s;
   z-index: 5;
+  color: white;
   .nav-bar__content-wrapper {
     display: flex;
     justify-content: left;
@@ -46,25 +45,25 @@
 }
 
 .nav-bar--scroll:after {
-  transition: 3s;
   content: "";
   display: block;
   width: 100%;
   height: 2px;
   background-image: linear-gradient(to right, black, #493fa3, #c03da3, black);
+  transition: 3s;
 }
 
 .nav-links {
-  flex-basis: 60%;
   display: flex;
   justify-content: space-evenly;
   flex-direction: row;
+  flex-basis: 60%;
   .link {
+    overflow: hidden;
     color: white;
     text-decoration: none;
     transition: 1s;
     line-height: 20px;
-    overflow: hidden;
     &:after {
       content: "";
       display: block;

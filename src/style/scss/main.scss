@@ -17,14 +17,14 @@
 
 .app {
   position: absolute;
-  top: 0;
   text-align: center;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  top: 0;
   width: 100%;
   background-color: black;
   overflow: hidden;
-  justify-content: center;
 }
 
 .app__editor-and-panel-wrapper {
