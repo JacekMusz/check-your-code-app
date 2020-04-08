@@ -26,6 +26,13 @@ const NavBar = props => {
     "--top": isWindowTopPosition,
     "--scroll": !isWindowTopPosition
   });
+
+  const navBarLinks = [
+    { path: "section-start", name: "Start" },
+    { path: "section-project", name: "Project" },
+    { path: "section-technology", name: "Technology" },
+    { path: "section-author", name: "Author" }
+  ];
   return (
     <div className={`nav-bar nav-bar${classForNavBar}`}>
       <div className="nav-bar__content-wrapper">
@@ -35,38 +42,19 @@ const NavBar = props => {
           {"Check your code <3 />"}
         </p>
         <div className="nav-links">
-          <Link
-            className="link"
-            to="section-start"
-            smooth={true}
-            onClick={handleReturnToMainPage}
-          >
-            Start
-          </Link>
-          <Link
-            className="link"
-            to="section-project"
-            smooth={true}
-            onClick={handleReturnToMainPage}
-          >
-            Project
-          </Link>
-          <Link
-            className="link"
-            to="section-technology"
-            smooth={true}
-            onClick={handleReturnToMainPage}
-          >
-            Technology
-          </Link>
-          <Link
-            className="link"
-            to="section-author"
-            smooth={true}
-            onClick={handleReturnToMainPage}
-          >
-            Author
-          </Link>
+          {navBarLinks.map((item, index) => {
+            return (
+              <Link
+                className="link"
+                to={item.path}
+                smooth={true}
+                onClick={handleReturnToMainPage}
+                key={index}
+              >
+                {item.name}
+              </Link>
+            );
+          })}
           <NavLink className="link" to="/editor">
             Editor
           </NavLink>

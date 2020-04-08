@@ -1,16 +1,20 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import SectionTechnologyFooter from "./SectionTechnologyFooter.js";
 import gsap from "gsap";
+//COMPONENTS
+import SectionTechnologyFooter from "./SectionTechnologyFooter.js";
 
 const SectionTechnology = () => {
-  //react-intersection-observer
+  //-----REACT INTERSECTION OBSERVER-----
   const [sectionTechnology, inView, entry] = useInView({
     threshold: 0
   });
-  const [linstenerInView, setListenerInView] = useState(0);
-  const [stopListeningViewer, setStopListeningViewer] = useState(0);
-  //refs
+  const [
+    stopObserveSectionTechnology,
+    setStopObserveSectionTechnology
+  ] = useState(0);
+
+  //-----REFS FOR ANIMATION-----
   const sectionBackgroundOne = useRef(null);
   const sectionBackgroundTwo = useRef(null);
   const logoBackgroundOne = useRef(null);
@@ -19,25 +23,23 @@ const SectionTechnology = () => {
   const logo = useRef(null);
 
   useEffect(() => {
-    if (!stopListeningViewer) {
-      if (inView) {
-        setListenerInView(1);
-      }
-      if (linstenerInView) {
-        const tl = gsap.timeline({ defaults: { duration: 0.8 } });
-        tl.to(sectionBackgroundTwo.current, { opacity: 1, y: "2vh", x: "2vw" })
-          .to(
-            sectionBackgroundOne.current,
-            { opacity: 1, y: "5vh", x: "6vw" },
-            "-=0.4"
-          )
-          .to(article.current, { opacity: 1, y: "8vh", x: "10vw" }, "-=0.4")
-          .to([...article.current.children], { opacity: 1, y: "-20" }, "+=0.4")
-          .to(logoBackgroundOne.current, { opacity: 1, x: 0, y: 0 }, "-=0.01")
-          .to(logoBackgroundTwo.current, { opacity: 1, x: 0, y: 0 }, "-=0.5")
-          .to(logo.current, { duration: 1.2, opacity: 1, x: 0, y: 0 }, "-=0.3")
-          .eventCallback("onComplete", setStopListeningViewer(1));
-      }
+    if (inView && !stopObserveSectionTechnology) {
+      // In order to stop listeining after first animation
+      //
+      //----ANIMATION ARTICLE AND ITS BACKGORUNDS-----
+      const tl = gsap.timeline({ defaults: { duration: 0.8 } });
+      tl.to(sectionBackgroundTwo.current, { opacity: 1, y: "2vh", x: "2vw" })
+        .to(
+          sectionBackgroundOne.current,
+          { opacity: 1, y: "5vh", x: "6vw" },
+          "-=0.4"
+        )
+        .to(article.current, { opacity: 1, y: "8vh", x: "10vw" }, "-=0.4")
+        .to([...article.current.children], { opacity: 1, y: "-20" }, "+=0.4")
+        .to(logoBackgroundOne.current, { opacity: 1, x: 0, y: 0 }, "-=0.01")
+        .to(logoBackgroundTwo.current, { opacity: 1, x: 0, y: 0 }, "-=0.5")
+        .to(logo.current, { duration: 1.2, opacity: 1, x: 0, y: 0 }, "-=0.3")
+        .eventCallback("onComplete", setStopObserveSectionTechnology(1));
     }
   });
 

@@ -4,15 +4,35 @@ import classNames from "classnames";
 
 const SectionTechnologyFooter = () => {
   const [buttonValue, setButtonValue] = useState(false);
+
+  //-----ANIMATIONS-----
   const logo1 = useRef(null);
   const logo2 = useRef(null);
   const logo3 = useRef(null);
   const logo4 = useRef(null);
   const logo5 = useRef(null);
   const logo6 = useRef(null);
-
   const logosRefsArray = [logo1, logo2, logo3, logo4, logo5, logo6];
 
+  const logoAnimations = () => {
+    const tl = gsap.timeline({ defaults: { duration: 0.9 } });
+    tl.to([logo3.current, logo4.current], { opacity: 1 }, "+=0.5");
+    tl.to([logo2.current, logo5.current], { opacity: 1 }, "-=0.5");
+    tl.to([logo1.current, logo6.current], { opacity: 1 }, "-=0.5");
+  };
+
+  //-----CLASSES-----
+  const showOrHideModal = classNames({
+    "modal-app-technologies modal-app-technologies--show": buttonValue,
+    "modal-app-technologies modal-app-technologies--hide": !buttonValue
+  });
+
+  //-----BUTTON ACITONS-----
+  const handleSectionTechnologyFooterButton = () => {
+    return setButtonValue(!buttonValue), logoAnimations();
+  };
+
+  //-----CREATE JSX ELEMENTS-----
   const namesMainTechnologies = [
     "HTML 5",
     "CSS 3",
@@ -20,12 +40,6 @@ const SectionTechnologyFooter = () => {
     "Java Script ES6",
     "React",
     "Redux"
-  ];
-
-  const otherTechnologies = [
-    "Axiaos - to comunicate whith deepCode API",
-    "Monaco-ediotr - to edit your code on browser",
-    "Gsap - to make awesome animations on the website"
   ];
 
   const createMainTechnologyTemplate = () =>
@@ -40,17 +54,21 @@ const SectionTechnologyFooter = () => {
       );
     });
 
-  const logoAnimations = () => {
-    const tl = gsap.timeline({ defaults: { duration: 0.9 } });
-    tl.to([logo3.current, logo4.current], { opacity: 1 }, "+=0.5");
-    tl.to([logo2.current, logo5.current], { opacity: 1 }, "-=0.5");
-    tl.to([logo1.current, logo6.current], { opacity: 1 }, "-=0.5");
-  };
+  const otherTechnologies = [
+    "Axiaos - to comunicate whith deepCode API",
+    "Monaco-ediotr - to edit your code on browser",
+    "Gsap - to make awesome animations on the website"
+  ];
 
-  const showOrHideModal = classNames({
-    "modal-app-technologies modal-app-technologies--show": buttonValue,
-    "modal-app-technologies modal-app-technologies--hide": !buttonValue
-  });
+  const createOtherTechnologies = () => {
+    return otherTechnologies.map((item, index) => {
+      return (
+        <li key={index} className="others-technologies__list-item">
+          {item}
+        </li>
+      );
+    });
+  };
 
   return (
     <div className="section-technology-footer__wrapper">
@@ -59,7 +77,7 @@ const SectionTechnologyFooter = () => {
       </h3>
       <button
         className="section-technology-footer__button"
-        onClick={() => (setButtonValue(!buttonValue), logoAnimations())}
+        onClick={() => handleSectionTechnologyFooterButton()}
       >
         {buttonValue ? "Hide me" : "See more"}
       </button>
@@ -74,13 +92,7 @@ const SectionTechnologyFooter = () => {
           <div className="modal-app-technologies__others-technologies">
             <h2 className="others-technologies__title">This App also uses:</h2>
             <ul className="others-technologies__list">
-              {otherTechnologies.map((item, index) => {
-                return (
-                  <li key={index} className="others-technologies__list-item">
-                    {item}
-                  </li>
-                );
-              })}
+              {createOtherTechnologies()}
             </ul>
           </div>
         </div>
