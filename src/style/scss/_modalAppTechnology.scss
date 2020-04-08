@@ -65,10 +65,10 @@ $technologiesDescription: (
         height: 70%;
         .main-technology__logo {
           opacity: 0;
+          background: url("../photos/technology-icons/icons8-#{map-get($technologiesName,'#{$i}')}-100.png");
           background-size: contain;
           background-repeat: no-repeat;
           background-position: center;
-          background: url("../photos/technology-icons/icons8-#{map-get($technologiesName,'#{$i}')}-100.png");
           display: block;
           position: relative;
           width: 100%;
