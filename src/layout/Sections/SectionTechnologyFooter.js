@@ -1,5 +1,6 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import gsap from "gsap";
+import classNames from "classnames";
 
 const SectionTechnologyFooter = () => {
   const [buttonValue, setButtonValue] = useState(false);
@@ -45,6 +46,12 @@ const SectionTechnologyFooter = () => {
     tl.to([logo2.current, logo5.current], { opacity: 1 }, "-=0.5");
     tl.to([logo1.current, logo6.current], { opacity: 1 }, "-=0.5");
   };
+
+  const showOrHideModal = classNames({
+    "modal-app-technologies modal-app-technologies--show": buttonValue,
+    "modal-app-technologies modal-app-technologies--hide": !buttonValue
+  });
+
   return (
     <div className="section-technology-footer__wrapper">
       <h3 className="section-technology-footer__title">
@@ -56,13 +63,7 @@ const SectionTechnologyFooter = () => {
       >
         {buttonValue ? "Hide me" : "See more"}
       </button>
-      <div
-        className={
-          buttonValue
-            ? "modal-app-technologies modal-app-technologies--show"
-            : "modal-app-technologies modal-app-technologies--hide"
-        }
-      >
+      <div className={showOrHideModal}>
         <h2 className="modal-app-technologies__title">
           Major technologies which were used to create this app:
         </h2>
