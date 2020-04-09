@@ -1,6 +1,12 @@
 import React, { useState, useRef } from "react";
 import gsap from "gsap";
 import classNames from "classnames";
+import logoCss from "../../photos/technology-icons/icons8-css3-100.png";
+import logoHtml from "../../photos/technology-icons/icons8-html-5-100.png";
+import logoJS from "../../photos/technology-icons/icons8-javascript-100.png";
+import logoReact from "../../photos/technology-icons/icons8-react-100.png";
+import logoRedux from "../../photos/technology-icons/icons8-redux-100.png";
+import logoSass from "../../photos/technology-icons/icons8-sass-100.png";
 
 const SectionTechnologyFooter = () => {
   const [buttonValue, setButtonValue] = useState(false);
@@ -24,32 +30,38 @@ const SectionTechnologyFooter = () => {
   //-----CLASSES-----
   const showOrHideModal = classNames({
     "modal-app-technologies modal-app-technologies--show": buttonValue,
-    "modal-app-technologies modal-app-technologies--hide": !buttonValue
+    "modal-app-technologies modal-app-technologies--hide": !buttonValue,
   });
 
   //-----BUTTON ACITONS-----
   const handleSectionTechnologyFooterButton = () => {
-    return setButtonValue(!buttonValue), logoAnimations();
+    setButtonValue(!buttonValue);
+    logoAnimations();
   };
 
   //-----CREATE JSX ELEMENTS-----
-  const namesMainTechnologies = [
-    "HTML 5",
-    "CSS 3",
-    "Sass",
-    "Java Script ES6",
-    "React",
-    "Redux"
+  const mainTechnologies = [
+    { name: "HTML 5", logo: logoHtml },
+    { name: "CSS 3", logo: logoCss },
+    { name: "Sass", logo: logoSass },
+    { name: `JavaScript ES6`, logo: logoJS },
+    { name: "React", logo: logoReact },
+    { name: "Redux", logo: logoRedux },
   ];
 
   const createMainTechnologyTemplate = () =>
-    namesMainTechnologies.map((item, index) => {
+    mainTechnologies.map((item, index) => {
       return (
         <div key={index} className="main-technology">
           <div
             ref={logosRefsArray[index]}
             className="main-technology__logo"
-          ></div>
+            style={{
+              backgroundImage: `url(${item.logo})`,
+            }}
+          >
+            <div className="main-technology__name">{item.name}</div>
+          </div>
         </div>
       );
     });
@@ -57,13 +69,13 @@ const SectionTechnologyFooter = () => {
   const otherTechnologies = [
     "Axiaos - to comunicate whith deepCode API",
     "Monaco-ediotr - to edit your code on browser",
-    "Gsap - to make awesome animations on the website"
+    "Gsap - to make awesome animations on the website",
   ];
 
   const createOtherTechnologies = () => {
     return otherTechnologies.map((item, index) => {
       return (
-        <li key={index} className="others-technologies__list-item">
+        <li key={index} className="list__item">
           {item}
         </li>
       );

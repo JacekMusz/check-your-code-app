@@ -1,7 +1,6 @@
 .nav-bar {
   display: flex;
   flex-direction: column;
-  position: -webkit-sticky;
   position: fixed;
   width: 100vw;
   height: 10vh;
@@ -10,7 +9,7 @@
   transition: 0.5s;
   z-index: 5;
   color: white;
-  .nav-bar__content-wrapper {
+  &__content-wrapper {
     display: flex;
     justify-content: left;
     align-items: center;

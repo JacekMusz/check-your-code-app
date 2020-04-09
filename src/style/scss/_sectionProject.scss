@@ -26,11 +26,7 @@
   padding: 0 6vw 0 6vw;
   margin-bottom: 20vh;
   background-color: black;
-  &__triangle {
-    width: 90%;
-    height: 50px;
-  }
-  .section-project__title {
+  &__title {
     position: relative;
     color: white;
     max-width: 100%;
@@ -39,7 +35,7 @@
     font-size: 30px;
     border-radius: 30px;
   }
-  .section-project__title:after {
+  &__title:after {
     position: absolute;
     content: "";
     display: block;
@@ -61,62 +57,62 @@
   &__article {
     display: flex;
     flex-direction: wrap;
-  }
-  &__article:nth-child(1) {
-    @include widthAndHeight(100%, 60%);
-    .article__text {
-      width: 60%;
-      padding: 5% 5%;
-      text-align: left;
-      &::after {
-        z-index: 2;
-        top: 0;
-        left: -20px;
-        @include AfterBeforeCross(150px, 2px);
-        animation: sectionProject-firstFrameElement 10s linear infinite;
+    &:nth-child(1) {
+      @include widthAndHeight(100%, 60%);
+      .article__img {
+        transform-origin: top;
+        transform: scale(0.5);
+        background: rgba(0, 0, 0, 0.5) url("../photos/picture3.jpg");
+        @include imageProperites();
+        @include widthAndHeight(40%, 140%);
       }
-      &::before {
-        background-image: linear-gradient(to bottom, #c03da3, #493fa3, black);
-        top: -20px;
-        left: 0;
-        @include AfterBeforeCross(2px, 150px);
-        animation: sectionProject-secondFrameElement 10s linear infinite;
+      .article__text {
+        width: 60%;
+        padding: 5% 5%;
+        text-align: left;
+        &::after {
+          z-index: 2;
+          top: 0;
+          left: -20px;
+          @include AfterBeforeCross(150px, 2px);
+          animation: sectionProject-firstFrameElement 10s linear infinite;
+        }
+        &::before {
+          background-image: linear-gradient(to bottom, #c03da3, #493fa3, black);
+          top: -20px;
+          left: 0;
+          @include AfterBeforeCross(2px, 150px);
+          animation: sectionProject-secondFrameElement 10s linear infinite;
+        }
       }
     }
-    .article__img {
-      transform-origin: top;
-      transform: scale(0.5);
-      background: rgba(0, 0, 0, 0.5) url("../photos/picture3.jpg");
-      @include imageProperites();
-      @include widthAndHeight(40%, 140%);
-    }
-  }
-  &__article:nth-child(2) {
-    @include widthAndHeight(100%, 40%);
-    .article__img {
-      background: rgba(0, 0, 0, 0.5) url("../photos/picture2.jpg");
-      transform-origin: top;
-      transform: translateY(-40%) scale(0.8);
-      @include imageProperites();
-      @include widthAndHeight(60%, 110%);
-    }
-    .article__text {
-      width: 40%;
-      padding: 5% 5%;
-      text-align: justify;
-      &::after {
-        background-image: linear-gradient(to left, #c03da3, #493fa3, black);
-        bottom: 0;
-        right: -20px;
-        @include AfterBeforeCross(150px, 2px);
-        animation: sectionProject-thirdFrameElement 10s linear infinite;
+    &:nth-child(2) {
+      @include widthAndHeight(100%, 40%);
+      .article__img {
+        background: rgba(0, 0, 0, 0.5) url("../photos/picture2.jpg");
+        transform-origin: top;
+        transform: translateY(-40%) scale(0.8);
+        @include imageProperites();
+        @include widthAndHeight(60%, 110%);
       }
-      &::before {
-        background-image: linear-gradient(to top, #c03da3, #493fa3, black);
-        bottom: 0;
-        right: 0;
-        @include AfterBeforeCross(2px, 150px);
-        animation: sectionProject-fourthFrameElement 10s linear infinite;
+      .article__text {
+        width: 40%;
+        padding: 5% 5%;
+        text-align: justify;
+        &::after {
+          background-image: linear-gradient(to left, #c03da3, #493fa3, black);
+          bottom: 0;
+          right: -20px;
+          @include AfterBeforeCross(150px, 2px);
+          animation: sectionProject-thirdFrameElement 10s linear infinite;
+        }
+        &::before {
+          background-image: linear-gradient(to top, #c03da3, #493fa3, black);
+          bottom: 0;
+          right: 0;
+          @include AfterBeforeCross(2px, 150px);
+          animation: sectionProject-fourthFrameElement 10s linear infinite;
+        }
       }
     }
   }

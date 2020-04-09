@@ -2,21 +2,21 @@ import React, { Component } from "react";
 
 class PanelSessionToken extends Component {
   state = {
-    newSessionToken: ""
+    newSessionToken: "",
   };
 
-  handleNewSessionToken = e => {
+  handleNewSessionToken = (e) => {
     this.setState({
-      newSessionToken: e.target.value
+      newSessionToken: e.target.value,
     });
   };
 
   handleConfirmSessionToken = () => {
     const { newSessionToken } = this.state;
     if (newSessionToken.length > 10) {
-      this.props.reduxSetToken(newSessionToken);
+      this.props.setToken(newSessionToken);
       this.setState({
-        newSessionToken: ""
+        newSessionToken: "",
       });
     }
   };
@@ -29,7 +29,7 @@ class PanelSessionToken extends Component {
         <input
           type="text"
           placeholder="Session Token"
-          onChange={e => this.handleNewSessionToken(e)}
+          onChange={(e) => this.handleNewSessionToken(e)}
         ></input>
         <button
           disabled={this.state.newSessionToken.length < 10}

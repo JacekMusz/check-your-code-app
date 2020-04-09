@@ -1,27 +1,27 @@
-.section-technology-footer__wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 50px;
-  opacity: 0;
-  span {
-    color: red;
+.section-technology-footer {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    opacity: 0;
+    span {
+      color: #c03da3;
+    }
   }
-
-  .section-technology-footer__title {
+  &__title {
     color: white;
     font-size: 20px;
     span {
       font-style: italic;
     }
   }
-
-  .section-technology-footer__button {
+  &__button {
     width: 100px;
     background-color: transparent;
     border: none;
     font-size: 18px;
-    color: red;
+    color: #c03da3;
     margin: 30px;
     font-style: italic;
     cursor: pointer;

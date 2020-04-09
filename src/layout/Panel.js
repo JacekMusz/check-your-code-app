@@ -5,25 +5,24 @@ import {
   apiCreateBundle,
   apiCheckBundle,
   apiGetAnalysis,
-  apiGetDiffAnalysis
+  apiGetDiffAnalysis,
 } from "../api/apiBundle";
 import { connect } from "react-redux";
 import actions from "../actions/actions.js";
 
 class Panel extends Component {
   state = {
-    newFileName: ""
+    newFileName: "",
   };
 
   handleApiFilters = () => {
     apiFilters();
   };
   handleCreateBundle = () => {
-    console.log(this.handleNewFilePath(), this.props.fileContent);
     apiCreateBundle(this.handleNewFilePath(), this.props.fileContent).then(
-      resp => {
+      (resp) => {
         console.log(resp);
-        this.props.reduxSetBundleId(resp.data.bundleId);
+        this.props.setBundleId(resp.data.bundleId);
       }
     );
   };
@@ -54,16 +53,16 @@ class Panel extends Component {
     }
   };
 
-  handleNewFileName = e => {
+  handleNewFileName = (e) => {
     this.setState({
-      newFileName: e.target.value
+      newFileName: e.target.value,
     });
   };
   render() {
     return (
       <div className="panel">
         <PanelSessionToken
-          reduxSetToken={this.props.reduxSetToken}
+          setToken={this.props.setToken}
           sessionToken={this.props.sessionToken}
         />
         <br />
@@ -72,7 +71,7 @@ class Panel extends Component {
         </button>
         <br />
         <input
-          onChange={e => this.handleNewFileName(e)}
+          onChange={(e) => this.handleNewFileName(e)}
           placeholder="file name"
           type="text"
         ></input>
@@ -99,18 +98,18 @@ class Panel extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    sessionToken: state.mainStore.sessionToken,
-    editorLanguage: state.mainStore.editorLanguage,
-    fileContent: state.mainStore.code,
-    currentBundleId: state.mainStore.bundleId
+    sessionToken: state.store.sessionToken,
+    editorLanguage: state.store.editorLanguage,
+    fileContent: state.store.code,
+    currentBundleId: state.store.bundleId,
   };
 };
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    reduxSetBundleId: bundleId => dispatch(actions.reduxSetBundleId(bundleId)),
-    reduxSetToken: sessionToken => dispatch(actions.reduxSetToken(sessionToken))
+    setBundleId: (bundleId) => dispatch(actions.setBundleId(bundleId)),
+    setToken: (sessionToken) => dispatch(actions.setToken(sessionToken)),
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Panel);

@@ -15,7 +15,7 @@ function EditorWrapper(props) {
       </p>
       <select
         className="button"
-        onChange={e => props.setEditorLanguage(e.target.value)}
+        onChange={(e) => props.setEditorLanguage(e.target.value)}
       >
         <option value="text">select language</option>
         <option value="javascript">javascript</option>
@@ -35,16 +35,16 @@ function EditorWrapper(props) {
   );
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    editorLanguage: state.mainStore.editorLanguage
+    editorLanguage: state.store.editorLanguage,
   };
 };
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    setCode: code => dispatch(actions.reduxSetCode(code)),
-    setEditorLanguage: editorLanguage =>
-      dispatch(actions.reduxSetEditorLanguage(editorLanguage))
+    setCode: (code) => dispatch(actions.setCode(code)),
+    setEditorLanguage: (editorLanguage) =>
+      dispatch(actions.setEditorLanguage(editorLanguage)),
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(EditorWrapper);
