@@ -1,12 +1,12 @@
 const initialState = {
   bundleId: "noData",
   code: "noData",
-  sessionToken:
-    "08406328ef4d4bd1c986fd972eb10e83b44e21a9e9d768644c48426735d6638f",
+  sessionToken: process.env.REACT_APP_DEFAULT_SESSION_TOKEN,
   editorLanguage: "plaintext",
 };
 
 export default function store(state = initialState, action) {
+  console.log(process.env.REACT_APP_DEFAULT_SESSION_TOKEN);
   switch (action.type) {
     case "SET_BUNDLE_ID":
       return { ...state, bundleId: action.bundleId };

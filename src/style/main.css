@@ -1,3 +1,25 @@
+.button {
+  min-width: 150px;
+  max-width: 300px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 16px;
+  margin: 10px;
+  padding-left: 0 10px;
+  color: white;
+  background-color: #333;
+  -webkit-box-shadow: 0 0 3px #888;
+          box-shadow: 0 0 3px #888;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.button:hover {
+  -webkit-box-shadow: 0 0 6px white;
+          box-shadow: 0 0 6px white;
+}
+
 .nav-bar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -10,10 +32,10 @@
   width: 100vw;
   height: 10vh;
   padding: 0 30px;
-  top: 0px;
+  top: 0;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  z-index: 5;
+  z-index: 500;
   color: white;
 }
 
@@ -190,28 +212,6 @@ button:disabled {
   opacity: 50%;
 }
 
-.button {
-  min-width: 150px;
-  max-width: 300px;
-  height: 24px;
-  line-height: 24px;
-  font-size: 16px;
-  margin: 10px;
-  padding-left: 0 10px;
-  color: white;
-  background-color: #333;
-  -webkit-box-shadow: 0px 0px 3px #888;
-          box-shadow: 0px 0px 3px #888;
-  border: none;
-  cursor: pointer;
-  border-radius: 3px;
-}
-
-.button:hover {
-  -webkit-box-shadow: 0px 0px 6px white;
-          box-shadow: 0px 0px 6px white;
-}
-
 .right-panel {
   max-width: 50%;
 }
@@ -316,15 +316,15 @@ button:disabled {
 }
 
 .articles__article:nth-child(1) .article__text::after {
-  z-index: 2;
+  z-index: 200;
   top: 0;
   left: -20px;
-  border-radius: 2px;
-  content: "";
+  position: absolute;
   display: block;
+  content: "";
   width: 150px;
   height: 2px;
-  position: absolute;
+  border-radius: 2px;
   -webkit-animation: sectionProject-firstFrameElement 10s linear infinite;
           animation: sectionProject-firstFrameElement 10s linear infinite;
 }
@@ -334,12 +334,12 @@ button:disabled {
   background-image: linear-gradient(to bottom, #c03da3, #493fa3, black);
   top: -20px;
   left: 0;
-  border-radius: 2px;
-  content: "";
+  position: absolute;
   display: block;
+  content: "";
   width: 2px;
   height: 150px;
-  position: absolute;
+  border-radius: 2px;
   -webkit-animation: sectionProject-secondFrameElement 10s linear infinite;
           animation: sectionProject-secondFrameElement 10s linear infinite;
 }
@@ -374,12 +374,12 @@ button:disabled {
   background-image: linear-gradient(to left, #c03da3, #493fa3, black);
   bottom: 0;
   right: -20px;
-  border-radius: 2px;
-  content: "";
+  position: absolute;
   display: block;
+  content: "";
   width: 150px;
   height: 2px;
-  position: absolute;
+  border-radius: 2px;
   -webkit-animation: sectionProject-thirdFrameElement 10s linear infinite;
           animation: sectionProject-thirdFrameElement 10s linear infinite;
 }
@@ -389,12 +389,12 @@ button:disabled {
   background-image: linear-gradient(to top, #c03da3, #493fa3, black);
   bottom: 0;
   right: 0;
-  border-radius: 2px;
-  content: "";
+  position: absolute;
   display: block;
+  content: "";
   width: 2px;
   height: 150px;
-  position: absolute;
+  border-radius: 2px;
   -webkit-animation: sectionProject-fourthFrameElement 10s linear infinite;
           animation: sectionProject-fourthFrameElement 10s linear infinite;
 }
@@ -686,7 +686,7 @@ button:disabled {
   width: 70vw;
   min-height: 115vh;
   background-color: #08042e;
-  z-index: 2;
+  z-index: 200;
   -webkit-box-shadow: -5px -5px 30px #250c20;
           box-shadow: -5px -5px 30px #250c20;
 }
@@ -697,7 +697,7 @@ button:disabled {
   width: 70vw;
   min-height: 120vh;
   background-color: #04021c;
-  z-index: 1;
+  z-index: 100;
   -webkit-box-shadow: -5px -5px 60px #1d0919;
           box-shadow: -5px -5px 60px #1d0919;
 }
@@ -717,7 +717,7 @@ button:disabled {
   opacity: 0;
   width: 70vw;
   min-height: 110vh;
-  z-index: 3;
+  z-index: 300;
   padding: 5% 5%;
   -webkit-transform: translate(5vw, 5vh);
           transform: translate(5vw, 5vh);
@@ -773,7 +773,7 @@ button:disabled {
   background-repeat: no-repeat;
   background-position: center;
   position: relative;
-  z-index: 6;
+  z-index: 600;
   width: 25vw;
   height: 25vh;
   -webkit-transform: translate(20px, -5px);
@@ -787,7 +787,7 @@ button:disabled {
   top: -1vh;
   width: 25vw;
   height: 25vh;
-  z-index: 5;
+  z-index: 500;
   background-color: rgba(204, 206, 235, 0.4);
   -webkit-transform: translate(30px, -5px);
           transform: translate(30px, -5px);
@@ -796,7 +796,7 @@ button:disabled {
 .section-technology .article-technology__text-and-logo-wrapper .article-technology__logo-background-one {
   opacity: 0;
   position: absolute;
-  z-index: 5;
+  z-index: 500;
   right: -1vw;
   top: -2vh;
   width: 25vw;
@@ -878,8 +878,8 @@ button:disabled {
 }
 
 .section-technology-footer__button:hover:after {
-  background-image: -webkit-gradient(linear, right top, left top, from(transparent), color-stop(#c03da3), color-stop(#493fa3), to(transparent));
-  background-image: linear-gradient(to left, transparent, #c03da3, #493fa3, transparent);
+  background-image: -webkit-gradient(linear, right top, left top, from(transparent), color-stop(#493fa3, #c03da3));
+  background-image: linear-gradient(to left, transparent, #c03da3 #493fa3 transparent);
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
 }
@@ -891,11 +891,20 @@ button:disabled {
   bottom: 0;
   color: white;
   background-color: #060325;
-  -webkit-box-shadow: 0px 0px 30px #392473;
-          box-shadow: 0px 0px 30px #392473;
+  -webkit-box-shadow: 0 0 30px #150b83;
+          box-shadow: 0 0 30px #150b83;
   border-radius: 10px;
   -webkit-transform: translate(-4vw, 400px);
           transform: translate(-4vw, 400px);
+  opacity: 0;
+  width: 0;
+  height: 400px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.modal-app-technologies * {
+  opacity: 0;
 }
 
 .modal-app-technologies--show {
@@ -905,16 +914,8 @@ button:disabled {
   transition: 0.5s;
 }
 
-.modal-app-technologies--hide {
-  opacity: 0;
-  width: 0vw;
-  height: 400px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.modal-app-technologies--hide * {
-  opacity: 0;
+.modal-app-technologies--show * {
+  opacity: 1;
 }
 
 .modal-app-technologies__container {
@@ -1019,7 +1020,7 @@ button:disabled {
 .others-technologies__list .list__item {
   font-size: 15px;
   margin: 3px;
-  font-weight: lighter;
+  font-weight: 300;
 }
 
 * {

@@ -21,7 +21,7 @@
     background-color: transparent;
     border: none;
     font-size: 18px;
-    color: #c03da3;
+    color: map-get($color-pink, "color");
     margin: 30px;
     font-style: italic;
     cursor: pointer;
@@ -49,9 +49,8 @@
       background-image: linear-gradient(
         to left,
         transparent,
-        #c03da3,
-        #493fa3,
-        transparent
+        map-get($color-pink, "color") map-get($color-purple, "color")
+          transparent
       );
       transform: translateX(100%);
     }

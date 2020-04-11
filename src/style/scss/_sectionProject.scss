@@ -11,12 +11,12 @@
   @content;
 }
 @mixin AfterBeforeCross($width, $height) {
-  border-radius: 2px;
-  content: "";
+  position: absolute;
   display: block;
+  content: "";
   width: $width;
   height: $height;
-  position: absolute;
+  border-radius: 2px;
 }
 .section-project {
   display: flex;
@@ -71,14 +71,19 @@
         padding: 5% 5%;
         text-align: left;
         &::after {
-          z-index: 2;
+          z-index: 200;
           top: 0;
           left: -20px;
           @include AfterBeforeCross(150px, 2px);
           animation: sectionProject-firstFrameElement 10s linear infinite;
         }
         &::before {
-          background-image: linear-gradient(to bottom, #c03da3, #493fa3, black);
+          background-image: linear-gradient(
+            to bottom,
+            map-get($color-pink, "color"),
+            map-get($color-purple, "color"),
+            black
+          );
           top: -20px;
           left: 0;
           @include AfterBeforeCross(2px, 150px);
@@ -100,14 +105,24 @@
         padding: 5% 5%;
         text-align: justify;
         &::after {
-          background-image: linear-gradient(to left, #c03da3, #493fa3, black);
+          background-image: linear-gradient(
+            to left,
+            map-get($color-pink, "color"),
+            map-get($color-purple, "color"),
+            black
+          );
           bottom: 0;
           right: -20px;
           @include AfterBeforeCross(150px, 2px);
           animation: sectionProject-thirdFrameElement 10s linear infinite;
         }
         &::before {
-          background-image: linear-gradient(to top, #c03da3, #493fa3, black);
+          background-image: linear-gradient(
+            to top,
+            map-get($color-pink, "color"),
+            map-get($color-purple, "color"),
+            black
+          );
           bottom: 0;
           right: 0;
           @include AfterBeforeCross(2px, 150px);
@@ -118,91 +133,6 @@
   }
 }
 
-@keyframes sectionProject-firstFrameElement {
-  0% {
-    background-image: linear-gradient(to right, #c03da3, #493fa3, black);
-    transform: translateX(0);
-  }
-  45% {
-    background-image: linear-gradient(to right, #c03da3, #493fa3, black);
-    transform: translateX(0);
-  }
-  50% {
-    background-image: linear-gradient(to left, #c03da3, #493fa3, black);
-    transform: translateX(calc(80vw - 110px));
-  }
-  95% {
-    background-image: linear-gradient(to left, #c03da3, #493fa3, black);
-    transform: translateX(calc(80vw - 110px));
-  }
-  100% {
-    background-image: linear-gradient(to right, #c03da3, #493fa3, black);
-    transform: translateX(0);
-  }
-}
-@keyframes sectionProject-secondFrameElement {
-  0% {
-    background-image: linear-gradient(to bottom, #c03da3, #493fa3, black);
-    transform: translateY(0);
-  }
-  45% {
-    background-image: linear-gradient(to bottom, #c03da3, #493fa3, black);
-    transform: translateY(0);
-  }
-  50% {
-    background-image: linear-gradient(to top, #c03da3, #493fa3, black);
-    transform: translateY(calc(100vh - 110px));
-  }
-  95% {
-    background-image: linear-gradient(to top, #c03da3, #493fa3, black);
-    transform: translateY(calc(100vh - 110px));
-  }
-  100% {
-    background-image: linear-gradient(to bottom, #c03da3, #493fa3, black);
-    transform: translateY(0);
-  }
-}
-@keyframes sectionProject-thirdFrameElement {
-  0% {
-    background-image: linear-gradient(to left, #c03da3, #493fa3, black);
-    transform: translateX(0);
-  }
-  45% {
-    background-image: linear-gradient(to left, #c03da3, #493fa3, black);
-    transform: translateX(0);
-  }
-  50% {
-    background-image: linear-gradient(to right, #c03da3, #493fa3, black);
-    transform: translateX(calc(-80vw + 110px));
-  }
-  95% {
-    background-image: linear-gradient(to right, #c03da3, #493fa3, black);
-    transform: translateX(calc(-80vw + 110px));
-  }
-  100% {
-    background-image: linear-gradient(to left, #c03da3, #493fa3, black);
-    transform: translateX(0);
-  }
-}
-@keyframes sectionProject-fourthFrameElement {
-  0% {
-    background-image: linear-gradient(to top, #c03da3, #493fa3, black);
-    transform: translateY(20px);
-  }
-  45% {
-    background-image: linear-gradient(to top, #c03da3, #493fa3, black);
-    transform: translateY(20px);
-  }
-  50% {
-    background-image: linear-gradient(to bottom, #c03da3, #493fa3, black);
-    transform: translateY(calc(-100vh + 130px));
-  }
-  95% {
-    background-image: linear-gradient(to bottom, #c03da3, #493fa3, black);
-    transform: translateY(calc(-100vh + 130px));
-  }
-  100% {
-    background-image: linear-gradient(to top, #c03da3, #493fa3, black);
-    transform: translateY(0);
-  }
-}
+//-----ANIMATIONS-----
+
+@import "_sectionProjectAnimations.scss";

@@ -1,0 +1,188 @@
+@keyframes sectionProject-firstFrameElement {
+  0% {
+    background-image: linear-gradient(
+      to right,
+      map-get($color-pink, "color"),
+      map-get($color-purple, "color"),
+      black
+    );
+    transform: translateX(0);
+  }
+  45% {
+    background-image: linear-gradient(
+      to right,
+      map-get($color-pink, "color"),
+      map-get($color-purple, "color"),
+      black
+    );
+    transform: translateX(0);
+  }
+  50% {
+    background-image: linear-gradient(
+      to left,
+      map-get($color-pink, "color"),
+      map-get($color-purple, "color"),
+      black
+    );
+    transform: translateX(calc(80vw - 110px));
+  }
+  95% {
+    background-image: linear-gradient(
+      to left,
+      map-get($color-pink, "color"),
+      map-get($color-purple, "color"),
+      black
+    );
+    transform: translateX(calc(80vw - 110px));
+  }
+  100% {
+    background-image: linear-gradient(
+      to right,
+      map-get($color-pink, "color"),
+      map-get($color-purple, "color"),
+      black
+    );
+    transform: translateX(0);
+  }
+}
+@keyframes sectionProject-secondFrameElement {
+  0% {
+    background-image: linear-gradient(
+      to bottom,
+      map-get($color-pink, "color"),
+      map-get($color-purple, "color"),
+      black
+    );
+    transform: translateY(0);
+  }
+  45% {
+    background-image: linear-gradient(
+      to bottom,
+      map-get($color-pink, "color"),
+      map-get($color-purple, "color"),
+      black
+    );
+    transform: translateY(0);
+  }
+  50% {
+    background-image: linear-gradient(
+      to top,
+      map-get($color-pink, "color"),
+      map-get($color-purple, "color"),
+      black
+    );
+    transform: translateY(calc(100vh - 110px));
+  }
+  95% {
+    background-image: linear-gradient(
+      to top,
+      map-get($color-pink, "color"),
+      map-get($color-purple, "color"),
+      black
+    );
+    transform: translateY(calc(100vh - 110px));
+  }
+  100% {
+    background-image: linear-gradient(
+      to bottom,
+      map-get($color-pink, "color"),
+      map-get($color-purple, "color"),
+      black
+    );
+    transform: translateY(0);
+  }
+}
+@keyframes sectionProject-thirdFrameElement {
+  0% {
+    background-image: linear-gradient(
+      to left,
+      map-get($color-pink, "color"),
+      map-get($color-purple, "color"),
+      black
+    );
+    transform: translateX(0);
+  }
+  45% {
+    background-image: linear-gradient(
+      to left,
+      map-get($color-pink, "color"),
+      map-get($color-purple, "color"),
+      black
+    );
+    transform: translateX(0);
+  }
+  50% {
+    background-image: linear-gradient(
+      to right,
+      map-get($color-pink, "color"),
+      map-get($color-purple, "color"),
+      black
+    );
+    transform: translateX(calc(-80vw + 110px));
+  }
+  95% {
+    background-image: linear-gradient(
+      to right,
+      map-get($color-pink, "color"),
+      map-get($color-purple, "color"),
+      black
+    );
+    transform: translateX(calc(-80vw + 110px));
+  }
+  100% {
+    background-image: linear-gradient(
+      to left,
+      map-get($color-pink, "color"),
+      map-get($color-purple, "color"),
+      black
+    );
+    transform: translateX(0);
+  }
+}
+@keyframes sectionProject-fourthFrameElement {
+  0% {
+    background-image: linear-gradient(
+      to top,
+      map-get($color-pink, "color"),
+      map-get($color-purple, "color"),
+      black
+    );
+    transform: translateY(20px);
+  }
+  45% {
+    background-image: linear-gradient(
+      to top,
+      map-get($color-pink, "color"),
+      map-get($color-purple, "color"),
+      black
+    );
+    transform: translateY(20px);
+  }
+  50% {
+    background-image: linear-gradient(
+      to bottom,
+      map-get($color-pink, "color"),
+      map-get($color-purple, "color"),
+      black
+    );
+    transform: translateY(calc(-100vh + 130px));
+  }
+  95% {
+    background-image: linear-gradient(
+      to bottom,
+      map-get($color-pink, "color"),
+      map-get($color-purple, "color"),
+      black
+    );
+    transform: translateY(calc(-100vh + 130px));
+  }
+  100% {
+    background-image: linear-gradient(
+      to top,
+      map-get($color-pink, "color"),
+      map-get($color-purple, "color"),
+      black
+    );
+    transform: translateY(0);
+  }
+}

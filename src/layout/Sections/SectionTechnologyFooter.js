@@ -30,7 +30,7 @@ const SectionTechnologyFooter = () => {
   //-----CLASSES-----
   const showOrHideModal = classNames({
     "modal-app-technologies modal-app-technologies--show": buttonValue,
-    "modal-app-technologies modal-app-technologies--hide": !buttonValue,
+    "modal-app-technologies": !buttonValue,
   });
 
   //-----BUTTON ACITONS-----
