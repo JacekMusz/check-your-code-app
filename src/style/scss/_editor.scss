@@ -1,0 +1,19 @@
+.editor__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 50%;
+  height: 90vh;
+  margin-top: 10vh;
+  padding-top: 20px;
+}
+
+.editor__current-language-info {
+  font-size: 14px;
+  color: white;
+}
+
+button:disabled {
+  opacity: 50%;
+}

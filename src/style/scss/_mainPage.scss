@@ -1,0 +1,31 @@
+.section-start {
+  width: 100%;
+  min-height: 120vh;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.01),
+      rgba(0, 0, 0, 1)
+    ),
+    url("../photos/picture1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.main-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.section-author {
+  width: 100%;
+  height: 200vh;
+  background-image: linear-gradient(
+    to top,
+    black,
+    lighten($color: map-get($color-blue, "dark-blue"), $amount: 1%)
+  );
+}

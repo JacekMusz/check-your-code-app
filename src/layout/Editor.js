@@ -1,5 +1,4 @@
-import React, { useRef, useState } from "react";
-import "../style/Editor.css";
+import React from "react";
 import { ControlledEditor } from "@monaco-editor/react";
 import actions from "../actions/actions.js";
 import { connect } from "react-redux";
@@ -9,38 +8,43 @@ function EditorWrapper(props) {
     props.setCode(value);
   };
 
-  const [editorLanguage, setLanguage] = useState("plaintext");
-
   return (
-    <div className="Editor__wrapper">
-      <select className="button" onChange={e => setLanguage(e.target.value)}>
-        <option value="txt">select language</option>
+    <div className="editor__wrapper">
+      <p className="editor__current-language-info">
+        Current editor language: {props.editorLanguage}
+      </p>
+      <select
+        className="button"
+        onChange={(e) => props.setEditorLanguage(e.target.value)}
+      >
+        <option value="text">select language</option>
         <option value="javascript">javascript</option>
         <option value="java">java</option>
-        <option value="typescript">typescript</option>
         <option value="html">html</option>
         <option value="python">python</option>
       </select>
       <ControlledEditor
-        height="90vh"
-        width="100%"
+        height="100%"
+        width="100vw"
         value={"// write your code"}
         onChange={handleEditorChange}
-        language={editorLanguage}
+        language={props.editorLanguage}
         theme="dark"
       />
     </div>
   );
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    editorLanguage2: state.editorLanguage
+    editorLanguage: state.store.editorLanguage,
   };
 };
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    setCode: code => dispatch(actions.reduxSetCode(code))
+    setCode: (code) => dispatch(actions.setCode(code)),
+    setEditorLanguage: (editorLanguage) =>
+      dispatch(actions.setEditorLanguage(editorLanguage)),
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(EditorWrapper);

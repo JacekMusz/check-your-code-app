@@ -1,0 +1,32 @@
+@import "_variables.scss";
+@import "_buttons.scss";
+@import "_navBar.scss";
+@import "_mainPage.scss";
+@import "_editor.scss";
+@import "_rightPanel.scss";
+@import "_sectionProject.scss";
+@import "_sectionTechnology.scss";
+@import "_sectionTechnologyFooter.scss";
+@import "_modalAppTechnology.scss";
+
+* {
+  box-sizing: border-box;
+  font-family: "Oxanium", cursive;
+}
+
+.app {
+  position: absolute;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  top: 0;
+  width: 100%;
+  background-color: black;
+  overflow: hidden;
+}
+
+.app__editor-and-panel-wrapper {
+  display: flex;
+  flex-direction: row;
+}

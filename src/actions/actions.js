@@ -1,25 +1,24 @@
-export const reduxSetBundleId = bundleId => (
-  console.log(bundleId, "actions"),
-  {
-    type: "SET_BUNDLE_ID",
-    bundleId
-  }
-);
-
-export const reduxSetToken = sessionToken => ({
-  type: "SET_TOKEN",
-  sessionToken
+export const setBundleId = (bundleId) => ({
+  type: "SET_BUNDLE_ID",
+  bundleId,
 });
-export const reduxSetCode = code => (
-  console.log(code, "actions"),
-  {
-    type: "SET_CODE",
-    code
-  }
-);
+
+export const setToken = (sessionToken) => ({
+  type: "SET_TOKEN",
+  sessionToken,
+});
+export const setCode = (code) => ({
+  type: "SET_CODE",
+  code,
+});
+export const setEditorLanguage = (editorLanguage) => ({
+  type: "SET_EDITOR_LANGUAGE",
+  editorLanguage,
+});
 
 export default {
-  reduxSetBundleId,
-  reduxSetToken,
-  reduxSetCode
+  setBundleId,
+  setToken,
+  setCode,
+  setEditorLanguage,
 };

@@ -1,0 +1,138 @@
+@mixin imageProperites() {
+  background-blend-mode: darken;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  @content;
+}
+@mixin widthAndHeight($width, $height) {
+  width: $width;
+  height: $height;
+  @content;
+}
+@mixin AfterBeforeCross($width, $height) {
+  position: absolute;
+  display: block;
+  content: "";
+  width: $width;
+  height: $height;
+  border-radius: 2px;
+}
+.section-project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 6vw 0 6vw;
+  margin-bottom: 20vh;
+  background-color: black;
+  &__title {
+    position: relative;
+    color: white;
+    max-width: 100%;
+    margin-bottom: 20vh;
+    padding: 3px 20px;
+    font-size: 30px;
+    border-radius: 30px;
+  }
+  &__title:after {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 120%;
+    height: 2px;
+    bottom: -3px;
+    transform: translateX(-10%);
+    border-radius: 10px;
+    background-image: linear-gradient(to left, black, #666, black);
+  }
+}
+
+.articles {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  color: white;
+  @include widthAndHeight(80vw, 100vh);
+  &__article {
+    display: flex;
+    flex-direction: wrap;
+    &:nth-child(1) {
+      @include widthAndHeight(100%, 60%);
+      .article__img {
+        transform-origin: top;
+        transform: scale(0.5);
+        background: rgba(0, 0, 0, 0.5) url("../photos/picture3.jpg");
+        @include imageProperites();
+        @include widthAndHeight(40%, 140%);
+      }
+      .article__text {
+        width: 60%;
+        padding: 5% 5%;
+        text-align: left;
+        &::after {
+          z-index: 200;
+          top: 0;
+          left: -20px;
+          @include AfterBeforeCross(150px, 2px);
+          animation: sectionProject-firstFrameElement 10s linear infinite;
+        }
+        &::before {
+          background-image: linear-gradient(
+            to bottom,
+            map-get($color-pink, "color"),
+            map-get($color-purple, "color"),
+            black
+          );
+          top: -20px;
+          left: 0;
+          @include AfterBeforeCross(2px, 150px);
+          animation: sectionProject-secondFrameElement 10s linear infinite;
+        }
+      }
+    }
+    &:nth-child(2) {
+      @include widthAndHeight(100%, 40%);
+      .article__img {
+        background: rgba(0, 0, 0, 0.5) url("../photos/picture2.jpg");
+        transform-origin: top;
+        transform: translateY(-40%) scale(0.8);
+        @include imageProperites();
+        @include widthAndHeight(60%, 110%);
+      }
+      .article__text {
+        width: 40%;
+        padding: 5% 5%;
+        text-align: justify;
+        &::after {
+          background-image: linear-gradient(
+            to left,
+            map-get($color-pink, "color"),
+            map-get($color-purple, "color"),
+            black
+          );
+          bottom: 0;
+          right: -20px;
+          @include AfterBeforeCross(150px, 2px);
+          animation: sectionProject-thirdFrameElement 10s linear infinite;
+        }
+        &::before {
+          background-image: linear-gradient(
+            to top,
+            map-get($color-pink, "color"),
+            map-get($color-purple, "color"),
+            black
+          );
+          bottom: 0;
+          right: 0;
+          @include AfterBeforeCross(2px, 150px);
+          animation: sectionProject-fourthFrameElement 10s linear infinite;
+        }
+      }
+    }
+  }
+}
+
+//-----ANIMATIONS-----
+
+@import "_sectionProjectAnimations.scss";
