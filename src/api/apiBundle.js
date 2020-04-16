@@ -4,8 +4,7 @@ export const apiFilters = () => {
   return publicApi
     .get("filters", {
       headers: {
-        "Session-Token":
-          "08406328ef4d4bd1c986fd972eb10e83b44e21a9e9d768644c48426735d6638f",
+        "Session-Token": process.env.REACT_APP_DEFAULT_SESSION_TOKEN,
       },
     })
     .then((resp) => console.log(resp))
@@ -17,8 +16,7 @@ export const apiCreateBundle = (newFilePath, newFileContent) => {
     .post("bundle", {
       "Content-Type": "application/json",
       headers: {
-        "Session-Token":
-          "08406328ef4d4bd1c986fd972eb10e83b44e21a9e9d768644c48426735d6638f",
+        "Session-Token": process.env.REACT_APP_DEFAULT_SESSION_TOKEN,
       },
       files: [{ filePath: newFilePath, fileContent: newFileContent }],
     })
@@ -34,8 +32,7 @@ export const apiCheckBundle = (bundleID) => {
     .get(`bundle/${bundleID}`, {
       "Content-Type": "application/json",
       headers: {
-        "Session-Token":
-          "08406328ef4d4bd1c986fd972eb10e83b44e21a9e9d768644c48426735d6638f",
+        "Session-Token": process.env.REACT_APP_DEFAULT_SESSION_TOKEN,
       },
     })
     .then((resp) => console.log(resp))
@@ -47,8 +44,7 @@ export const apiExtendBundle = () => {
     .put(`bundle/:bundleId`, {
       "Content-Type": "application/json",
       headers: {
-        "Session-Token":
-          "08406328ef4d4bd1c986fd972eb10e83b44e21a9e9d768644c48426735d6638f",
+        "Session-Token": process.env.REACT_APP_DEFAULT_SESSION_TOKEN,
       },
       files: [{ filePath: "/file2.js", fileContent: "const a = 3" }],
       removedFiles: ["/file.js"],
@@ -61,8 +57,7 @@ export const apiGetAnalysis = (bundleId) => {
   return publicApi
     .get(`analysis/${bundleId}`, {
       headers: {
-        "Session-Token":
-          "08406328ef4d4bd1c986fd972eb10e83b44e21a9e9d768644c48426735d6638f",
+        "Session-Token": process.env.REACT_APP_DEFAULT_SESSION_TOKEN,
       },
     })
     .then((resp) => console.log(resp))
@@ -73,8 +68,7 @@ export const apiGetDiffAnalysis = (bundleId) => {
   return publicApi
     .get(`analysis/${bundleId}/${bundleId}`, {
       headers: {
-        "Session-Token":
-          "08406328ef4d4bd1c986fd972eb10e83b44e21a9e9d768644c48426735d6638f",
+        "Session-Token": process.env.REACT_APP_DEFAULT_SESSION_TOKEN,
       },
     })
     .then((resp) => console.log(resp))
