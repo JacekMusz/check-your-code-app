@@ -6,7 +6,6 @@ const initialState = {
 };
 
 export default function store(state = initialState, action) {
-  console.log(process.env.REACT_APP_DEFAULT_SESSION_TOKEN);
   switch (action.type) {
     case "SET_BUNDLE_ID":
       return { ...state, bundleId: action.bundleId };
