@@ -85,7 +85,7 @@ const SectionTechnologyFooter = () => {
   return (
     <div className="section-technology-footer__wrapper">
       <h3 className="section-technology-footer__title">
-        Click <span>See More</span> to get more information about this App !{" "}
+        Click See More to get more information about this App !{" "}
       </h3>
       <button
         className="section-technology-footer__button"

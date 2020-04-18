@@ -44,7 +44,7 @@
     bottom: -3px;
     transform: translateX(-10%);
     border-radius: 10px;
-    background-image: linear-gradient(to left, black, #666, black);
+    background-image: linear-gradient(to left, black, white, black);
   }
 }
 
@@ -70,6 +70,9 @@
         width: 60%;
         padding: 5% 5%;
         text-align: left;
+        a {
+          color: map-get($color-pink, "color");
+        }
         &::after {
           z-index: 200;
           top: 0;

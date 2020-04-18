@@ -2,26 +2,28 @@
   position: absolute;
   padding: 5% 10%;
   height: 400px;
-  bottom: 0;
+  top: 0;
   color: white;
   background-color: map-get($color-blue, "dark-blue");
-  box-shadow: 0 0 30px
-    lighten($color: map-get($color-blue, "dark-blue"), $amount: 20%);
+  box-shadow: 0 0 20px map-get($color-purple, "color");
   border-radius: 10px;
-  transform: translate(-4vw, 400px);
+  transform: translate(-4vw, -400px);
   opacity: 0;
-  width: 0;
+  width: 0px;
   height: 400px;
+  overflow: hidden;
   transition: 0.3s;
   & * {
     opacity: 0;
   }
   &--show {
+    transform: translate(-4vw, -400px);
     opacity: 1;
     width: 90vw;
     transition: 0.5s;
     & * {
       opacity: 1;
+      transition: 2s;
     }
   }
 }

@@ -7,11 +7,11 @@ import SectionTechnologyFooter from "./SectionTechnologyFooter.js";
 const SectionTechnology = () => {
   //-----REACT INTERSECTION OBSERVER-----
   const [sectionTechnology, inView, entry] = useInView({
-    threshold: 0
+    threshold: 0,
   });
   const [
     stopObserveSectionTechnology,
-    setStopObserveSectionTechnology
+    setStopObserveSectionTechnology,
   ] = useState(0);
 
   //-----REFS FOR ANIMATION-----
@@ -38,7 +38,11 @@ const SectionTechnology = () => {
         .to([...article.current.children], { opacity: 1, y: "-20" }, "+=0.4")
         .to(logoBackgroundOne.current, { opacity: 1, x: 0, y: 0 }, "-=0.01")
         .to(logoBackgroundTwo.current, { opacity: 1, x: 0, y: 0 }, "-=0.5")
-        .to(logo.current, { duration: 1.2, opacity: 1, x: 0, y: 0 }, "-=0.3")
+        .to(
+          logo.current,
+          { duration: 1.2, opacity: 1, x: "-15px", y: 0 },
+          "-=0.3"
+        )
         .eventCallback("onComplete", setStopObserveSectionTechnology(1));
     }
   });
@@ -67,12 +71,8 @@ const SectionTechnology = () => {
               'Check yout code App' uses DeepCode's public API and its interface
               and tool to edit and send your code to automated code review.
               DeepCode's algorithms detect syntax mistakes as well as your
-              code's intent. DeepCode's algorithms can finds critical
-              vulnerabilities that other automated code reviews don't. Such as:
-              cross-site scripting, path traversal or SQL injection.
+              code's intent.
               <br />
-              Now you can write a better code using the knowladge of the global
-              comunnity.
             </div>
             <div
               className="article-technology__logo-background-one"
@@ -83,6 +83,20 @@ const SectionTechnology = () => {
               ref={logoBackgroundTwo}
             ></div>
             <div className="article-technology__logo" ref={logo}></div>
+          </div>
+          <div
+            style={{
+              opacity: "0",
+              color: "white",
+              marginTop: "20px",
+              lineHeight: "150%",
+              textAlign: "justify",
+            }}
+          >
+            DeepCode's algorithms can finds critical vulnerabilities that other
+            automated code reviews don't. Such as: cross-site scripting, path
+            traversal or SQL injection. Now you can write a better code using
+            the knowladge of the global comunnity.
           </div>
         </>
         <SectionTechnologyFooter />
