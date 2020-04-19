@@ -36,7 +36,7 @@ const SectionTechnology = () => {
         )
         .to(article.current, { opacity: 1, y: "8vh", x: "10vw" }, "-=0.4")
         .to([...article.current.children], { opacity: 1, y: "-20" }, "+=0.4")
-        .to(logoBackgroundOne.current, { opacity: 1, x: 0, y: 0 }, "-=0.01")
+        .to(logoBackgroundOne.current, { opacity: 1, x: 0, y: 0 }, "-=1")
         .to(logoBackgroundTwo.current, { opacity: 1, x: 0, y: 0 }, "-=0.5")
         .to(
           logo.current,
@@ -66,13 +66,12 @@ const SectionTechnology = () => {
           <h2 className="article-technology__title">
             Do you know how it works ?
           </h2>
-          <div className="article-technology__text-and-logo-wrapper">
-            <div className="article-technology__text">
-              'Check yout code App' uses DeepCode's public API and its interface
-              and tool to edit and send your code to automated code review.
-              DeepCode's algorithms detect syntax mistakes as well as your
-              code's intent.
-              <br />
+          <div className="article-technology__paragraph-one-and-logo-wrapper">
+            <div className="article-technology__paragraph-one">
+              'Check yout code App' is non-profit App. It uses DeepCode's public
+              API and is an interface which can edit and send your code to
+              automated code review. DeepCode's algorithms detect syntax
+              mistakes as well as your code's intent.
             </div>
             <div
               className="article-technology__logo-background-one"
@@ -84,19 +83,13 @@ const SectionTechnology = () => {
             ></div>
             <div className="article-technology__logo" ref={logo}></div>
           </div>
-          <div
-            style={{
-              opacity: "0",
-              color: "white",
-              marginTop: "20px",
-              lineHeight: "150%",
-              textAlign: "justify",
-            }}
-          >
-            DeepCode's algorithms can finds critical vulnerabilities that other
-            automated code reviews don't. Such as: cross-site scripting, path
-            traversal or SQL injection. Now you can write a better code using
-            the knowladge of the global comunnity.
+          <div className="article-technology__paragraph-two">
+            {" "}
+            Moreover DeepCode's algorithms can finds critical vulnerabilities
+            that other automated code reviews don't. Such as: cross-site
+            scripting, path traversal or SQL injection. <br />
+            Now you can write a better code using the knowladge of the global
+            comunnity.
           </div>
         </>
         <SectionTechnologyFooter />

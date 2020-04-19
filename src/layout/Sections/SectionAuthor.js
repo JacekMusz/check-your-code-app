@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const SectionAuthor = () => {
   return (
@@ -9,22 +10,26 @@ const SectionAuthor = () => {
           <div className="author__portrait"></div>
           <div className="author__author-info">
             <p className="author-info__introduction">
-              Hello world ! My name is Jacek Muszyński.
+              Hello world ! <br /> My name is Jacek Muszyński.
             </p>
             <p className="author-info__job-info">
               {" "}
-              I'm a junior front-end Developer science October 2019 when I got
-              my first commercial job in Warsaw.
+              I'm a junior front-end Developer since October 2019 when I got my
+              first commercial job in Warsaw.
               <br />
-              Currently I'm responsible for build kind of a interface which will
-              be the web tool to menage and create dialogs for voicebots.
+              Currently I'm responsible for building kind of an interface which
+              will be the web tool to menage and create dialogs for voicebots.
             </p>
             <p className="author-info__about-app">
-              I create this app because ...
+              This app is non-profit project made for improve my programming
+              skills :)
             </p>
           </div>
         </div>
       </div>
+      <NavLink className="section-author__button" to="/editor">
+        Check my code now!
+      </NavLink>
     </div>
   );
 };

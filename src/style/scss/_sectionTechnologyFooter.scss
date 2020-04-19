@@ -17,7 +17,6 @@
     }
   }
   &__button {
-    width: 120px;
     background-color: transparent;
     border: none;
     font-size: 22px;
@@ -27,33 +26,13 @@
     font-style: italic;
     cursor: pointer;
     outline: none;
-    overflow: hidden;
     transition: 0.7s;
-    &:after {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 2px;
-      background-color: transparent;
-      transition: 1s;
-      border-radius: 2px;
-    }
-    &:after {
-      transform: translateX(-100%);
-    }
     &:hover {
       cursor: pointer;
       position: relative;
-      transform: translateY(-15%) scale(1.05);
-    }
-    &:hover:after {
-      background-image: linear-gradient(
-        to left,
-        transparent,
-        map-get($color-pink, "color") map-get($color-purple, "color")
-          transparent
-      );
-      transform: translateX(100%);
+      text-shadow: #fff 0px 0px 5px, #fff 0px 0px 10px, #fff 0px 0px 15px,
+        #ff2d95 0px 0px 20px, #ff2d95 0px 0px 30px, #ff2d95 0px 0px 40px,
+        6px -19px 0px rgba(255, 255, 255, 0.04);
     }
   }
 }

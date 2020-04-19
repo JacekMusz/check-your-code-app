@@ -9,7 +9,7 @@
   color: white;
   background-color: #333;
   -webkit-box-shadow: 0 0 3px #888;
-  box-shadow: 0 0 3px #888;
+          box-shadow: 0 0 3px #888;
   border: none;
   cursor: pointer;
   border-radius: 3px;
@@ -17,7 +17,7 @@
 
 .button:hover {
   -webkit-box-shadow: 0 0 6px white;
-  box-shadow: 0 0 6px white;
+          box-shadow: 0 0 6px white;
 }
 
 .nav-bar {
@@ -26,8 +26,8 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   position: fixed;
   width: 100vw;
   height: 10vh;
@@ -44,14 +44,14 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: left;
-  -ms-flex-pack: left;
-  justify-content: left;
+      -ms-flex-pack: left;
+          justify-content: left;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   height: 100%;
 }
 
@@ -73,7 +73,7 @@
 
 .nav-bar__bookmark-title {
   -ms-flex-preferred-size: 30%;
-  flex-basis: 30%;
+      flex-basis: 30%;
   font-weight: 600;
   -webkit-transition: 1s;
   transition: 1s;
@@ -89,15 +89,7 @@
   display: block;
   width: 100%;
   height: 2px;
-  background-image: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    from(black),
-    color-stop(#493fa3),
-    color-stop(#c03da3),
-    to(black)
-  );
+  background-image: -webkit-gradient(linear, left top, right top, from(black), color-stop(#493fa3), color-stop(#c03da3), to(black));
   background-image: linear-gradient(to right, black, #493fa3, #c03da3, black);
   -webkit-transition: 3s;
   transition: 3s;
@@ -108,14 +100,14 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: space-evenly;
-  -ms-flex-pack: space-evenly;
-  justify-content: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -ms-flex-preferred-size: 60%;
-  flex-basis: 60%;
+      flex-basis: 60%;
 }
 
 .nav-links .link {
@@ -140,52 +132,30 @@
 
 .nav-links .link:after {
   -webkit-transform: translateX(-100%);
-  transform: translateX(-100%);
+          transform: translateX(-100%);
 }
 
 .nav-links .link:hover {
   cursor: pointer;
   position: relative;
   -webkit-transform: translateY(-15%);
-  transform: translateY(-15%);
+          transform: translateY(-15%);
   -webkit-transition: 0.7s;
   transition: 0.7s;
 }
 
 .nav-links .link:hover:after {
-  background-image: -webkit-gradient(
-    linear,
-    right top,
-    left top,
-    from(transparent),
-    color-stop(#c03da3),
-    color-stop(#493fa3),
-    to(transparent)
-  );
-  background-image: linear-gradient(
-    to left,
-    transparent,
-    #c03da3,
-    #493fa3,
-    transparent
-  );
+  background-image: -webkit-gradient(linear, right top, left top, from(transparent), color-stop(#c03da3), color-stop(#493fa3), to(transparent));
+  background-image: linear-gradient(to left, transparent, #c03da3, #493fa3, transparent);
   -webkit-transform: translateX(100%);
-  transform: translateX(100%);
+          transform: translateX(100%);
 }
 
 .section-start {
   width: 100%;
   min-height: 120vh;
-  background-image: -webkit-gradient(
-      linear,
-      left top,
-      left bottom,
-      from(rgba(0, 0, 0, 0.01)),
-      to(black)
-    ),
-    url("../photos/picture1.jpg");
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.01), black),
-    url("../photos/picture1.jpg");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.01)), to(black)), url("../photos/picture1.jpg");
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.01), black), url("../photos/picture1.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -197,11 +167,11 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   text-align: center;
   width: 100%;
 }
@@ -212,14 +182,14 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   min-width: 50%;
   height: 90vh;
   margin-top: 10vh;
@@ -254,11 +224,11 @@ button:disabled {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
   padding: 0 6vw 0 6vw;
   margin-bottom: 20vh;
@@ -283,17 +253,10 @@ button:disabled {
   height: 2px;
   bottom: -3px;
   -webkit-transform: translateX(-10%);
-  transform: translateX(-10%);
+          transform: translateX(-10%);
   border-radius: 10px;
-  background-image: -webkit-gradient(
-    linear,
-    right top,
-    left top,
-    from(black),
-    color-stop(white),
-    to(black)
-  );
-  background-image: linear-gradient(to left, black, white, black);
+  background-image: -webkit-gradient(linear, right top, left top, from(transparent), color-stop(white), to(transparent));
+  background-image: linear-gradient(to left, transparent, white, transparent);
 }
 
 .articles {
@@ -302,8 +265,8 @@ button:disabled {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   position: relative;
   color: white;
   width: 80vw;
@@ -316,8 +279,8 @@ button:disabled {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: wrap;
-  flex-direction: wrap;
+      -ms-flex-direction: wrap;
+          flex-direction: wrap;
 }
 
 .articles__article:nth-child(1) {
@@ -327,9 +290,9 @@ button:disabled {
 
 .articles__article:nth-child(1) .article__img {
   -webkit-transform-origin: top;
-  transform-origin: top;
+          transform-origin: top;
   -webkit-transform: scale(0.5);
-  transform: scale(0.5);
+          transform: scale(0.5);
   background: rgba(0, 0, 0, 0.5) url("../photos/picture3.jpg");
   background-blend-mode: darken;
   background-size: cover;
@@ -343,6 +306,7 @@ button:disabled {
   width: 60%;
   padding: 5% 5%;
   text-align: left;
+  line-height: 150%;
 }
 
 .articles__article:nth-child(1) .article__text a {
@@ -360,18 +324,11 @@ button:disabled {
   height: 2px;
   border-radius: 2px;
   -webkit-animation: sectionProject-firstFrameElement 10s linear infinite;
-  animation: sectionProject-firstFrameElement 10s linear infinite;
+          animation: sectionProject-firstFrameElement 10s linear infinite;
 }
 
 .articles__article:nth-child(1) .article__text::before {
-  background-image: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(#c03da3),
-    color-stop(#493fa3),
-    to(black)
-  );
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#c03da3), color-stop(#493fa3), to(black));
   background-image: linear-gradient(to bottom, #c03da3, #493fa3, black);
   top: -20px;
   left: 0;
@@ -382,7 +339,7 @@ button:disabled {
   height: 150px;
   border-radius: 2px;
   -webkit-animation: sectionProject-secondFrameElement 10s linear infinite;
-  animation: sectionProject-secondFrameElement 10s linear infinite;
+          animation: sectionProject-secondFrameElement 10s linear infinite;
 }
 
 .articles__article:nth-child(2) {
@@ -393,9 +350,9 @@ button:disabled {
 .articles__article:nth-child(2) .article__img {
   background: rgba(0, 0, 0, 0.5) url("../photos/picture2.jpg");
   -webkit-transform-origin: top;
-  transform-origin: top;
+          transform-origin: top;
   -webkit-transform: translateY(-40%) scale(0.8);
-  transform: translateY(-40%) scale(0.8);
+          transform: translateY(-40%) scale(0.8);
   background-blend-mode: darken;
   background-size: cover;
   background-repeat: no-repeat;
@@ -408,17 +365,11 @@ button:disabled {
   width: 40%;
   padding: 5% 5%;
   text-align: justify;
+  line-height: 150%;
 }
 
 .articles__article:nth-child(2) .article__text::after {
-  background-image: -webkit-gradient(
-    linear,
-    right top,
-    left top,
-    from(#c03da3),
-    color-stop(#493fa3),
-    to(black)
-  );
+  background-image: -webkit-gradient(linear, right top, left top, from(#c03da3), color-stop(#493fa3), to(black));
   background-image: linear-gradient(to left, #c03da3, #493fa3, black);
   bottom: 0;
   right: -20px;
@@ -429,18 +380,11 @@ button:disabled {
   height: 2px;
   border-radius: 2px;
   -webkit-animation: sectionProject-thirdFrameElement 10s linear infinite;
-  animation: sectionProject-thirdFrameElement 10s linear infinite;
+          animation: sectionProject-thirdFrameElement 10s linear infinite;
 }
 
 .articles__article:nth-child(2) .article__text::before {
-  background-image: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    from(#c03da3),
-    color-stop(#493fa3),
-    to(black)
-  );
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#c03da3), color-stop(#493fa3), to(black));
   background-image: linear-gradient(to top, #c03da3, #493fa3, black);
   bottom: 0;
   right: 0;
@@ -451,550 +395,270 @@ button:disabled {
   height: 150px;
   border-radius: 2px;
   -webkit-animation: sectionProject-fourthFrameElement 10s linear infinite;
-  animation: sectionProject-fourthFrameElement 10s linear infinite;
+          animation: sectionProject-fourthFrameElement 10s linear infinite;
 }
 
 @-webkit-keyframes sectionProject-firstFrameElement {
   0% {
-    background-image: -webkit-gradient(
-      linear,
-      left top,
-      right top,
-      from(#c03da3),
-      color-stop(#493fa3),
-      to(black)
-    );
+    background-image: -webkit-gradient(linear, left top, right top, from(#c03da3), color-stop(#493fa3), to(black));
     background-image: linear-gradient(to right, #c03da3, #493fa3, black);
     -webkit-transform: translateX(0);
-    transform: translateX(0);
+            transform: translateX(0);
   }
   45% {
-    background-image: -webkit-gradient(
-      linear,
-      left top,
-      right top,
-      from(#c03da3),
-      color-stop(#493fa3),
-      to(black)
-    );
+    background-image: -webkit-gradient(linear, left top, right top, from(#c03da3), color-stop(#493fa3), to(black));
     background-image: linear-gradient(to right, #c03da3, #493fa3, black);
     -webkit-transform: translateX(0);
-    transform: translateX(0);
+            transform: translateX(0);
   }
   50% {
-    background-image: -webkit-gradient(
-      linear,
-      right top,
-      left top,
-      from(#c03da3),
-      color-stop(#493fa3),
-      to(black)
-    );
+    background-image: -webkit-gradient(linear, right top, left top, from(#c03da3), color-stop(#493fa3), to(black));
     background-image: linear-gradient(to left, #c03da3, #493fa3, black);
     -webkit-transform: translateX(calc(80vw - 110px));
-    transform: translateX(calc(80vw - 110px));
+            transform: translateX(calc(80vw - 110px));
   }
   95% {
-    background-image: -webkit-gradient(
-      linear,
-      right top,
-      left top,
-      from(#c03da3),
-      color-stop(#493fa3),
-      to(black)
-    );
+    background-image: -webkit-gradient(linear, right top, left top, from(#c03da3), color-stop(#493fa3), to(black));
     background-image: linear-gradient(to left, #c03da3, #493fa3, black);
     -webkit-transform: translateX(calc(80vw - 110px));
-    transform: translateX(calc(80vw - 110px));
+            transform: translateX(calc(80vw - 110px));
   }
   100% {
-    background-image: -webkit-gradient(
-      linear,
-      left top,
-      right top,
-      from(#c03da3),
-      color-stop(#493fa3),
-      to(black)
-    );
+    background-image: -webkit-gradient(linear, left top, right top, from(#c03da3), color-stop(#493fa3), to(black));
     background-image: linear-gradient(to right, #c03da3, #493fa3, black);
     -webkit-transform: translateX(0);
-    transform: translateX(0);
+            transform: translateX(0);
   }
 }
 
 @keyframes sectionProject-firstFrameElement {
   0% {
-    background-image: -webkit-gradient(
-      linear,
-      left top,
-      right top,
-      from(#c03da3),
-      color-stop(#493fa3),
-      to(black)
-    );
+    background-image: -webkit-gradient(linear, left top, right top, from(#c03da3), color-stop(#493fa3), to(black));
     background-image: linear-gradient(to right, #c03da3, #493fa3, black);
     -webkit-transform: translateX(0);
-    transform: translateX(0);
+            transform: translateX(0);
   }
   45% {
-    background-image: -webkit-gradient(
-      linear,
-      left top,
-      right top,
-      from(#c03da3),
-      color-stop(#493fa3),
-      to(black)
-    );
+    background-image: -webkit-gradient(linear, left top, right top, from(#c03da3), color-stop(#493fa3), to(black));
     background-image: linear-gradient(to right, #c03da3, #493fa3, black);
     -webkit-transform: translateX(0);
-    transform: translateX(0);
+            transform: translateX(0);
   }
   50% {
-    background-image: -webkit-gradient(
-      linear,
-      right top,
-      left top,
-      from(#c03da3),
-      color-stop(#493fa3),
-      to(black)
-    );
+    background-image: -webkit-gradient(linear, right top, left top, from(#c03da3), color-stop(#493fa3), to(black));
     background-image: linear-gradient(to left, #c03da3, #493fa3, black);
     -webkit-transform: translateX(calc(80vw - 110px));
-    transform: translateX(calc(80vw - 110px));
+            transform: translateX(calc(80vw - 110px));
   }
   95% {
-    background-image: -webkit-gradient(
-      linear,
-      right top,
-      left top,
-      from(#c03da3),
-      color-stop(#493fa3),
-      to(black)
-    );
+    background-image: -webkit-gradient(linear, right top, left top, from(#c03da3), color-stop(#493fa3), to(black));
     background-image: linear-gradient(to left, #c03da3, #493fa3, black);
     -webkit-transform: translateX(calc(80vw - 110px));
-    transform: translateX(calc(80vw - 110px));
+            transform: translateX(calc(80vw - 110px));
   }
   100% {
-    background-image: -webkit-gradient(
-      linear,
-      left top,
-      right top,
-      from(#c03da3),
-      color-stop(#493fa3),
-      to(black)
-    );
+    background-image: -webkit-gradient(linear, left top, right top, from(#c03da3), color-stop(#493fa3), to(black));
     background-image: linear-gradient(to right, #c03da3, #493fa3, black);
     -webkit-transform: translateX(0);
-    transform: translateX(0);
+            transform: translateX(0);
   }
 }
 
 @-webkit-keyframes sectionProject-secondFrameElement {
   0% {
-    background-image: -webkit-gradient(
-      linear,
-      left top,
-      left bottom,
-      from(#c03da3),
-      color-stop(#493fa3),
-      to(black)
-    );
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#c03da3), color-stop(#493fa3), to(black));
     background-image: linear-gradient(to bottom, #c03da3, #493fa3, black);
     -webkit-transform: translateY(0);
-    transform: translateY(0);
+            transform: translateY(0);
   }
   45% {
-    background-image: -webkit-gradient(
-      linear,
-      left top,
-      left bottom,
-      from(#c03da3),
-      color-stop(#493fa3),
-      to(black)
-    );
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#c03da3), color-stop(#493fa3), to(black));
     background-image: linear-gradient(to bottom, #c03da3, #493fa3, black);
     -webkit-transform: translateY(0);
-    transform: translateY(0);
+            transform: translateY(0);
   }
   50% {
-    background-image: -webkit-gradient(
-      linear,
-      left bottom,
-      left top,
-      from(#c03da3),
-      color-stop(#493fa3),
-      to(black)
-    );
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#c03da3), color-stop(#493fa3), to(black));
     background-image: linear-gradient(to top, #c03da3, #493fa3, black);
     -webkit-transform: translateY(calc(100vh - 110px));
-    transform: translateY(calc(100vh - 110px));
+            transform: translateY(calc(100vh - 110px));
   }
   95% {
-    background-image: -webkit-gradient(
-      linear,
-      left bottom,
-      left top,
-      from(#c03da3),
-      color-stop(#493fa3),
-      to(black)
-    );
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#c03da3), color-stop(#493fa3), to(black));
     background-image: linear-gradient(to top, #c03da3, #493fa3, black);
     -webkit-transform: translateY(calc(100vh - 110px));
-    transform: translateY(calc(100vh - 110px));
+            transform: translateY(calc(100vh - 110px));
   }
   100% {
-    background-image: -webkit-gradient(
-      linear,
-      left top,
-      left bottom,
-      from(#c03da3),
-      color-stop(#493fa3),
-      to(black)
-    );
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#c03da3), color-stop(#493fa3), to(black));
     background-image: linear-gradient(to bottom, #c03da3, #493fa3, black);
     -webkit-transform: translateY(0);
-    transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
 @keyframes sectionProject-secondFrameElement {
   0% {
-    background-image: -webkit-gradient(
-      linear,
-      left top,
-      left bottom,
-      from(#c03da3),
-      color-stop(#493fa3),
-      to(black)
-    );
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#c03da3), color-stop(#493fa3), to(black));
     background-image: linear-gradient(to bottom, #c03da3, #493fa3, black);
     -webkit-transform: translateY(0);
-    transform: translateY(0);
+            transform: translateY(0);
   }
   45% {
-    background-image: -webkit-gradient(
-      linear,
-      left top,
-      left bottom,
-      from(#c03da3),
-      color-stop(#493fa3),
-      to(black)
-    );
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#c03da3), color-stop(#493fa3), to(black));
     background-image: linear-gradient(to bottom, #c03da3, #493fa3, black);
     -webkit-transform: translateY(0);
-    transform: translateY(0);
+            transform: translateY(0);
   }
   50% {
-    background-image: -webkit-gradient(
-      linear,
-      left bottom,
-      left top,
-      from(#c03da3),
-      color-stop(#493fa3),
-      to(black)
-    );
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#c03da3), color-stop(#493fa3), to(black));
     background-image: linear-gradient(to top, #c03da3, #493fa3, black);
     -webkit-transform: translateY(calc(100vh - 110px));
-    transform: translateY(calc(100vh - 110px));
+            transform: translateY(calc(100vh - 110px));
   }
   95% {
-    background-image: -webkit-gradient(
-      linear,
-      left bottom,
-      left top,
-      from(#c03da3),
-      color-stop(#493fa3),
-      to(black)
-    );
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#c03da3), color-stop(#493fa3), to(black));
     background-image: linear-gradient(to top, #c03da3, #493fa3, black);
     -webkit-transform: translateY(calc(100vh - 110px));
-    transform: translateY(calc(100vh - 110px));
+            transform: translateY(calc(100vh - 110px));
   }
   100% {
-    background-image: -webkit-gradient(
-      linear,
-      left top,
-      left bottom,
-      from(#c03da3),
-      color-stop(#493fa3),
-      to(black)
-    );
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#c03da3), color-stop(#493fa3), to(black));
     background-image: linear-gradient(to bottom, #c03da3, #493fa3, black);
     -webkit-transform: translateY(0);
-    transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
 @-webkit-keyframes sectionProject-thirdFrameElement {
   0% {
-    background-image: -webkit-gradient(
-      linear,
-      right top,
-      left top,
-      from(#c03da3),
-      color-stop(#493fa3),
-      to(black)
-    );
+    background-image: -webkit-gradient(linear, right top, left top, from(#c03da3), color-stop(#493fa3), to(black));
     background-image: linear-gradient(to left, #c03da3, #493fa3, black);
     -webkit-transform: translateX(0);
-    transform: translateX(0);
+            transform: translateX(0);
   }
   45% {
-    background-image: -webkit-gradient(
-      linear,
-      right top,
-      left top,
-      from(#c03da3),
-      color-stop(#493fa3),
-      to(black)
-    );
+    background-image: -webkit-gradient(linear, right top, left top, from(#c03da3), color-stop(#493fa3), to(black));
     background-image: linear-gradient(to left, #c03da3, #493fa3, black);
     -webkit-transform: translateX(0);
-    transform: translateX(0);
+            transform: translateX(0);
   }
   50% {
-    background-image: -webkit-gradient(
-      linear,
-      left top,
-      right top,
-      from(#c03da3),
-      color-stop(#493fa3),
-      to(black)
-    );
+    background-image: -webkit-gradient(linear, left top, right top, from(#c03da3), color-stop(#493fa3), to(black));
     background-image: linear-gradient(to right, #c03da3, #493fa3, black);
     -webkit-transform: translateX(calc(-80vw + 110px));
-    transform: translateX(calc(-80vw + 110px));
+            transform: translateX(calc(-80vw + 110px));
   }
   95% {
-    background-image: -webkit-gradient(
-      linear,
-      left top,
-      right top,
-      from(#c03da3),
-      color-stop(#493fa3),
-      to(black)
-    );
+    background-image: -webkit-gradient(linear, left top, right top, from(#c03da3), color-stop(#493fa3), to(black));
     background-image: linear-gradient(to right, #c03da3, #493fa3, black);
     -webkit-transform: translateX(calc(-80vw + 110px));
-    transform: translateX(calc(-80vw + 110px));
+            transform: translateX(calc(-80vw + 110px));
   }
   100% {
-    background-image: -webkit-gradient(
-      linear,
-      right top,
-      left top,
-      from(#c03da3),
-      color-stop(#493fa3),
-      to(black)
-    );
+    background-image: -webkit-gradient(linear, right top, left top, from(#c03da3), color-stop(#493fa3), to(black));
     background-image: linear-gradient(to left, #c03da3, #493fa3, black);
     -webkit-transform: translateX(0);
-    transform: translateX(0);
+            transform: translateX(0);
   }
 }
 
 @keyframes sectionProject-thirdFrameElement {
   0% {
-    background-image: -webkit-gradient(
-      linear,
-      right top,
-      left top,
-      from(#c03da3),
-      color-stop(#493fa3),
-      to(black)
-    );
+    background-image: -webkit-gradient(linear, right top, left top, from(#c03da3), color-stop(#493fa3), to(black));
     background-image: linear-gradient(to left, #c03da3, #493fa3, black);
     -webkit-transform: translateX(0);
-    transform: translateX(0);
+            transform: translateX(0);
   }
   45% {
-    background-image: -webkit-gradient(
-      linear,
-      right top,
-      left top,
-      from(#c03da3),
-      color-stop(#493fa3),
-      to(black)
-    );
+    background-image: -webkit-gradient(linear, right top, left top, from(#c03da3), color-stop(#493fa3), to(black));
     background-image: linear-gradient(to left, #c03da3, #493fa3, black);
     -webkit-transform: translateX(0);
-    transform: translateX(0);
+            transform: translateX(0);
   }
   50% {
-    background-image: -webkit-gradient(
-      linear,
-      left top,
-      right top,
-      from(#c03da3),
-      color-stop(#493fa3),
-      to(black)
-    );
+    background-image: -webkit-gradient(linear, left top, right top, from(#c03da3), color-stop(#493fa3), to(black));
     background-image: linear-gradient(to right, #c03da3, #493fa3, black);
     -webkit-transform: translateX(calc(-80vw + 110px));
-    transform: translateX(calc(-80vw + 110px));
+            transform: translateX(calc(-80vw + 110px));
   }
   95% {
-    background-image: -webkit-gradient(
-      linear,
-      left top,
-      right top,
-      from(#c03da3),
-      color-stop(#493fa3),
-      to(black)
-    );
+    background-image: -webkit-gradient(linear, left top, right top, from(#c03da3), color-stop(#493fa3), to(black));
     background-image: linear-gradient(to right, #c03da3, #493fa3, black);
     -webkit-transform: translateX(calc(-80vw + 110px));
-    transform: translateX(calc(-80vw + 110px));
+            transform: translateX(calc(-80vw + 110px));
   }
   100% {
-    background-image: -webkit-gradient(
-      linear,
-      right top,
-      left top,
-      from(#c03da3),
-      color-stop(#493fa3),
-      to(black)
-    );
+    background-image: -webkit-gradient(linear, right top, left top, from(#c03da3), color-stop(#493fa3), to(black));
     background-image: linear-gradient(to left, #c03da3, #493fa3, black);
     -webkit-transform: translateX(0);
-    transform: translateX(0);
+            transform: translateX(0);
   }
 }
 
 @-webkit-keyframes sectionProject-fourthFrameElement {
   0% {
-    background-image: -webkit-gradient(
-      linear,
-      left bottom,
-      left top,
-      from(#c03da3),
-      color-stop(#493fa3),
-      to(black)
-    );
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#c03da3), color-stop(#493fa3), to(black));
     background-image: linear-gradient(to top, #c03da3, #493fa3, black);
     -webkit-transform: translateY(20px);
-    transform: translateY(20px);
+            transform: translateY(20px);
   }
   45% {
-    background-image: -webkit-gradient(
-      linear,
-      left bottom,
-      left top,
-      from(#c03da3),
-      color-stop(#493fa3),
-      to(black)
-    );
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#c03da3), color-stop(#493fa3), to(black));
     background-image: linear-gradient(to top, #c03da3, #493fa3, black);
     -webkit-transform: translateY(20px);
-    transform: translateY(20px);
+            transform: translateY(20px);
   }
   50% {
-    background-image: -webkit-gradient(
-      linear,
-      left top,
-      left bottom,
-      from(#c03da3),
-      color-stop(#493fa3),
-      to(black)
-    );
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#c03da3), color-stop(#493fa3), to(black));
     background-image: linear-gradient(to bottom, #c03da3, #493fa3, black);
     -webkit-transform: translateY(calc(-100vh + 130px));
-    transform: translateY(calc(-100vh + 130px));
+            transform: translateY(calc(-100vh + 130px));
   }
   95% {
-    background-image: -webkit-gradient(
-      linear,
-      left top,
-      left bottom,
-      from(#c03da3),
-      color-stop(#493fa3),
-      to(black)
-    );
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#c03da3), color-stop(#493fa3), to(black));
     background-image: linear-gradient(to bottom, #c03da3, #493fa3, black);
     -webkit-transform: translateY(calc(-100vh + 130px));
-    transform: translateY(calc(-100vh + 130px));
+            transform: translateY(calc(-100vh + 130px));
   }
   100% {
-    background-image: -webkit-gradient(
-      linear,
-      left bottom,
-      left top,
-      from(#c03da3),
-      color-stop(#493fa3),
-      to(black)
-    );
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#c03da3), color-stop(#493fa3), to(black));
     background-image: linear-gradient(to top, #c03da3, #493fa3, black);
     -webkit-transform: translateY(0);
-    transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
 @keyframes sectionProject-fourthFrameElement {
   0% {
-    background-image: -webkit-gradient(
-      linear,
-      left bottom,
-      left top,
-      from(#c03da3),
-      color-stop(#493fa3),
-      to(black)
-    );
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#c03da3), color-stop(#493fa3), to(black));
     background-image: linear-gradient(to top, #c03da3, #493fa3, black);
     -webkit-transform: translateY(20px);
-    transform: translateY(20px);
+            transform: translateY(20px);
   }
   45% {
-    background-image: -webkit-gradient(
-      linear,
-      left bottom,
-      left top,
-      from(#c03da3),
-      color-stop(#493fa3),
-      to(black)
-    );
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#c03da3), color-stop(#493fa3), to(black));
     background-image: linear-gradient(to top, #c03da3, #493fa3, black);
     -webkit-transform: translateY(20px);
-    transform: translateY(20px);
+            transform: translateY(20px);
   }
   50% {
-    background-image: -webkit-gradient(
-      linear,
-      left top,
-      left bottom,
-      from(#c03da3),
-      color-stop(#493fa3),
-      to(black)
-    );
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#c03da3), color-stop(#493fa3), to(black));
     background-image: linear-gradient(to bottom, #c03da3, #493fa3, black);
     -webkit-transform: translateY(calc(-100vh + 130px));
-    transform: translateY(calc(-100vh + 130px));
+            transform: translateY(calc(-100vh + 130px));
   }
   95% {
-    background-image: -webkit-gradient(
-      linear,
-      left top,
-      left bottom,
-      from(#c03da3),
-      color-stop(#493fa3),
-      to(black)
-    );
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#c03da3), color-stop(#493fa3), to(black));
     background-image: linear-gradient(to bottom, #c03da3, #493fa3, black);
     -webkit-transform: translateY(calc(-100vh + 130px));
-    transform: translateY(calc(-100vh + 130px));
+            transform: translateY(calc(-100vh + 130px));
   }
   100% {
-    background-image: -webkit-gradient(
-      linear,
-      left bottom,
-      left top,
-      from(#c03da3),
-      color-stop(#493fa3),
-      to(black)
-    );
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#c03da3), color-stop(#493fa3), to(black));
     background-image: linear-gradient(to top, #c03da3, #493fa3, black);
     -webkit-transform: translateY(0);
-    transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
@@ -1004,34 +668,38 @@ button:disabled {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   width: 100%;
   padding: 0 5vw 0 8vw;
   min-height: 110vh;
 }
 
 .section-technology__background-one {
+  -webkit-box-shadow: -2px 2px 5px #493fa3;
+          box-shadow: -2px 2px 5px #493fa3;
   opacity: 0;
   position: absolute;
   -webkit-transform: translate(0vw, 0vh);
-  transform: translate(0vw, 0vh);
+          transform: translate(0vw, 0vh);
   width: 70vw;
   min-height: 110vh;
   background-color: #08042e;
   z-index: 200;
   -webkit-filter: blur(2px);
-  filter: blur(2px);
+          filter: blur(2px);
 }
 
 .section-technology__background-two {
+  -webkit-box-shadow: -2px 2px 5px #493fa3;
+          box-shadow: -2px 2px 5px #493fa3;
   position: absolute;
   opacity: 0;
   width: 70vw;
   min-height: 110vh;
   background-color: #04021c;
-  -webkit-filter: blur(10px);
-  filter: blur(10px);
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
 }
 
 .section-technology .article-technology {
@@ -1040,19 +708,21 @@ button:disabled {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   opacity: 0;
   width: 70vw;
   height: 110vh;
   z-index: 300;
   padding: 5% 5% 2% 5%;
   -webkit-transform: translate(5vw, 5vh);
-  transform: translate(5vw, 5vh);
+          transform: translate(5vw, 5vh);
+  -webkit-box-shadow: -2px 2px 5px #493fa3;
+          box-shadow: -2px 2px 5px #493fa3;
   background-color: #090538;
 }
 
@@ -1074,45 +744,37 @@ button:disabled {
   height: 2px;
   border-radius: 10px;
   margin: 0 10%;
-  background-image: -webkit-gradient(
-    linear,
-    right top,
-    left top,
-    from(transparent),
-    color-stop(white),
-    to(transparent)
-  );
+  background-image: -webkit-gradient(linear, right top, left top, from(transparent), color-stop(white), to(transparent));
   background-image: linear-gradient(to left, transparent, white, transparent);
 }
 
-.section-technology .article-technology__text-and-logo-wrapper {
+.section-technology .article-technology__paragraph-one-and-logo-wrapper {
   opacity: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   position: relative;
   width: 100%;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.section-technology
-  .article-technology__text-and-logo-wrapper
-  .article-technology__text {
+.section-technology .article-technology__paragraph-one-and-logo-wrapper .article-technology__paragraph-one {
   text-align: justify;
   width: 32vw;
   height: 100%;
   color: white;
   line-height: 150%;
+  padding: 10px;
+  -webkit-box-shadow: -1px -2px 2px #c03da3;
+          box-shadow: -1px -2px 2px #c03da3;
 }
 
-.section-technology
-  .article-technology__text-and-logo-wrapper
-  .article-technology__logo {
+.section-technology .article-technology__paragraph-one-and-logo-wrapper .article-technology__logo {
   opacity: 0;
   background: rgba(2, 12, 153, 0.2) url("../photos/deepcodeimage.png");
   background-blend-mode: darken;
@@ -1124,12 +786,10 @@ button:disabled {
   width: 25vw;
   height: 25vh;
   -webkit-transform: translate(0px, -5px);
-  transform: translate(0px, -5px);
+          transform: translate(0px, -5px);
 }
 
-.section-technology
-  .article-technology__text-and-logo-wrapper
-  .article-technology__logo-background-two {
+.section-technology .article-technology__paragraph-one-and-logo-wrapper .article-technology__logo-background-two {
   opacity: 0;
   position: absolute;
   right: 0;
@@ -1139,14 +799,12 @@ button:disabled {
   z-index: 500;
   background-color: rgba(204, 206, 235, 0.4);
   -webkit-transform: translate(30px, -5px);
-  transform: translate(30px, -5px);
+          transform: translate(30px, -5px);
   -webkit-filter: blur(1px);
-  filter: blur(1px);
+          filter: blur(1px);
 }
 
-.section-technology
-  .article-technology__text-and-logo-wrapper
-  .article-technology__logo-background-one {
+.section-technology .article-technology__paragraph-one-and-logo-wrapper .article-technology__logo-background-one {
   opacity: 0;
   position: absolute;
   z-index: 500;
@@ -1156,9 +814,20 @@ button:disabled {
   height: 25vh;
   background-color: rgba(204, 206, 235, 0.2);
   -webkit-transform: translate(20px, -5px);
-  transform: translate(20px, -5px);
+          transform: translate(20px, -5px);
   -webkit-filter: blur(2px);
-  filter: blur(2px);
+          filter: blur(2px);
+}
+
+.section-technology .article-technology__paragraph-two {
+  opacity: 0;
+  color: white;
+  margin-top: 20px;
+  line-height: 150%;
+  text-align: justify;
+  -webkit-box-shadow: -1px 2px 2px #c03da3;
+          box-shadow: -1px 2px 2px #c03da3;
+  padding: 10px;
 }
 
 .section-technology-footer__wrapper {
@@ -1167,11 +836,11 @@ button:disabled {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-top: 30px;
   opacity: 0;
 }
@@ -1190,7 +859,6 @@ button:disabled {
 }
 
 .section-technology-footer__button {
-  width: 120px;
   background-color: transparent;
   border: none;
   font-size: 22px;
@@ -1200,49 +868,14 @@ button:disabled {
   font-style: italic;
   cursor: pointer;
   outline: none;
-  overflow: hidden;
   -webkit-transition: 0.7s;
   transition: 0.7s;
-}
-
-.section-technology-footer__button:after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 2px;
-  background-color: transparent;
-  -webkit-transition: 1s;
-  transition: 1s;
-  border-radius: 2px;
-}
-
-.section-technology-footer__button:after {
-  -webkit-transform: translateX(-100%);
-  transform: translateX(-100%);
 }
 
 .section-technology-footer__button:hover {
   cursor: pointer;
   position: relative;
-  -webkit-transform: translateY(-15%) scale(1.05);
-  transform: translateY(-15%) scale(1.05);
-}
-
-.section-technology-footer__button:hover:after {
-  background-image: -webkit-gradient(
-    linear,
-    right top,
-    left top,
-    from(transparent),
-    color-stop(#493fa3, #c03da3)
-  );
-  background-image: linear-gradient(
-    to left,
-    transparent,
-    #c03da3 #493fa3 transparent
-  );
-  -webkit-transform: translateX(100%);
-  transform: translateX(100%);
+  text-shadow: #fff 0px 0px 5px, #fff 0px 0px 10px, #fff 0px 0px 15px, #ff2d95 0px 0px 20px, #ff2d95 0px 0px 30px, #ff2d95 0px 0px 40px, 6px -19px 0px rgba(255, 255, 255, 0.04);
 }
 
 .modal-app-technologies {
@@ -1253,10 +886,10 @@ button:disabled {
   color: white;
   background-color: #060325;
   -webkit-box-shadow: 0 0 20px #493fa3;
-  box-shadow: 0 0 20px #493fa3;
+          box-shadow: 0 0 20px #493fa3;
   border-radius: 10px;
   -webkit-transform: translate(-4vw, -400px);
-  transform: translate(-4vw, -400px);
+          transform: translate(-4vw, -400px);
   opacity: 0;
   width: 0px;
   height: 400px;
@@ -1271,7 +904,7 @@ button:disabled {
 
 .modal-app-technologies--show {
   -webkit-transform: translate(-4vw, -400px);
-  transform: translate(-4vw, -400px);
+          transform: translate(-4vw, -400px);
   opacity: 1;
   width: 90vw;
   -webkit-transition: 0.5s;
@@ -1290,11 +923,11 @@ button:disabled {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   height: 80%;
   width: 100%;
 }
@@ -1308,8 +941,8 @@ button:disabled {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   height: 40%;
   width: 100%;
 }
@@ -1329,11 +962,11 @@ button:disabled {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%;
   height: 100%;
   -webkit-transition: 1s;
@@ -1347,11 +980,11 @@ button:disabled {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   font-size: 10px;
   -webkit-transition: 0.7s;
   transition: 0.7s;
@@ -1363,7 +996,7 @@ button:disabled {
 
 .modal-app-technologies__main-technologies .main-technology__logo:hover {
   -webkit-transform: scale(1.4);
-  transform: scale(1.4);
+          transform: scale(1.4);
 }
 
 .modal-app-technologies__main-technologies .main-technology__logo:hover div {
@@ -1391,15 +1024,16 @@ button:disabled {
 
 .section-author {
   width: 100%;
-  height: 140vh;
+  min-height: 140vh;
   padding: 30vh 5vw 0 5vw;
+  margin-bottom: 10vh;
 }
 
 .section-author .author__container {
-  padding: 5%;
-  -webkit-box-shadow: 0 -5px 20px #493fa3;
-  box-shadow: 0 -5px 20px #493fa3;
-  background-color: #060325;
+  padding: 3%;
+  -webkit-box-shadow: -2px 2px 5px #493fa3;
+          box-shadow: -2px 2px 5px #493fa3;
+  background-color: #090538;
 }
 
 .section-author .author__title {
@@ -1407,19 +1041,13 @@ button:disabled {
   text-align: center;
   width: 100%;
   font-size: 30px;
+  padding: 0 30px;
 }
 
 .section-author .author__title::after {
   content: "";
   display: block;
-  background-image: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    from(transparent),
-    color-stop(white),
-    to(transparent)
-  );
+  background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(white), to(transparent));
   background-image: linear-gradient(to right, transparent, white, transparent);
   width: 40%;
   height: 2px;
@@ -1443,20 +1071,8 @@ button:disabled {
   width: 100%;
   height: 100%;
   border-radius: 300px;
-  background-image: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(transparent),
-    color-stop(transparent),
-    to(#060325)
-  );
-  background-image: linear-gradient(
-    to bottom,
-    transparent,
-    transparent,
-    #060325
-  );
+  background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(transparent), to(#090538));
+  background-image: linear-gradient(to bottom, transparent, transparent, #090538);
 }
 
 .section-author .author__author-info {
@@ -1464,17 +1080,54 @@ button:disabled {
   width: 80%;
   line-height: 150%;
   text-align: justify;
+  font-size: 13px;
+}
+
+.section-author .author__author-info .author-info__introduction {
+  width: 50%;
+  display: block;
+  font-size: 13px;
+  padding: 10px;
+  font-family: "Press Start 2P", cursive;
+  -webkit-box-shadow: -2px 3px 3px #c03da3;
+          box-shadow: -2px 3px 3px #c03da3;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.section-author .author__author-info .author-info__introduction:hover {
+  -webkit-box-shadow: 1px -3px 3px #c03da3;
+          box-shadow: 1px -3px 3px #c03da3;
 }
 
 .section-author .author__author-info .author-info__job-info {
   width: 60%;
   margin: 5% 20%;
+  padding: 10px 50px 10px 10px;
+  -webkit-box-shadow: -2px 3px 3px #c03da3;
+          box-shadow: -2px 3px 3px #c03da3;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.section-author .author__author-info .author-info__job-info:hover {
+  -webkit-box-shadow: 1px -3px 3px #c03da3;
+          box-shadow: 1px -3px 3px #c03da3;
 }
 
 .section-author .author__author-info .author-info__about-app {
-  width: 60%;
-  text-align: right;
+  width: 50%;
   margin-left: 40%;
+  padding: 10px;
+  -webkit-box-shadow: -2px 3px 3px #c03da3;
+          box-shadow: -2px 3px 3px #c03da3;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.section-author .author__author-info .author-info__about-app:hover {
+  -webkit-box-shadow: 1px -3px 3px #c03da3;
+          box-shadow: 1px -3px 3px #c03da3;
 }
 
 .section-author .author__portrait-and-job-info {
@@ -1485,13 +1138,29 @@ button:disabled {
   width: 100%;
   height: 100%;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.section-author__button {
+  display: block;
+  color: #c03da3;
+  height: 40px;
+  margin: 20vh auto;
+  font-size: 24px;
+  text-decoration: none;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  font-weight: bold;
+}
+
+.section-author__button:hover {
+  text-shadow: #fff 0px 0px 5px, #fff 0px 0px 10px, #fff 0px 0px 15px, #ff2d95 0px 0px 20px, #ff2d95 0px 0px 30px, #ff2d95 0px 0px 40px, 6px -19px 0px rgba(255, 255, 255, 0.04);
 }
 
 * {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   font-family: "Oxanium", cursive;
 }
 
@@ -1503,11 +1172,11 @@ button:disabled {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   top: 0;
   width: 100%;
   background-color: black;
@@ -1520,7 +1189,7 @@ button:disabled {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 /*# sourceMappingURL=main.css.map */

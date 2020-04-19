@@ -37,7 +37,7 @@ function EditorWrapper(props) {
 
 const mapStateToProps = (state) => {
   return {
-    editorLanguage: state.store.editorLanguage,
+    //editorLanguage: state.store.editorLanguage,
   };
 };
 const mapDispatchToProps = (dispatch) => {

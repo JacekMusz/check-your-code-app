@@ -5,12 +5,8 @@
   width: 100%;
   padding: 0 5vw 0 8vw;
   min-height: 110vh;
-  // background-image: linear-gradient(
-  //   to bottom,
-  //   black,
-  //   lighten(map-get($color-blue, "dark-blue"), $amount: 1%)
-  // );
   &__background-one {
+    box-shadow: -2px 2px 5px map-get($color-purple, "color");
     opacity: 0;
     position: absolute;
     transform: translate(0vw, 0vh);
@@ -20,10 +16,9 @@
     z-index: 200;
     filter: blur(2px);
   }
-  //   box-shadow: -5px -5px 30px darken($color: map-get($color-pink, "color"), $amount:
-  //         40%);
-  // }
+
   &__background-two {
+    box-shadow: -2px 2px 5px map-get($color-purple, "color");
     position: absolute;
     opacity: 0;
     width: 70vw;
@@ -32,12 +27,8 @@
       $color: map-get($color-blue, "dark-blue"),
       $amount: 2%
     );
-    filter: blur(10px);
+    filter: blur(5px);
   }
-  //   z-index: 100;
-  //   box-shadow: -5px -5px 60px darken($color: map-get($color-pink, "color"), $amount:
-  //         42%);
-  // }
 }
 
 .section-technology {
@@ -52,19 +43,18 @@
     z-index: 300;
     padding: 5% 5% 2% 5%;
     transform: translate(5vw, 5vh);
+    box-shadow: -2px 2px 5px map-get($color-purple, "color");
     background-color: lighten(
       $color: map-get($color-blue, "dark-blue"),
       $amount: 4%
     );
-    // box-shadow: -5px -5px 10px darken($color: map-get($color-pink, "color"), $amount:
-    //       38%);
     &__title {
       opacity: 0;
       position: relative;
       width: 100%;
       height: 10vh;
       font-size: 30px;
-      color: white;
+      color: white; //lighten(map-get($color-pink, "color"), 10%);
       margin-bottom: 10vh;
       &:after {
         position: absolute;
@@ -87,19 +77,21 @@
 
 .section-technology {
   .article-technology {
-    &__text-and-logo-wrapper {
+    &__paragraph-one-and-logo-wrapper {
       opacity: 0;
       display: flex;
       justify-content: space-between;
       position: relative;
       width: 100%;
       align-items: center;
-      .article-technology__text {
+      .article-technology__paragraph-one {
         text-align: justify;
         width: 32vw;
         height: 100%;
         color: white;
         line-height: 150%;
+        padding: 10px;
+        box-shadow: -1px -2px 2px map-get($color-pink, "color");
       }
       .article-technology__logo {
         opacity: 0;
@@ -140,6 +132,15 @@
         transform: translate(20px, -5px);
         filter: blur(2px);
       }
+    }
+    &__paragraph-two {
+      opacity: 0;
+      color: white;
+      margin-top: 20px;
+      line-height: 150%;
+      text-align: justify;
+      box-shadow: -1px 2px 2px map-get($color-pink, "color");
+      padding: 10px;
     }
   }
 }
