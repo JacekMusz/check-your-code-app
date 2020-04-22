@@ -671,7 +671,7 @@ button:disabled {
       -ms-flex-pack: start;
           justify-content: flex-start;
   width: 100%;
-  padding: 0 5vw 0 8vw;
+  padding: 0 5vw 0 5vw;
   min-height: 110vh;
 }
 
@@ -714,13 +714,13 @@ button:disabled {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-transform: translate(4vw, 1vh);
+          transform: translate(4vw, 1vh);
   opacity: 0;
   width: 70vw;
   height: 110vh;
   z-index: 300;
   padding: 5% 5% 2% 5%;
-  -webkit-transform: translate(5vw, 5vh);
-          transform: translate(5vw, 5vh);
   -webkit-box-shadow: -2px 2px 5px #493fa3;
           box-shadow: -2px 2px 5px #493fa3;
   background-color: #090538;
@@ -792,14 +792,14 @@ button:disabled {
 .section-technology .article-technology__paragraph-one-and-logo-wrapper .article-technology__logo-background-two {
   opacity: 0;
   position: absolute;
-  right: 0;
+  right: 0vw;
   top: -1vh;
   width: 25vw;
   height: 25vh;
   z-index: 500;
   background-color: rgba(204, 206, 235, 0.4);
-  -webkit-transform: translate(30px, -5px);
-          transform: translate(30px, -5px);
+  -webkit-transform: translate(20px, -5px);
+          transform: translate(20px, -5px);
   -webkit-filter: blur(1px);
           filter: blur(1px);
 }
@@ -813,8 +813,8 @@ button:disabled {
   width: 25vw;
   height: 25vh;
   background-color: rgba(204, 206, 235, 0.2);
-  -webkit-transform: translate(20px, -5px);
-          transform: translate(20px, -5px);
+  -webkit-transform: translate(30px, -5px);
+          transform: translate(30px, -5px);
   -webkit-filter: blur(2px);
           filter: blur(2px);
 }
@@ -1031,9 +1031,6 @@ button:disabled {
 
 .section-author .author__container {
   padding: 3%;
-  -webkit-box-shadow: -2px 2px 5px #493fa3;
-          box-shadow: -2px 2px 5px #493fa3;
-  background-color: #090538;
 }
 
 .section-author .author__title {
@@ -1071,8 +1068,8 @@ button:disabled {
   width: 100%;
   height: 100%;
   border-radius: 300px;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(transparent), to(#090538));
-  background-image: linear-gradient(to bottom, transparent, transparent, #090538);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(transparent), to(black));
+  background-image: linear-gradient(to bottom, transparent, transparent, black);
 }
 
 .section-author .author__author-info {
@@ -1084,6 +1081,9 @@ button:disabled {
 }
 
 .section-author .author__author-info .author-info__introduction {
+  -webkit-transform: translateX(200px);
+          transform: translateX(200px);
+  opacity: 0;
   width: 50%;
   display: block;
   font-size: 13px;
@@ -1091,43 +1091,28 @@ button:disabled {
   font-family: "Press Start 2P", cursive;
   -webkit-box-shadow: -2px 3px 3px #c03da3;
           box-shadow: -2px 3px 3px #c03da3;
-  -webkit-transition: 1s;
-  transition: 1s;
-}
-
-.section-author .author__author-info .author-info__introduction:hover {
-  -webkit-box-shadow: 1px -3px 3px #c03da3;
-          box-shadow: 1px -3px 3px #c03da3;
 }
 
 .section-author .author__author-info .author-info__job-info {
+  -webkit-transform: translateX(200px);
+          transform: translateX(200px);
+  opacity: 0;
   width: 60%;
   margin: 5% 20%;
   padding: 10px 50px 10px 10px;
   -webkit-box-shadow: -2px 3px 3px #c03da3;
           box-shadow: -2px 3px 3px #c03da3;
-  -webkit-transition: 1s;
-  transition: 1s;
-}
-
-.section-author .author__author-info .author-info__job-info:hover {
-  -webkit-box-shadow: 1px -3px 3px #c03da3;
-          box-shadow: 1px -3px 3px #c03da3;
 }
 
 .section-author .author__author-info .author-info__about-app {
+  -webkit-transform: translateX(200px);
+          transform: translateX(200px);
+  opacity: 0;
   width: 50%;
   margin-left: 40%;
   padding: 10px;
   -webkit-box-shadow: -2px 3px 3px #c03da3;
           box-shadow: -2px 3px 3px #c03da3;
-  -webkit-transition: 1s;
-  transition: 1s;
-}
-
-.section-author .author__author-info .author-info__about-app:hover {
-  -webkit-box-shadow: 1px -3px 3px #c03da3;
-          box-shadow: 1px -3px 3px #c03da3;
 }
 
 .section-author .author__portrait-and-job-info {

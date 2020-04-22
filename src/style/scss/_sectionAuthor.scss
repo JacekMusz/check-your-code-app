@@ -6,11 +6,11 @@
   .author {
     &__container {
       padding: 3%;
-      box-shadow: -2px 2px 5px map-get($color-purple, "color");
-      background-color: lighten(
-        $color: map-get($color-blue, "dark-blue"),
-        $amount: 4%
-      );
+      // box-shadow: -2px 2px 5px map-get($color-purple, "color");
+      // background-color: lighten(
+      //   $color: map-get($color-blue, "dark-blue"),
+      //   $amount: 4%
+      // );
     }
     &__title {
       color: white;
@@ -51,7 +51,7 @@
           to bottom,
           transparent,
           transparent,
-          lighten($color: map-get($color-blue, "dark-blue"), $amount: 4%)
+          black
         );
       }
     }
@@ -63,36 +63,33 @@
       font-size: 13px;
       .author-info {
         &__introduction {
+          transform: translateX(200px);
+          opacity: 0;
+
           width: 50%;
           display: block;
           font-size: 13px;
           padding: 10px;
           font-family: "Press Start 2P", cursive;
           box-shadow: -2px 3px 3px map-get($color-pink, "color");
-          transition: 1s;
-          &:hover {
-            box-shadow: 1px -3px 3px map-get($color-pink, "color");
-          }
         }
         &__job-info {
+          transform: translateX(200px);
+          opacity: 0;
+
           width: 60%;
           margin: 5% 20%;
           padding: 10px 50px 10px 10px;
           box-shadow: -2px 3px 3px map-get($color-pink, "color");
-          transition: 1s;
-          &:hover {
-            box-shadow: 1px -3px 3px map-get($color-pink, "color");
-          }
         }
         &__about-app {
+          transform: translateX(200px);
+          opacity: 0;
+
           width: 50%;
           margin-left: 40%;
           padding: 10px;
           box-shadow: -2px 3px 3px map-get($color-pink, "color");
-          transition: 1s;
-          &:hover {
-            box-shadow: 1px -3px 3px map-get($color-pink, "color");
-          }
         }
       }
     }
