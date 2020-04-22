@@ -31,6 +31,7 @@
   position: fixed;
   width: 100vw;
   height: 10vh;
+  min-height: 70px;
   padding: 0 30px;
   top: 0;
   -webkit-transition: 0.5s;
