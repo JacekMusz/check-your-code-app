@@ -73,7 +73,7 @@ const SectionTechnology = () => {
           { y: "8vh", x: "10vw", opacity: 0, duration: myDuration * 0.7 },
           "hideBackgrounds"
         )
-        .eventCallback("onComplete", setStopObserveSectionTechnology(1));
+        .eventCallback("onComplete", () => setStopObserveSectionTechnology(1));
     }
   });
 

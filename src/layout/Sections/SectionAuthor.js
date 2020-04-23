@@ -70,7 +70,7 @@ const SectionAuthor = () => {
           },
           "-=0.3"
         )
-        .eventCallback("onComplete", setStopAnimate(1));
+        .eventCallback("onComplete", () => setStopAnimate(1));
     }
   });
 
