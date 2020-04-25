@@ -25,15 +25,12 @@ const NavBar = () => {
     "--top": isWindowTopPosition && history.location.pathname !== "/editor",
     "--scroll": !isWindowTopPosition || history.location.pathname === "/editor",
   });
-  console.log(history.location.pathname === "/editor");
   const navBarLinks = [
     { path: "section-start", name: "Start", offset: 0 },
     { path: "section-project", name: "Project", offset: -100 },
     { path: "section-technology", name: "Technology", offset: -100 },
     { path: "section-author", name: "Author", offset: 70 },
   ];
-
-  console.log(history);
   return (
     <div className={`nav-bar nav-bar${classForNavBar}`}>
       <div className="nav-bar__content-wrapper">

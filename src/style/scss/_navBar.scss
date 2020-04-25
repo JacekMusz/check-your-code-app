@@ -3,13 +3,13 @@
   flex-direction: column;
   position: fixed;
   width: 100vw;
-  height: 10vh;
-  min-height: 70px;
+  height: 68px;
   padding: 0 30px;
   top: 0;
-  transition: 0.5s;
+  transition: 1s;
   z-index: 500;
   color: white;
+  background-color: none;
   &__content-wrapper {
     display: flex;
     justify-content: left;
@@ -17,31 +17,68 @@
     justify-content: space-between;
     height: 100%;
   }
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-image: none;
+    top: 68px;
+  }
+  .nav-links {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-basis: 60%;
+    .link {
+      overflow: hidden;
+      color: white;
+      text-decoration: none;
+      transition: 0.1s;
+      line-height: 20px;
+      display: none;
+      width: 100px;
+      height: 30px;
+      border-radius: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      &:hover {
+        box-shadow: 0px 0px 4px map-get($color-purple, "color");
+        transform: translate(-2px, 2px);
+      }
+    }
+  }
+  &__bookmark-title {
+    flex-basis: 30%;
+    font-weight: 600;
+    transition: 1s;
+    font-size: 20px;
+    &--top {
+      font-size: 22px;
+    }
+  }
 }
 
-.nav-bar--top {
-  background-color: none;
+.nav-bar {
   .link {
-    font-size: 16px;
+    box-shadow: -2px 2px 2px white;
+    &:hover {
+      box-shadow: 0 0 4px white;
+    }
   }
 }
 
 .nav-bar--scroll {
   background-color: black;
   .link {
-    font-size: 14px;
+    box-shadow: -3px 3px 3px map-get($color-purple, "color");
+    &:hover {
+      box-shadow: 0px 0px 4px map-get($color-purple, "color");
+    }
   }
-}
-
-.nav-bar__bookmark-title {
-  flex-basis: 30%;
-  font-weight: 600;
-  transition: 1s;
-  font-size: 20px;
-}
-
-.nav-bar__bookmark-title--top {
-  font-size: 22px;
 }
 
 .nav-bar--scroll:after {
@@ -57,47 +94,4 @@
     black
   );
   transition: 3s;
-}
-
-.nav-links {
-  display: flex;
-  justify-content: space-evenly;
-  flex-direction: row;
-  flex-basis: 60%;
-  .link {
-    overflow: hidden;
-    color: white;
-    text-decoration: none;
-    transition: 1s;
-    line-height: 20px;
-
-    &:after {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 2px;
-      background-color: transparent;
-      transition: 1s;
-      border-radius: 2px;
-    }
-    &:after {
-      transform: translateX(-100%);
-    }
-    &:hover {
-      cursor: pointer;
-      position: relative;
-      transform: translateY(-15%);
-      transition: 0.7s;
-    }
-    &:hover:after {
-      background-image: linear-gradient(
-        to left,
-        transparent,
-        map-get($color-pink, "color"),
-        map-get($color-purple, "color"),
-        transparent
-      );
-      transform: translateX(100%);
-    }
-  }
 }
