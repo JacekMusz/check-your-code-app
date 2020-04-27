@@ -1,28 +1,58 @@
-import React from "react";
+import React, { useState } from "react";
 import { ControlledEditor } from "@monaco-editor/react";
 import actions from "../actions/actions.js";
 import { connect } from "react-redux";
+import SideBar from "./Editor/SideBar";
 
 function EditorWrapper(props) {
   const handleEditorChange = (ev, value) => {
     props.setCode(value);
   };
+  const [fileName, setFileName] = useState("");
+  const [fileExtension, setFileExtension] = useState(".none");
+  const handleInput = (e) => {
+    setFileName(`${e.target.value}${props.fileExtension}`);
+  };
 
+  const handleChooseExtension = (option) => {
+    switch (option) {
+      case "javascript":
+        return `.js`;
+      case "java":
+        return `.java`;
+      case "python":
+        return `.py`;
+      default:
+        return `.none`;
+    }
+  };
+  const handleChangeSelect = (option) => {
+    props.setEditorLanguage(option);
+    setFileExtension(handleChooseExtension(option));
+  };
   return (
     <div className="editor__wrapper">
-      <p className="editor__current-language-info">
-        Current editor language: {props.editorLanguage}
-      </p>
-      <select
-        className="button"
-        onChange={(e) => props.setEditorLanguage(e.target.value)}
-      >
-        <option value="text">select language</option>
-        <option value="javascript">javascript</option>
-        <option value="java">java</option>
-        <option value="html">html</option>
-        <option value="python">python</option>
-      </select>
+      <SideBar />
+      <div className="top-panel">
+        <div className="top-panel__select-language">
+          <p> Select Editor language: </p>
+          <select onChange={(e) => handleChangeSelect(e.target.value)}>
+            <option value="text">select language</option>
+            <option value="javascript">javascript</option>
+            <option value="java">java</option>
+            <option value="python">python</option>
+          </select>
+        </div>
+        <div className="top-panel__file-full-name">
+          <input
+            onChange={(e) => handleInput(e)}
+            placeholder="filename"
+          ></input>
+          {fileExtension}
+        </div>
+        <button> Submit</button>
+        <p className="top-panel__warnings">aa</p>
+      </div>
       <ControlledEditor
         height="100%"
         width="100vw"
@@ -37,7 +67,7 @@ function EditorWrapper(props) {
 
 const mapStateToProps = (state) => {
   return {
-    //editorLanguage: state.store.editorLanguage,
+    editorLanguage: state.code.editorLanguage,
   };
 };
 const mapDispatchToProps = (dispatch) => {
