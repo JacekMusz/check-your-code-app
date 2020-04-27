@@ -19,13 +19,3 @@
   text-align: center;
   width: 100%;
 }
-
-.section-author {
-  width: 100%;
-  height: 200vh;
-  background-image: linear-gradient(
-    to top,
-    black,
-    lighten($color: map-get($color-blue, "dark-blue"), $amount: 1%)
-  );
-}

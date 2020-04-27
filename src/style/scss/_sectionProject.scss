@@ -44,7 +44,7 @@
     bottom: -3px;
     transform: translateX(-10%);
     border-radius: 10px;
-    background-image: linear-gradient(to left, black, #666, black);
+    background-image: linear-gradient(to left, transparent, white, transparent);
   }
 }
 
@@ -70,6 +70,10 @@
         width: 60%;
         padding: 5% 5%;
         text-align: left;
+        line-height: 150%;
+        a {
+          color: $color-pink;
+        }
         &::after {
           z-index: 200;
           top: 0;
@@ -80,8 +84,8 @@
         &::before {
           background-image: linear-gradient(
             to bottom,
-            map-get($color-pink, "color"),
-            map-get($color-purple, "color"),
+            $color-pink,
+            $color-purple,
             black
           );
           top: -20px;
@@ -104,11 +108,12 @@
         width: 40%;
         padding: 5% 5%;
         text-align: justify;
+        line-height: 150%;
         &::after {
           background-image: linear-gradient(
             to left,
-            map-get($color-pink, "color"),
-            map-get($color-purple, "color"),
+            $color-pink,
+            $color-purple,
             black
           );
           bottom: 0;
@@ -119,8 +124,8 @@
         &::before {
           background-image: linear-gradient(
             to top,
-            map-get($color-pink, "color"),
-            map-get($color-purple, "color"),
+            $color-pink,
+            $color-purple,
             black
           );
           bottom: 0;

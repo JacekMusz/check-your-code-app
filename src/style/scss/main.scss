@@ -8,20 +8,25 @@
 @import "_sectionTechnology.scss";
 @import "_sectionTechnologyFooter.scss";
 @import "_modalAppTechnology.scss";
+@import "_sectionAuthor.scss";
+@import "_sideBar.scss";
 
 * {
   box-sizing: border-box;
   font-family: "Oxanium", cursive;
 }
 
+#root {
+  background-color: black;
+}
 .app {
   position: absolute;
-  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   top: 0;
   width: 100%;
+  text-align: center;
   background-color: black;
   overflow: hidden;
 }

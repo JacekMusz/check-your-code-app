@@ -5,10 +5,9 @@ import { Link } from "react-scroll";
 import { useHistory } from "react-router-dom";
 import classNames from "classnames";
 
-const NavBar = props => {
+const NavBar = () => {
   const history = useHistory();
   const [isWindowTopPosition, setIsWindowTopPosition] = useState(true);
-
   const handleReturnToMainPage = () => {
     history.push("/");
   };
@@ -23,15 +22,14 @@ const NavBar = props => {
     });
   });
   const classForNavBar = classNames({
-    "--top": isWindowTopPosition,
-    "--scroll": !isWindowTopPosition
+    "--top": isWindowTopPosition && history.location.pathname !== "/editor",
+    "--scroll": !isWindowTopPosition || history.location.pathname === "/editor",
   });
-
   const navBarLinks = [
-    { path: "section-start", name: "Start" },
-    { path: "section-project", name: "Project" },
-    { path: "section-technology", name: "Technology" },
-    { path: "section-author", name: "Author" }
+    { path: "section-start", name: "Start", offset: 0 },
+    { path: "section-project", name: "Project", offset: -100 },
+    { path: "section-technology", name: "Technology", offset: -100 },
+    { path: "section-author", name: "Author", offset: 70 },
   ];
   return (
     <div className={`nav-bar nav-bar${classForNavBar}`}>
@@ -50,6 +48,7 @@ const NavBar = props => {
                 smooth={true}
                 onClick={handleReturnToMainPage}
                 key={index}
+                offset={item.offset}
               >
                 {item.name}
               </Link>

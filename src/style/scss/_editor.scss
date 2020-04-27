@@ -5,15 +5,86 @@
   align-items: center;
   min-width: 50%;
   height: 90vh;
-  margin-top: 10vh;
-  padding-top: 20px;
-}
-
-.editor__current-language-info {
-  font-size: 14px;
+  margin-top: 60px;
   color: white;
 }
+.top-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100px;
+  &__select-language {
+    display: flex;
+    flex-direction: row;
+    p {
+      margin: 0 10px 0 0;
+    }
+    select {
+      height: 20px;
+      background-color: transparent;
+      color: $color-purple;
+      border: none;
+      border-bottom: 2px solid #333;
+      cursor: pointer;
+      outline: none;
+      &:focus {
+        border-bottom: 2px solid $color-purple;
+      }
+      option {
+        cursor: pointer;
+        background-color: #111;
+        &:hover {
+          background-color: $color-purple;
+        }
+      }
+    }
+  }
+}
 
-button:disabled {
-  opacity: 50%;
+.top-panel {
+  &__file-full-name {
+    display: flex;
+    justify-content: flex-start;
+    width: 300px;
+    margin-left: 200px;
+    color: $color-pink;
+    input {
+      background-color: transparent;
+      color: $color-pink;
+      border: none;
+      border-bottom: 1px solid #333;
+      outline: none;
+      &:focus {
+        border-bottom: 1px solid $color-pink;
+      }
+    }
+  }
+
+  button {
+    position: absolute;
+    bottom: 10px;
+    right: 40px;
+    width: 80px;
+    height: 30px;
+    background-color: transparent;
+    color: white;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: -3px 3px 3px $color-pink;
+    &:hover {
+      box-shadow: 0px 0px 3px $color-purple;
+      transform: translate(-2px, 2px);
+    }
+  }
+  &__warnings {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+  }
 }
