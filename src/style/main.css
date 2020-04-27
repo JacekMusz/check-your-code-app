@@ -1358,9 +1358,7 @@
           justify-content: space-between;
 }
 
-.side-bar__steps .step-one,
-.side-bar__steps .step-two,
-.side-bar__steps .step-three {
+.side-bar__steps .step {
   width: 30%;
   height: 100%;
   border: 1px solid red;

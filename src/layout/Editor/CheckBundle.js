@@ -1,6 +1,6 @@
 import React from "react";
 
-const StepTwo = (props) => {
+const CheckBundle = (props) => {
   return (
     <div className="step-two">
       <h3>Step two - Check Bundle </h3>
@@ -9,4 +9,4 @@ const StepTwo = (props) => {
   );
 };
 
-export default StepTwo;
+export default CheckBundle;

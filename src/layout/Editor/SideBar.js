@@ -2,18 +2,18 @@ import React, { Component } from "react";
 import { FaBars } from "react-icons/fa";
 import classNames from "classnames";
 import {
-  apiFilters,
+  //apiFilters,
   apiCreateBundle,
-  apiCheckBundle,
-  apiGetAnalysis,
-  apiGetDiffAnalysis,
+  //   apiCheckBundle,
+  //   apiGetAnalysis,
+  //   apiGetDiffAnalysis,
 } from "../../api/apiBundle";
 import actions from "../../actions/actions.js";
 import { connect } from "react-redux";
 import withSteps from "./withSteps";
-import StepOne from "./StepOne";
-import StepTwo from "./StepOne";
-import StepThree from "./StepOne";
+import CreateBundle from "./CreateBundle";
+import CheckBundle from "./CheckBundle";
+import GetAnalysis from "./GetAnalysis";
 
 class SideBar extends Component {
   state = {
@@ -34,9 +34,9 @@ class SideBar extends Component {
   };
 
   render() {
-    const FirstStep = withSteps(StepOne);
-    const SecondStep = withSteps(StepTwo);
-    const ThirdStep = withSteps(StepThree);
+    const FirstStep = withSteps(CreateBundle);
+    const SecondStep = withSteps(CheckBundle);
+    const ThirdStep = withSteps(GetAnalysis);
 
     const classForSideBar = classNames({
       "side-bar": true,

@@ -1,6 +1,6 @@
 import React from "react";
 
-const StepThree = (props) => {
+const GetAnalysis = (props) => {
   return (
     <div className="step-three">
       <h3>Step three - Get Analysis</h3>
@@ -9,4 +9,4 @@ const StepThree = (props) => {
   );
 };
 
-export default StepThree;
+export default GetAnalysis;
