@@ -3,67 +3,61 @@
   display: flex;
   justify-content: flex-start;
   width: 100%;
-  padding: 0 5vw 0 5vw;
   min-height: 110vh;
+  padding: 0 5vw 0 5vw;
   &__background-one {
-    box-shadow: -2px 2px 5px map-get($color-purple, "color");
     opacity: 0;
     position: absolute;
-    transform: translate(0vw, 0vh);
+    transform: translate(0, 0);
     width: 70vw;
     min-height: 110vh;
-    background-color: lighten(map-get($color-blue, "dark-blue"), $amount: 2%);
     z-index: 200;
+    background-color: lighten($color-blue, $amount: 2%);
+    box-shadow: -2px 2px 5px $color-purple;
     filter: blur(2px);
   }
 
   &__background-two {
-    box-shadow: -2px 2px 5px map-get($color-purple, "color");
-    position: absolute;
     opacity: 0;
+    position: absolute;
     width: 70vw;
     min-height: 110vh;
-    background-color: darken(
-      $color: map-get($color-blue, "dark-blue"),
-      $amount: 2%
-    );
+    background-color: darken($color-blue, $amount: 2%);
+    box-shadow: -2px 2px 5px $color-purple;
     filter: blur(5px);
   }
 }
 
 .section-technology {
   .article-technology {
+    opacity: 0;
     position: absolute;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-    transform: translate(4vw, 1vh);
-    opacity: 0;
     width: 70vw;
     height: 110vh;
-    z-index: 300;
     padding: 5% 5% 2% 5%;
-    box-shadow: -2px 2px 5px map-get($color-purple, "color");
-    background-color: lighten(
-      $color: map-get($color-blue, "dark-blue"),
-      $amount: 4%
-    );
+    transform: translate(4vw, 1vh);
+    z-index: 300;
+    box-shadow: -2px 2px 5px $color-purple;
+    background-color: lighten($color-blue, $amount: 4%);
     &__title {
       opacity: 0;
       position: relative;
       width: 100%;
       height: 10vh;
-      font-size: 30px;
-      color: white; //lighten(map-get($color-pink, "color"), 10%);
       margin-bottom: 10vh;
+      font-size: 30px;
+      color: white;
       &:after {
         position: absolute;
         content: "";
         display: block;
         width: 80%;
         height: 2px;
-        border-radius: 10px;
         margin: 0 10%;
+        border-radius: 10px;
         background-image: linear-gradient(
           to left,
           transparent,
@@ -88,29 +82,29 @@
         text-align: justify;
         width: 32vw;
         height: 100%;
+        padding: 10px;
         color: white;
         line-height: 150%;
-        padding: 10px;
-        box-shadow: -1px -2px 2px map-get($color-pink, "color");
+        box-shadow: -1px -2px 2px $color-pink;
       }
       .article-technology__logo {
         opacity: 0;
+        position: relative;
+        width: 25vw;
+        height: 25vh;
+        transform: translate(0, -5px);
         background: rgba(2, 12, 153, 0.2) url("../photos/deepcodeimage.png");
         background-blend-mode: darken;
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
-        position: relative;
         z-index: 600;
-        width: 25vw;
-        height: 25vh;
-        transform: translate(0px, -5px);
       }
 
       .article-technology__logo-background-two {
         opacity: 0;
         position: absolute;
-        right: 0vw;
+        right: 0;
         top: -1vh;
         width: 25vw;
         height: 25vh;
@@ -123,11 +117,11 @@
       .article-technology__logo-background-one {
         opacity: 0;
         position: absolute;
-        z-index: 500;
         right: -1vw;
         top: -2vh;
         width: 25vw;
         height: 25vh;
+        z-index: 500;
         background-color: rgba(204, 206, 235, 0.2);
         transform: translate(30px, -5px);
         filter: blur(2px);
@@ -135,12 +129,12 @@
     }
     &__paragraph-two {
       opacity: 0;
-      color: white;
       margin-top: 20px;
+      padding: 10px;
       line-height: 150%;
       text-align: justify;
-      box-shadow: -1px 2px 2px map-get($color-pink, "color");
-      padding: 10px;
+      color: white;
+      box-shadow: -1px 2px 2px $color-pink;
     }
   }
 }
