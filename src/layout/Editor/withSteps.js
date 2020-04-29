@@ -4,13 +4,13 @@ import classNames from "classnames";
 const withSteps = (Component) => {
   return class WithSteps extends React.Component {
     state = {
-      activeStep: 0,
+      activeStep: false,
     };
 
     //-----CLASSES-----
     stepClasses = classNames({
-      step: true,
-      "step step--active": this.state.activeStep,
+      "step ": true,
+      "step step--active": this.props.activeStepId === this.props.stepId,
     });
 
     render() {
@@ -21,9 +21,9 @@ const withSteps = (Component) => {
               this.setState({ activeStep: !this.state.activeStep })
             }
           >
-            {this.state.activeStep}
+            {this.state.activeStep ? "true" : "false"}
           </button>
-          <Component />
+          <Component dataStep={this.props.dataStep} />
         </div>
       );
     }

@@ -11,7 +11,7 @@ function EditorWrapper(props) {
   const [fileName, setFileName] = useState("");
   const [fileExtension, setFileExtension] = useState(".none");
   const handleInput = (e) => {
-    setFileName(`${e.target.value}${props.fileExtension}`);
+    setFileName(`${e.target.value}${fileExtension}`);
   };
 
   const handleChooseExtension = (option) => {
@@ -29,6 +29,10 @@ function EditorWrapper(props) {
   const handleChangeSelect = (option) => {
     props.setEditorLanguage(option);
     setFileExtension(handleChooseExtension(option));
+  };
+
+  const handleSetFileName = () => {
+    props.setFileName(fileName);
   };
   return (
     <div className="editor__wrapper">
@@ -50,7 +54,7 @@ function EditorWrapper(props) {
           ></input>
           {fileExtension}
         </div>
-        <button> Submit</button>
+        <button onClick={() => handleSetFileName()}> Submit</button>
         <p className="top-panel__warnings">aa</p>
       </div>
       <ControlledEditor
@@ -75,6 +79,7 @@ const mapDispatchToProps = (dispatch) => {
     setCode: (code) => dispatch(actions.setCode(code)),
     setEditorLanguage: (editorLanguage) =>
       dispatch(actions.setEditorLanguage(editorLanguage)),
+    setFileName: (fileName) => dispatch(actions.setFileName(fileName)),
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(EditorWrapper);
