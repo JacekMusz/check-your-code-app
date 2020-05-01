@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 import { FaBars } from "react-icons/fa";
 import classNames from "classnames";
-import {
-  //apiFilters,
-  apiCreateBundle,
-  //   apiCheckBundle,
-  //   apiGetAnalysis,
-  //   apiGetDiffAnalysis,
-} from "../../api/apiBundle";
+import //apiFilters,
+//  apiCreateBundle,
+//   apiCheckBundle,
+//   apiGetAnalysis,
+//   apiGetDiffAnalysis,
+"../../api/apiBundle";
 import actions from "../../actions/actions.js";
 import { connect } from "react-redux";
 import withSteps from "./withSteps";
@@ -23,15 +22,6 @@ class SideBar extends Component {
 
   handleToggleSideBarHiden = () => {
     this.setState({ sideBarHiden: !this.state.sideBarHiden });
-  };
-
-  handleCreateBundle = () => {
-    apiCreateBundle("/file2.js", "const a = 3")
-      .then((resp) => {
-        console.log(resp);
-        this.props.setBundleId(resp.data.bundleId);
-      })
-      .catch((err) => console.log(err));
   };
 
   render() {
