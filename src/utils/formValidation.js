@@ -3,7 +3,6 @@ export const isFileNameIncorrect = (fileName) => {
   let results = fileNameArray.map((item) => {
     return properSigns.includes(item);
   });
-  console.log(results.includes(false));
   return results.includes(false);
 };
 

@@ -4,7 +4,7 @@ const initialState = {
   fileName: "",
 };
 
-export default function code(state = initialState, action) {
+export default function codeFile(state = initialState, action) {
   switch (action.type) {
     case "SET_CODE":
       return { ...state, code: action.code };

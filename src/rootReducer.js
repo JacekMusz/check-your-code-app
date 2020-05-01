@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
 import settings from "./reducers/settings";
-import code from "./reducers/code";
+import codeFile from "./reducers/codeFile";
 
-const rootReducer = combineReducers({ settings, code });
+const rootReducer = combineReducers({ settings, codeFile });
 
 export default rootReducer;
 

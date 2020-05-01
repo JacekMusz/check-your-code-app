@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { FaBars } from "react-icons/fa";
 import classNames from "classnames";
-import //apiFilters,
-//  apiCreateBundle,
-//   apiCheckBundle,
-//   apiGetAnalysis,
-//   apiGetDiffAnalysis,
-"../../api/apiBundle";
+// import //apiFilters,
+// //  apiCreateBundle,
+// //   apiCheckBundle,
+// //   apiGetAnalysis,
+// //   apiGetDiffAnalysis,
+// "../../api/apiBundle";
 import actions from "../../actions/actions.js";
 import { connect } from "react-redux";
 import withSteps from "./withSteps";
@@ -51,7 +51,8 @@ class SideBar extends Component {
             stepId={1}
             dataStep={{
               fileName: this.props.fileName,
-              setBundleMethod: this.props.setBudnleId,
+              setBundleIdMethod: this.props.setBundleId,
+              code: this.props.code,
             }}
           />
           <SecondStep activeStepId={this.state.activeStepId} stepId={2} />
@@ -66,7 +67,8 @@ class SideBar extends Component {
 const mapStateToProps = (state) => {
   return {
     sessionToken: state.settings.sessionToken,
-    fileName: state.code.fileName,
+    fileName: state.codeFile.fileName,
+    code: state.codeFile.code,
   };
 };
 const mapDispatchToProps = (dispatch) => {

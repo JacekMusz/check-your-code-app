@@ -3,11 +3,10 @@ import { apiCreateBundle } from "../../api/apiBundle";
 
 const CreateBundle = (props) => {
   const handleCreateBundle = () => {
-    console.log();
-    apiCreateBundle(`/${props.dataStep.fileName}`, "const a = 3")
+    apiCreateBundle(`/${props.dataStep.fileName}`, `${props.dataStep.code}`)
       .then((resp) => {
         console.log(resp);
-        // this.props.setBundleId(resp.data.bundleId);
+        props.dataStep.setBundleIdMethod(resp.data.bundleId);
       })
       .catch((err) => console.log(err));
   };
