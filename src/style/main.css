@@ -7,7 +7,7 @@
   margin: 10px;
   padding-left: 0 10px;
   color: white;
-  background-color: #333;
+  background-color: transparent;
   -webkit-box-shadow: 0 0 3px #888;
           box-shadow: 0 0 3px #888;
   border: none;
@@ -16,8 +16,15 @@
 }
 
 .button:hover {
-  -webkit-box-shadow: 0 0 6px white;
-          box-shadow: 0 0 6px white;
+  -webkit-box-shadow: 0 0 6px #c03da3;
+          box-shadow: 0 0 6px #c03da3;
+  color: #c03da3;
+}
+
+.button:disabled {
+  color: #333;
+  -webkit-box-shadow: 0 0 3px #333;
+          box-shadow: 0 0 3px #333;
 }
 
 .nav-bar {
@@ -1306,8 +1313,10 @@
   height: 100%;
   padding: 5px;
   background-color: #111;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transform: translateX(-80vw);
+          transform: translateX(-80vw);
 }
 
 .side-bar__top {
@@ -1330,19 +1339,31 @@
   cursor: pointer;
   background-image: -webkit-gradient(linear, left top, right top, from(#493fa3), to(#c03da3));
   background-image: linear-gradient(to right, #493fa3, #c03da3);
-  opacity: 0.5;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  opacity: 0.9;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transform: translateX(40px);
+          transform: translateX(40px);
 }
 
-.side-bar--hiden {
+.side-bar--showed {
+  -webkit-transform: translateX(0vw);
+          transform: translateX(0vw);
+}
+
+.side-bar--showed .side-bar__top {
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+}
+
+.side-bar--disactive {
   -webkit-transform: translateX(-80vw);
           transform: translateX(-80vw);
 }
 
-.side-bar--hiden .side-bar__top {
-  -webkit-transform: translateX(40px);
-          transform: translateX(40px);
+.side-bar--disactive .side-bar__top {
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
 }
 
 .side-bar__steps {
@@ -1362,10 +1383,19 @@
   width: 30%;
   height: 100%;
   border: 1px solid grey;
+  -webkit-transition: 1s;
+  transition: 1s;
+  opacity: 0.3;
 }
 
 .side-bar__steps .step--active {
+  border: 1px solid #c03da3;
+  opacity: 1;
+}
+
+.side-bar__steps .step--complited {
   border: 1px solid green;
+  opacity: 0.6;
 }
 
 * {

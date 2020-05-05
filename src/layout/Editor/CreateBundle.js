@@ -2,19 +2,32 @@ import React from "react";
 import { apiCreateBundle } from "../../api/apiBundle";
 
 const CreateBundle = (props) => {
+  const {
+    fileName,
+    code,
+    setBundleIdMethod,
+    setComplitedSteps,
+  } = props.dataStep;
   const handleCreateBundle = () => {
-    apiCreateBundle(`/${props.dataStep.fileName}`, `${props.dataStep.code}`)
+    console.log("active");
+    apiCreateBundle(`/${fileName}`, `${code}`)
       .then((resp) => {
-        console.log(resp);
-        props.dataStep.setBundleIdMethod(resp.data.bundleId);
+        setBundleIdMethod(resp.data.bundleId);
       })
+      .then(setComplitedSteps([1]))
       .catch((err) => console.log(err));
   };
   return (
     <div className="step-one">
-      <h3>Step one - Create Bundle!</h3>
+      <h3>Step one - Create Bundle! </h3>
 
-      <button onClick={() => handleCreateBundle()}>Create Bundle</button>
+      <button
+        className="button"
+        disabled={props.activeStepId !== props.stepId}
+        onClick={() => handleCreateBundle()}
+      >
+        Create Bundle
+      </button>
     </div>
   );
 };

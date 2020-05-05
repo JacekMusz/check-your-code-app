@@ -16,8 +16,8 @@ import GetAnalysis from "./GetAnalysis";
 
 class SideBar extends Component {
   state = {
-    sideBarHiden: 0,
-    activeStepId: 1,
+    sideBarHiden: 1,
+    sideBarDisactive: true,
   };
 
   handleToggleSideBarHiden = () => {
@@ -25,14 +25,25 @@ class SideBar extends Component {
   };
 
   render() {
+    const {
+      fileName,
+      setBundleId,
+      code,
+      setComplitedSteps,
+      complitedSteps,
+      bundleId,
+    } = this.props;
+
     const FirstStep = withSteps(CreateBundle);
     const SecondStep = withSteps(CheckBundle);
     const ThirdStep = withSteps(GetAnalysis);
 
     const classForSideBar = classNames({
       "side-bar": true,
-      "side-bar--hiden": this.state.sideBarHiden,
+      "side-bar--showed": this.state.sideBarHiden,
+      "side-bar--disactive": fileName.length < 3,
     });
+
     return (
       <div className={classForSideBar}>
         <div
@@ -40,23 +51,37 @@ class SideBar extends Component {
           onClick={() => this.handleToggleSideBarHiden()}
         >
           {this.state.sideBarHiden ? (
-            <FaBars className="top-icon" />
-          ) : (
             "Hide Me !"
+          ) : (
+            <FaBars className="top-icon" />
           )}
         </div>
         <div className="side-bar__steps">
           <FirstStep
-            activeStepId={this.state.activeStepId}
             stepId={1}
             dataStep={{
-              fileName: this.props.fileName,
-              setBundleIdMethod: this.props.setBundleId,
-              code: this.props.code,
+              fileName: fileName,
+              setBundleIdMethod: setBundleId,
+              code: code,
+              setComplitedSteps: setComplitedSteps,
+              complitedSteps: complitedSteps,
             }}
           />
-          <SecondStep activeStepId={this.state.activeStepId} stepId={2} />
-          <ThirdStep activeStepId={this.state.activeStepId} stepId={3} />
+          <SecondStep
+            stepId={2}
+            dataStep={{
+              setComplitedSteps: setComplitedSteps,
+              complitedSteps: complitedSteps,
+              bundleId: bundleId,
+            }}
+          />
+          <ThirdStep
+            stepId={3}
+            dataStep={{
+              setComplitedSteps: setComplitedSteps,
+              complitedSteps: complitedSteps,
+            }}
+          />
         </div>
         <div className="side-bar__buttons"></div>
       </div>
@@ -65,15 +90,21 @@ class SideBar extends Component {
 }
 
 const mapStateToProps = (state) => {
+  const { sessionToken, complitedSteps, bundleId } = state.settings;
+  const { fileName, code } = state.codeFile;
   return {
-    sessionToken: state.settings.sessionToken,
-    fileName: state.codeFile.fileName,
-    code: state.codeFile.code,
+    sessionToken: sessionToken,
+    fileName: fileName,
+    code: code,
+    complitedSteps: complitedSteps,
+    bundleId: bundleId,
   };
 };
 const mapDispatchToProps = (dispatch) => {
   return {
     setBundleId: (bundleId) => dispatch(actions.setBundleId(bundleId)),
+    setComplitedSteps: (complitedSteps) =>
+      dispatch(actions.setComplitedSteps(complitedSteps)),
   };
 };
 

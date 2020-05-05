@@ -20,10 +20,16 @@ export const setFullFileName = (fileName) => ({
   fileName: fileName,
 });
 
+export const setComplitedSteps = (complitedSteps) => ({
+  type: "SET_COMPLITED_STEPS",
+  complitedSteps: complitedSteps,
+});
+
 export default {
   setBundleId,
   setToken,
   setCode,
   setEditorLanguage,
   setFullFileName,
+  setComplitedSteps,
 };

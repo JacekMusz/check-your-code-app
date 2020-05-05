@@ -4,26 +4,31 @@ import classNames from "classnames";
 const withSteps = (Component) => {
   return class WithSteps extends React.Component {
     state = {
-      activeStep: false,
+      activeStepId: this.props.dataStep.complitedSteps.length + 1,
+      complitedStep: false,
     };
 
     //-----CLASSES-----
+
     stepClasses = classNames({
       "step ": true,
-      "step step--active": this.props.activeStepId === this.props.stepId,
+      "step--active":
+        this.state.activeStepId === this.props.stepId &&
+        !this.props.dataStep.complitedSteps.includes(this.props.stepId),
+      "step--complited": this.props.dataStep.complitedSteps.includes(
+        this.props.stepId
+      ),
     });
 
     render() {
+      const { dataStep } = this.props;
       return (
         <div className={this.stepClasses}>
-          <button
-            onClick={() =>
-              this.setState({ activeStep: !this.state.activeStep })
-            }
-          >
-            {this.state.activeStep ? "true" : "false"}
-          </button>
-          <Component dataStep={this.props.dataStep} />
+          <Component
+            dataStep={dataStep}
+            activeStepId={this.state.activeStepId}
+            stepId={this.props.stepId}
+          />
         </div>
       );
     }

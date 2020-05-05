@@ -11,7 +11,6 @@ export const apiFilters = () => {
     .catch((err) => console.log(err));
 };
 export const apiCreateBundle = (newFilePath, newFileContent) => {
-  console.log(newFilePath, newFileContent);
   return publicApi
     .post("bundle", {
       "Content-Type": "application/json",
@@ -27,7 +26,6 @@ export const apiCreateBundle = (newFilePath, newFileContent) => {
 };
 
 export const apiCheckBundle = (bundleID) => {
-  console.log(bundleID);
   return publicApi
     .get(`bundle/${bundleID}`, {
       "Content-Type": "application/json",
@@ -35,7 +33,9 @@ export const apiCheckBundle = (bundleID) => {
         "Session-Token": process.env.REACT_APP_DEFAULT_SESSION_TOKEN,
       },
     })
-    .then((resp) => console.log(resp))
+    .then((resp) => {
+      return resp;
+    })
     .catch((err) => console.log(err));
 };
 
@@ -60,7 +60,9 @@ export const apiGetAnalysis = (bundleId) => {
         "Session-Token": process.env.REACT_APP_DEFAULT_SESSION_TOKEN,
       },
     })
-    .then((resp) => console.log(resp))
+    .then((resp) => {
+      return resp;
+    })
     .catch((err) => console.log(err));
 };
 

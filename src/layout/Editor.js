@@ -34,6 +34,7 @@ function EditorWrapper(props) {
       setWarning("Success");
     }
   };
+
   return (
     <div className="editor__wrapper">
       <SideBar />

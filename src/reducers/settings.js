@@ -1,6 +1,7 @@
 const initialState = {
   bundleId: "noData",
   sessionToken: process.env.REACT_APP_DEFAULT_SESSION_TOKEN,
+  complitedSteps: [],
 };
 
 export default function settings(state = initialState, action) {
@@ -9,6 +10,9 @@ export default function settings(state = initialState, action) {
       return { ...state, bundleId: action.bundleId };
     case "SET_TOKEN":
       return { ...state, sessionToken: action.sessionToken };
+    case "SET_COMPLITED_STEPS":
+      console.log(action.complitedSteps);
+      return { ...state, complitedSteps: action.complitedSteps };
     default:
       return state;
   }

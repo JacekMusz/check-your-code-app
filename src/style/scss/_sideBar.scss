@@ -7,7 +7,8 @@
   height: 100%;
   padding: 5px;
   background-color: #111;
-  transition: 0.3s;
+  transition: 0.5s;
+  transform: translateX(-80vw);
   &__top {
     display: flex;
     justify-content: flex-end;
@@ -21,13 +22,20 @@
     border-radius: 5px;
     cursor: pointer;
     background-image: linear-gradient(to right, $color-purple, $color-pink);
-    opacity: 0.5;
-    transition: 0.3s;
+    opacity: 0.9;
+    transition: 0.5s;
+    transform: translateX(40px);
   }
-  &--hiden {
+  &--showed {
+    transform: translateX(0vw);
+    .side-bar__top {
+      transform: translateX(0px);
+    }
+  }
+  &--disactive {
     transform: translateX(-80vw);
     .side-bar__top {
-      transform: translateX(40px);
+      transform: translateX(0px);
     }
   }
 }
@@ -44,8 +52,15 @@
       width: 30%;
       height: 100%;
       border: 1px solid grey;
+      transition: 1s;
+      opacity: 0.3;
       &--active {
+        border: 1px solid $color-pink;
+        opacity: 1;
+      }
+      &--complited {
         border: 1px solid green;
+        opacity: 0.6;
       }
     }
   }

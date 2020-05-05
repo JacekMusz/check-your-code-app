@@ -7,7 +7,7 @@
   margin: 10px;
   padding-left: 0 10px;
   color: white;
-  background-color: #333;
+  background-color: transparent;
   box-shadow: 0 0 3px #888;
   border: none;
   cursor: pointer;
@@ -15,5 +15,11 @@
 }
 
 .button:hover {
-  box-shadow: 0 0 6px white;
+  box-shadow: 0 0 6px $color-pink;
+  color: $color-pink;
+}
+
+.button:disabled {
+  color: #333;
+  box-shadow: 0 0 3px #333;
 }
