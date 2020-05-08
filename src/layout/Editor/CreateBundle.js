@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { apiCreateBundle } from "../../api/apiBundle";
 
 const CreateBundle = (props) => {
@@ -9,14 +9,13 @@ const CreateBundle = (props) => {
     setComplitedSteps,
   } = props.dataStep;
   const handleCreateBundle = () => {
-    console.log("active");
     apiCreateBundle(`/${fileName}`, `${code}`)
       .then((resp) => {
         setBundleIdMethod(resp.data.bundleId);
       })
-      .then(setComplitedSteps([1]))
       .catch((err) => console.log(err));
   };
+
   return (
     <div className="step-one">
       <h3>Step one - Create Bundle! </h3>
@@ -28,6 +27,7 @@ const CreateBundle = (props) => {
       >
         Create Bundle
       </button>
+      <button onClick={() => setComplitedSteps([1])}>Next Step</button>
     </div>
   );
 };

@@ -15,7 +15,7 @@ const withSteps = (Component) => {
       "step--active":
         this.state.activeStepId === this.props.stepId &&
         !this.props.dataStep.complitedSteps.includes(this.props.stepId),
-      "step--complited": this.props.dataStep.complitedSteps.includes(
+      " step--complited": this.props.dataStep.complitedSteps.includes(
         this.props.stepId
       ),
     });

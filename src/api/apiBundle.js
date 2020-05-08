@@ -54,6 +54,7 @@ export const apiExtendBundle = () => {
 };
 
 export const apiGetAnalysis = (bundleId) => {
+  console.log(bundleId);
   return publicApi
     .get(`analysis/${bundleId}`, {
       headers: {
