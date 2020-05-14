@@ -15,14 +15,25 @@ export const setEditorLanguage = (editorLanguage) => ({
   type: "SET_EDITOR_LANGUAGE",
   editorLanguage,
 });
-export const setFullFileName = (fileName) => ({
-  type: "SET_FILE_NAME",
-  fileName: fileName,
+export const setFullFileName = (fileName) => (
+  console.log(fileName),
+  {
+    type: "SET_FILE_NAME",
+    fileName: fileName,
+  }
+);
+export const setResult = (result) => ({
+  type: "SET_RESULT",
+  result,
 });
-
 export const setComplitedSteps = (complitedSteps) => ({
   type: "SET_COMPLITED_STEPS",
   complitedSteps: complitedSteps,
+});
+
+export const setEditorAvailable = (value) => ({
+  type: "SET_COMPLITED_STEPS",
+  value,
 });
 
 export default {
@@ -32,4 +43,5 @@ export default {
   setEditorLanguage,
   setFullFileName,
   setComplitedSteps,
+  setResult,
 };

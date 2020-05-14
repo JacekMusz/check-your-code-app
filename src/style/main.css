@@ -205,7 +205,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  min-width: 50%;
+  width: 100%;
   height: 90vh;
   margin-top: 60px;
   color: white;
@@ -218,12 +218,13 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   position: relative;
   width: 100%;
-  height: 100px;
+  min-height: 80px;
+  padding: 30px;
 }
 
 .top-panel__select-language {
@@ -289,27 +290,17 @@
 
 .top-panel button {
   position: absolute;
-  bottom: 10px;
   right: 40px;
+  bottom: 0;
   width: 80px;
   height: 30px;
   background-color: transparent;
   color: white;
-  border-radius: 15px;
   border: none;
   outline: none;
   cursor: pointer;
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  -webkit-box-shadow: -3px 3px 3px #c03da3;
-          box-shadow: -3px 3px 3px #c03da3;
-}
-
-.top-panel button:hover {
-  -webkit-box-shadow: 0px 0px 3px #493fa3;
-          box-shadow: 0px 0px 3px #493fa3;
-  -webkit-transform: translate(-2px, 2px);
-          transform: translate(-2px, 2px);
 }
 
 .top-panel__warnings {
@@ -1367,49 +1358,67 @@
 }
 
 .side-bar__steps {
-  margin-top: 100px;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  height: 30%;
-  padding: 5px;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  position: relative;
+  height: 80%;
   -webkit-transition: 1s;
   transition: 1s;
-  padding: 0 100px;
+  padding: 0 5% 5% 5%;
 }
 
 .side-bar__steps .step {
-  width: 25%;
+  position: absolute;
+  width: 90%;
   height: 100%;
-  border: 1px solid grey;
   -webkit-transition: 1s;
   transition: 1s;
   padding: 10px;
-  background-color: black;
+  -webkit-transform: translateX(-200%);
+          transform: translateX(-200%);
 }
 
 .side-bar__steps .step--active {
   -webkit-transition: 1s;
   transition: 1s;
-  opacity: 1;
-  -webkit-animation: becomeActive 1s linear both;
-          animation: becomeActive 1s linear both;
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+  opacity: 0.5;
 }
 
 .side-bar__steps .step--complited {
   -webkit-transition: 1s;
   transition: 1s;
-  -webkit-animation: becomeComplited 1s linear both;
-          animation: becomeComplited 1s linear both;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  opacity: 0;
+}
+
+.side-bar__steps .next-step-button {
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  font-size: 20px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.side-bar__steps .next-step-button:disabled {
+  color: #333;
+}
+
+.side-bar__steps .next-step-button--animation {
+  -webkit-animation: nextStepButtonAnimation 2s both linear infinite;
+          animation: nextStepButtonAnimation 2s both linear infinite;
 }
 
 .side-bar__steps .step-two__progress-bar {
-  width: 100%;
   position: relative;
   overflow: hidden;
   display: -webkit-box;
@@ -1421,81 +1430,104 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 300px;
+  height: 300px;
+  border-radius: 300px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 .side-bar__steps .step-two__progress-bar:after {
-  -webkit-animation: animateprogressBar 5s linear infinite;
-          animation: animateprogressBar 5s linear infinite;
-  background-color: #c03da3;
   display: block;
   content: "";
-  width: 100%;
-  height: 100%;
+  width: 280px;
+  height: 280px;
+  border-radius: 300px;
   position: absolute;
-  top: 0;
-  left: 0;
+  border: 5px solid transparent;
+  border-top: 5px solid #c03da3;
+  border-bottom: 5px solid #493fa3;
+  position: absolute;
+  top: 0px;
+  left: 0px;
   opacity: 0.5;
+  -webkit-animation: animateprogressBar 1.5s infinite linear;
+          animation: animateprogressBar 1.5s infinite linear;
+}
+
+.side-bar__steps .step-two__progress-bar--finished {
+  color: green;
+  font-size: 30px;
 }
 
 .side-bar__steps .step-two__progress-bar--finished:after {
-  background-color: green;
-  display: block;
-  content: "";
-  -webkit-animation: none;
-          animation: none;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0.5;
+  display: none;
 }
 
 @-webkit-keyframes animateprogressBar {
   0% {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    border-top: 1px solid #c03da3;
+    border-bottom: 5px solid #493fa3;
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+    border-top: 5px solid #c03da3;
+    border-bottom: 1px solid #493fa3;
   }
   100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    border-top: 1px solid #c03da3;
+    border-bottom: 5px solid #493fa3;
   }
 }
 
 @keyframes animateprogressBar {
   0% {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    border-top: 1px solid #c03da3;
+    border-bottom: 5px solid #493fa3;
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+    border-top: 5px solid #c03da3;
+    border-bottom: 1px solid #493fa3;
   }
   100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    border-top: 1px solid #c03da3;
+    border-bottom: 5px solid #493fa3;
   }
 }
 
-@-webkit-keyframes becomeComplited {
+@-webkit-keyframes nextStepButtonAnimation {
   0% {
-    border: 1px solid #c03da3;
-    -webkit-transform: scale(1.4);
-            transform: scale(1.4);
+    text-shadow: none;
+  }
+  50% {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18, 0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18, -40px -40px 0px rgba(206, 89, 55, 0);
   }
   100% {
-    border: 1px solid green;
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    text-shadow: none;
   }
 }
 
-@keyframes becomeComplited {
+@keyframes nextStepButtonAnimation {
   0% {
-    border: 1px solid #c03da3;
-    -webkit-transform: scale(1.4);
-            transform: scale(1.4);
+    text-shadow: none;
+  }
+  50% {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18, 0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18, -40px -40px 0px rgba(206, 89, 55, 0);
   }
   100% {
-    border: 1px solid green;
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    text-shadow: none;
   }
 }
 
@@ -1507,8 +1539,8 @@
   }
   100% {
     border: 1px solid #c03da3;
-    -webkit-transform: scale(1.4);
-            transform: scale(1.4);
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
   }
 }
 
@@ -1520,8 +1552,34 @@
   }
   100% {
     border: 1px solid #c03da3;
-    -webkit-transform: scale(1.4);
-            transform: scale(1.4);
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+
+@-webkit-keyframes becomeComplited {
+  0% {
+    border: 1px solid #c03da3;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    border: 1px solid green;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes becomeComplited {
+  0% {
+    border: 1px solid #c03da3;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    border: 1px solid green;
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 

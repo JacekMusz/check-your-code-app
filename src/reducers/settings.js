@@ -11,8 +11,8 @@ export default function settings(state = initialState, action) {
     case "SET_TOKEN":
       return { ...state, sessionToken: action.sessionToken };
     case "SET_COMPLITED_STEPS":
-      console.log(action.complitedSteps);
       return { ...state, complitedSteps: action.complitedSteps };
+
     default:
       return state;
   }

@@ -10,6 +10,7 @@ function EditorWrapper(props) {
   const [fileName, setFileName] = useState("");
   const [fileExtension, setFileExtension] = useState(".none");
   const [warning, setWarning] = useState("");
+  const [editorAvailable, setEditorAvailable] = useState(false);
 
   const handleEditorChange = (ev, value) => {
     props.setCode(value);
@@ -31,8 +32,12 @@ function EditorWrapper(props) {
       setWarning("Select file language");
     } else {
       props.setFullFileName(`${fileName}${fileExtension}`);
-      setWarning("Success");
+      setWarning("Now you can use Editor below");
+      setEditorAvailable(true);
     }
+  };
+  const monacoOptions = {
+    readOnly: !editorAvailable,
   };
 
   return (
@@ -55,16 +60,20 @@ function EditorWrapper(props) {
           ></input>
           {fileExtension}
         </div>
-        <button onClick={() => handleSubmitButton()}> Submit</button>
+        <button onClick={() => handleSubmitButton()}> Next Step</button>
         <p className="top-panel__warnings">{warning}</p>
       </div>
+
       <ControlledEditor
-        height="100%"
+        height="90%"
         width="100vw"
-        value={"// write your code"}
+        value={
+          "//choose file language,name it and submit before paste your code !"
+        }
         onChange={handleEditorChange}
         language={props.editorLanguage}
         theme="dark"
+        options={monacoOptions}
       />
     </div>
   );
@@ -73,6 +82,7 @@ function EditorWrapper(props) {
 const mapStateToProps = (state) => {
   return {
     editorLanguage: state.codeFile.editorLanguage,
+    editorAvailable: state.codeFile.editorAvailable,
   };
 };
 const mapDispatchToProps = (dispatch) => {
