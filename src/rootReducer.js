@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import settings from "./reducers/settings";
+import dataApiResponses from "./reducers/dataApiResponses";
 import codeFile from "./reducers/codeFile";
 
-const rootReducer = combineReducers({ settings, codeFile });
+const rootReducer = combineReducers({ dataApiResponses, codeFile });
 
 export default rootReducer;
 

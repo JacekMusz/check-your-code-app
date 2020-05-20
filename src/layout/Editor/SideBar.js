@@ -1,13 +1,6 @@
 import React, { Component } from "react";
-import { FaBars } from "react-icons/fa";
 import classNames from "classnames";
-// import //apiFilters,
-// //  apiCreateBundle,
-// //   apiCheckBundle,
-// //   apiGetAnalysis,
-// //   apiGetDiffAnalysis,
-// "../../api/apiBundle";
-import actions from "../../actions/actions.js";
+import actionsDataApiResponses from "../../actions/actionsDataApiResponses.js";
 import { connect } from "react-redux";
 import withSteps from "./withSteps";
 import CreateBundle from "./CreateBundle";
@@ -19,17 +12,15 @@ class SideBar extends Component {
     sideBarHiden: 1,
     complitedSteps: [],
     activeStepId: 1,
-    activeAnalysisProcess: this.props.bundleId !== "noData" ? true : false,
   };
 
   handleToggleSideBarHiden = () => {
-    if (this.props.bundleId === "noData") {
+    if (
+      this.props.bundleId === "noData" ||
+      this.state.complitedSteps.includes(2)
+    ) {
       this.setState({ sideBarHiden: !this.state.sideBarHiden });
     }
-  };
-
-  handleActiveAnalysisProcess = (value) => {
-    this.setState({ activeAnalysisProcess: value });
   };
 
   handleSetComplitedSteps = (steps) => {
@@ -50,9 +41,13 @@ class SideBar extends Component {
       setBundleId,
       code,
       setComplitedSteps,
-      complitedSteps,
       bundleId,
+      setResult,
+      result,
+      handleReset,
     } = this.props;
+
+    const { sideBarHiden, complitedSteps } = this.state;
 
     const FirstStep = withSteps(CreateBundle);
     const SecondStep = withSteps(CheckBundle);
@@ -60,30 +55,28 @@ class SideBar extends Component {
 
     const classForSideBar = classNames({
       "side-bar": true,
-      "side-bar--showed": this.state.sideBarHiden,
-      "side-bar--disactive": fileName.length < 3,
+      "side-bar--disactive": fileName.length < 3 || code === "noData",
+      "side-bar--active-and-hiden": fileName.length > 2 && sideBarHiden,
+      "side-bar--active-and-showed": fileName.length > 2 && !sideBarHiden,
+      "side-bar--analysing-in-progress":
+        bundleId !== "noData" && !complitedSteps.includes(2),
     });
-    //console.log("render sidebar", this.state);
     return (
       <div className={classForSideBar}>
         <div
-          disabled={this.props.bundleId !== "noData"}
+          disabled={bundleId !== "noData"}
           className="side-bar__top"
           onClick={() => this.handleToggleSideBarHiden()}
         >
-          {this.state.sideBarHiden ? (
-            "Hide Me !"
-          ) : (
-            <FaBars className="top-icon" />
-          )}
+          <span>
+            {!sideBarHiden ? "Go back to Editor !" : "Check your code now!"}
+          </span>
         </div>
         <div className="side-bar__steps">
           <FirstStep
             handleSetComplitedSteps={this.handleSetComplitedSteps}
-            handleActiveAnalysisProcess={this.handleActiveAnalysisProcess}
-            //handleSetActiveSteps={this.handleSetActiveSteps}
             stepId={1}
-            complitedSteps={this.state.complitedSteps}
+            complitedSteps={complitedSteps}
             dataStep={{
               fileName: fileName,
               setBundleIdMethod: setBundleId,
@@ -95,21 +88,23 @@ class SideBar extends Component {
           <SecondStep
             handleSetComplitedSteps={this.handleSetComplitedSteps}
             stepId={2}
-            complitedSteps={this.state.complitedSteps}
+            complitedSteps={complitedSteps}
             dataStep={{
               complitedSteps: complitedSteps,
               bundleId: bundleId,
-              setResult: this.props.setResult,
-              result: this.props.result,
+              setResult: setResult,
+              result: result,
             }}
           />
           <ThirdStep
-            handleSetComplitedSteps={this.handleSetComplitedSteps}
             stepId={3}
-            complitedSteps={this.state.complitedSteps}
+            complitedSteps={complitedSteps}
             dataStep={{
+              fileName: fileName,
               setComplitedSteps: setComplitedSteps,
-              result: this.props.result,
+              result: result,
+              handleToggleSideBarHiden: this.handleToggleSideBarHiden,
+              handleReset: handleReset,
             }}
           />
         </div>
@@ -120,8 +115,8 @@ class SideBar extends Component {
 }
 
 const mapStateToProps = (state) => {
-  const { sessionToken, bundleId } = state.settings;
-  const { fileName, code, result } = state.codeFile;
+  const { sessionToken, bundleId, result } = state.dataApiResponses;
+  const { fileName, code } = state.codeFile;
   return {
     sessionToken: sessionToken,
     fileName: fileName,
@@ -132,8 +127,9 @@ const mapStateToProps = (state) => {
 };
 const mapDispatchToProps = (dispatch) => {
   return {
-    setBundleId: (bundleId) => dispatch(actions.setBundleId(bundleId)),
-    setResult: (result) => dispatch(actions.setResult(result)),
+    setBundleId: (bundleId) =>
+      dispatch(actionsDataApiResponses.setBundleId(bundleId)),
+    setResult: (result) => dispatch(actionsDataApiResponses.setResult(result)),
   };
 };
 

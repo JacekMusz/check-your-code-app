@@ -5,7 +5,7 @@ const withSteps = (Component) => {
   return class WithSteps extends React.Component {
     state = {};
 
-    //-----CLASSES-----
+    //-----Classes-----
     stepClasses = classNames({
       "step ": true,
       "step--active":
@@ -20,15 +20,19 @@ const withSteps = (Component) => {
     };
 
     render() {
-      const { dataStep } = this.props;
+      const {
+        dataStep,
+        complitedSteps,
+        handleSetComplitedSteps,
+        stepId,
+      } = this.props;
       return (
         <div className={this.stepClasses}>
           <Component
-            handleSetComplitedSteps={this.props.handleSetComplitedSteps}
+            handleSetComplitedSteps={handleSetComplitedSteps}
             dataStep={dataStep}
-            activeStepId={this.state.activeStepId}
-            stepId={this.props.stepId}
-            complitedSteps={this.props.complitedSteps}
+            stepId={stepId}
+            complitedSteps={complitedSteps}
           />
         </div>
       );

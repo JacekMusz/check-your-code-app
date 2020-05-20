@@ -3,10 +3,15 @@ import { apiGetAnalysis } from "../../api/apiBundle";
 import classNames from "classnames";
 
 const CheckBundle = (props) => {
+  //Hooks
   const intervalId = useRef(null);
-  const [stopApiCall, setStopApiCall] = useState(false);
-  const [bundleStatus, setBundleStatus] = useState("Send a code to analysing");
+  const [bundleStatus, setBundleStatus] = useState("Work in progress");
 
+  //Destructuring props
+  const { result, setResult, bundleId } = props.dataStep;
+  const { complitedSteps, stepId } = props;
+
+  //Classes
   const classesForProgressBar = classNames({
     "step-two__progress-bar": true,
     "step-two__progress-bar--finished": bundleStatus === "DONE",
@@ -14,53 +19,49 @@ const CheckBundle = (props) => {
 
   const classesNextStepButton = classNames({
     "next-step-button": true,
-    "next-step-button--animation": bundleStatus === "DONE",
+    "next-step-button--animation":
+      bundleStatus === "DONE" && !complitedSteps.includes(2),
   });
 
+  //Handlers
   const handaleNexStep = () => {
-    props.handleSetComplitedSteps([props.stepId]);
+    props.handleSetComplitedSteps([stepId]);
   };
 
   const handleApiResponse = (resp) => {
-    console.log();
-
     if (resp.data.status === "DONE") {
-      console.log("isDone");
       clearInterval(intervalId.current);
-      props.dataStep.setResult(resp);
-      setStopApiCall(true);
+      setResult(resp);
     }
   };
 
   useEffect(() => {
     if (
-      props.dataStep.result.data.status === "noData" &&
-      props.complitedSteps.includes(1)
+      complitedSteps.includes(1) &&
+      result.data.status !== "DONE" &&
+      bundleId !== "noData"
     ) {
       intervalId.current = setInterval(() => {
-        console.log("zapytanie api");
-        apiGetAnalysis(props.dataStep.bundleId)
+        apiGetAnalysis(bundleId)
           .then((resp) => handleApiResponse(resp))
           .catch((err) => console.log(err));
       }, 10000);
     } else {
-      setBundleStatus(props.dataStep.result.data.status);
+      setBundleStatus(result.data.status);
       clearInterval(intervalId.current);
     }
-  }, [props.complitedSteps, stopApiCall]);
+  }, [complitedSteps]);
   return (
     <div className="step-two">
-      <h3>Step two - Check Bundle </h3>
-
       {props.complitedSteps.includes(1) ? (
         <div className={classesForProgressBar}>{bundleStatus}</div>
       ) : null}
       <button
-        disabled={bundleStatus !== "DONE"}
+        disabled={bundleStatus !== "DONE" || complitedSteps.includes(2)}
         className={classesNextStepButton}
         onClick={() => handaleNexStep()}
       >
-        Next Step
+        Show Results
       </button>
     </div>
   );
