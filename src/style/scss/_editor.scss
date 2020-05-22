@@ -9,12 +9,29 @@
   color: white;
   .controlled-editor-wrapper {
     min-height: 100%;
-  }
-  .controlled-editor-wrapper--disabled {
-    opacity: 0;
-  }
-  .controlled-editor-wrapper--enabled {
-    opacity: 1;
+    .next-step-button {
+      position: absolute;
+      right: 50%;
+      top: 50%;
+      transform: translateX(50%);
+      width: 80px;
+      height: 30px;
+      background-color: transparent;
+      color: white;
+      outline: none;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+      animation: buttonAnimation 2s linear infinite;
+      &:disabled {
+        opacity: 0;
+        animation: none;
+      }
+      &:hover {
+        color: green;
+      }
+    }
   }
 }
 .top-panel {
@@ -34,20 +51,23 @@
     select {
       height: 20px;
       background-color: transparent;
-      color: $color-purple;
+      color: $color-pink;
       border: none;
       border-bottom: 2px solid #333;
       cursor: pointer;
       outline: none;
       &:focus {
-        border-bottom: 2px solid $color-purple;
+        border-bottom: 2px solid $color-pink;
       }
       option {
         cursor: pointer;
         background-color: #111;
         &:hover {
-          background-color: $color-purple;
+          background-color: $color-pink;
         }
+      }
+      &:disabled {
+        opacity: 0.5;
       }
     }
   }
@@ -58,23 +78,27 @@
     display: flex;
     justify-content: flex-start;
     width: 300px;
-    margin-left: 200px;
-    color: $color-pink;
+    color: $color-purple;
     input {
       background-color: transparent;
-      color: $color-pink;
+      color: $color-purple;
       border: none;
       border-bottom: 1px solid #333;
       outline: none;
+      cursor: pointer;
       &:focus {
-        border-bottom: 1px solid $color-pink;
+        border-bottom: 1px solid $color-purple;
+      }
+
+      &:disabled {
+        opacity: 0.5;
       }
     }
   }
 
   .reset-button {
     position: absolute;
-    right: 0px;
+    right: 0;
     bottom: 35px;
     width: 80px;
     height: 30px;
@@ -87,24 +111,7 @@
       color: red;
     }
   }
-  .next-step-button {
-    position: absolute;
-    right: 40px;
-    bottom: 0;
-    width: 80px;
-    height: 30px;
-    background-color: transparent;
-    color: white;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    transition: 0.3s;
-    animation: nextStepButtonAnimation 1s linear infinite;
-    &:disabled {
-      opacity: 0;
-      animation: none;
-    }
-  }
+
   &__warnings {
     display: block;
     position: absolute;
@@ -115,7 +122,7 @@
 }
 
 .step-three {
-  h3 {
+  &__title {
     margin-bottom: 20px;
   }
   .suggestion-list {
@@ -125,20 +132,34 @@
       margin: 15px;
     }
   }
+  .reset-button {
+    position: absolute;
+    right: 0;
+    bottom: 35px;
+    width: 180px;
+    height: 30px;
+    font-size: 18px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    &:hover {
+      color: red;
+    }
+  }
 }
 
-@keyframes nextStepButtonAnimation {
+@keyframes buttonAnimation {
   0% {
-    text-shadow: none;
+    box-shadow: 0 0 3px green;
   }
 
   50% {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18,
-      0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18,
-      -40px -40px 0px rgba(206, 89, 55, 0);
+    box-shadow: 0 0 15px green;
   }
 
   100% {
-    text-shadow: none;
+    box-shadow: 0 0 3px green;
   }
 }

@@ -215,12 +215,34 @@
   min-height: 100%;
 }
 
-.editor__wrapper .controlled-editor-wrapper--disabled {
-  opacity: 0;
+.editor__wrapper .controlled-editor-wrapper .next-step-button {
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+  width: 80px;
+  height: 30px;
+  background-color: transparent;
+  color: white;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-animation: buttonAnimation 2s linear infinite;
+          animation: buttonAnimation 2s linear infinite;
 }
 
-.editor__wrapper .controlled-editor-wrapper--enabled {
-  opacity: 1;
+.editor__wrapper .controlled-editor-wrapper .next-step-button:disabled {
+  opacity: 0;
+  -webkit-animation: none;
+          animation: none;
+}
+
+.editor__wrapper .controlled-editor-wrapper .next-step-button:hover {
+  color: green;
 }
 
 .top-panel {
@@ -256,7 +278,7 @@
 .top-panel__select-language select {
   height: 20px;
   background-color: transparent;
-  color: #493fa3;
+  color: #c03da3;
   border: none;
   border-bottom: 2px solid #333;
   cursor: pointer;
@@ -264,7 +286,7 @@
 }
 
 .top-panel__select-language select:focus {
-  border-bottom: 2px solid #493fa3;
+  border-bottom: 2px solid #c03da3;
 }
 
 .top-panel__select-language select option {
@@ -273,7 +295,11 @@
 }
 
 .top-panel__select-language select option:hover {
-  background-color: #493fa3;
+  background-color: #c03da3;
+}
+
+.top-panel__select-language select:disabled {
+  opacity: 0.5;
 }
 
 .top-panel__file-full-name {
@@ -284,25 +310,29 @@
       -ms-flex-pack: start;
           justify-content: flex-start;
   width: 300px;
-  margin-left: 200px;
-  color: #c03da3;
+  color: #493fa3;
 }
 
 .top-panel__file-full-name input {
   background-color: transparent;
-  color: #c03da3;
+  color: #493fa3;
   border: none;
   border-bottom: 1px solid #333;
   outline: none;
+  cursor: pointer;
 }
 
 .top-panel__file-full-name input:focus {
-  border-bottom: 1px solid #c03da3;
+  border-bottom: 1px solid #493fa3;
+}
+
+.top-panel__file-full-name input:disabled {
+  opacity: 0.5;
 }
 
 .top-panel .reset-button {
   position: absolute;
-  right: 0px;
+  right: 0;
   bottom: 35px;
   width: 80px;
   height: 30px;
@@ -317,29 +347,6 @@
   color: red;
 }
 
-.top-panel .next-step-button {
-  position: absolute;
-  right: 40px;
-  bottom: 0;
-  width: 80px;
-  height: 30px;
-  background-color: transparent;
-  color: white;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  -webkit-animation: nextStepButtonAnimation 1s linear infinite;
-          animation: nextStepButtonAnimation 1s linear infinite;
-}
-
-.top-panel .next-step-button:disabled {
-  opacity: 0;
-  -webkit-animation: none;
-          animation: none;
-}
-
 .top-panel__warnings {
   display: block;
   position: absolute;
@@ -348,7 +355,7 @@
   font-size: 12px;
 }
 
-.step-three h3 {
+.step-three__title {
   margin-bottom: 20px;
 }
 
@@ -358,27 +365,51 @@
   margin: 15px;
 }
 
-@-webkit-keyframes nextStepButtonAnimation {
+.step-three .reset-button {
+  position: absolute;
+  right: 0;
+  bottom: 35px;
+  width: 180px;
+  height: 30px;
+  font-size: 18px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.step-three .reset-button:hover {
+  color: red;
+}
+
+@-webkit-keyframes buttonAnimation {
   0% {
-    text-shadow: none;
+    -webkit-box-shadow: 0 0 3px green;
+            box-shadow: 0 0 3px green;
   }
   50% {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18, 0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18, -40px -40px 0px rgba(206, 89, 55, 0);
+    -webkit-box-shadow: 0 0 15px green;
+            box-shadow: 0 0 15px green;
   }
   100% {
-    text-shadow: none;
+    -webkit-box-shadow: 0 0 3px green;
+            box-shadow: 0 0 3px green;
   }
 }
 
-@keyframes nextStepButtonAnimation {
+@keyframes buttonAnimation {
   0% {
-    text-shadow: none;
+    -webkit-box-shadow: 0 0 3px green;
+            box-shadow: 0 0 3px green;
   }
   50% {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18, 0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18, -40px -40px 0px rgba(206, 89, 55, 0);
+    -webkit-box-shadow: 0 0 15px green;
+            box-shadow: 0 0 15px green;
   }
   100% {
-    text-shadow: none;
+    -webkit-box-shadow: 0 0 3px green;
+            box-shadow: 0 0 3px green;
   }
 }
 
@@ -1489,9 +1520,16 @@
   right: 20px;
   font-size: 20px;
   background-color: transparent;
+  width: 80px;
+  height: 30px;
+  background-color: transparent;
   color: white;
+  outline: none;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .side-bar__steps .next-step-button:disabled {
@@ -1499,8 +1537,8 @@
 }
 
 .side-bar__steps .next-step-button--animation {
-  -webkit-animation: nextStepButtonAnimation 2s both linear infinite;
-          animation: nextStepButtonAnimation 2s both linear infinite;
+  -webkit-animation: buttonAnimation 2s linear infinite;
+          animation: buttonAnimation 2s linear infinite;
 }
 
 .side-bar__steps .step-two__progress-bar {
@@ -1588,18 +1626,6 @@
             transform: rotate(360deg);
     border-top: 1px solid #c03da3;
     border-bottom: 5px solid #493fa3;
-  }
-}
-
-@keyframes nextStepButtonAnimation {
-  0% {
-    text-shadow: none;
-  }
-  50% {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18, 0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18, -40px -40px 0px rgba(206, 89, 55, 0);
-  }
-  100% {
-    text-shadow: none;
   }
 }
 

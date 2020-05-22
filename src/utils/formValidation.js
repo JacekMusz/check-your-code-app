@@ -1,9 +1,8 @@
-export const isFileNameIncorrect = (fileName) => {
-  let fileNameArray = fileName.split("");
-  let results = fileNameArray.map((item) => {
-    return properSigns.includes(item);
-  });
-  return results.includes(false);
+export const isFileNameCorrect = (fileName) => {
+  const regex = /[a-z0-9\_\-]/i;
+  const properSigns = [];
+  [...fileName].forEach((sign) => properSigns.push(regex.test(sign)));
+  return true && !properSigns.includes(false);
 };
 
 export const returnFileExtension = (option) => {
@@ -18,45 +17,3 @@ export const returnFileExtension = (option) => {
       return `.none`;
   }
 };
-
-const properSigns = [
-  "a",
-  "b",
-  "c",
-  "d",
-  "e",
-  "f",
-  "g",
-  "h",
-  "i",
-  "j",
-  "k",
-  "l",
-  "m",
-  "n",
-  "o",
-  "p",
-  "r",
-  "s",
-  "t",
-  "u",
-  "w",
-  "v",
-  "x",
-  "y",
-  "z",
-  "q",
-  "-",
-  "_",
-  "1",
-  "2",
-  "3",
-  "4",
-  "5",
-  "6",
-  "7",
-  "8",
-  "9",
-  "0",
-  ".",
-];

@@ -91,14 +91,21 @@
       right: 20px;
       font-size: 20px;
       background-color: transparent;
+      width: 80px;
+      height: 30px;
+      background-color: transparent;
       color: white;
+      outline: none;
       border: none;
+      border-radius: 5px;
       cursor: pointer;
+      transition: 0.3s;
+
       &:disabled {
         opacity: 0;
       }
       &--animation {
-        animation: nextStepButtonAnimation 2s both linear infinite;
+        animation: buttonAnimation 2s linear infinite;
       }
     }
     .step-two__progress-bar {
@@ -156,22 +163,6 @@
     transform: rotate(360deg);
     border-top: 1px solid $color-pink;
     border-bottom: 5px solid $color-purple;
-  }
-}
-
-@keyframes nextStepButtonAnimation {
-  0% {
-    text-shadow: none;
-  }
-
-  50% {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18,
-      0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18,
-      -40px -40px 0px rgba(206, 89, 55, 0);
-  }
-
-  100% {
-    text-shadow: none;
   }
 }
 

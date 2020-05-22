@@ -25,8 +25,8 @@ export const setEditorAvailable = (value) => ({
   value,
 });
 
-export const resetCodeFileReducer = () => ({
-  type: "RESET_REDUCER_CODE_FILE",
+export const resetCodeFile = () => ({
+  type: "RESET_CODE_FILE",
 });
 
 export default {
@@ -35,5 +35,5 @@ export default {
   setEditorLanguage,
   setFullFileName,
   setComplitedSteps,
-  resetCodeFileReducer,
+  resetCodeFile,
 };

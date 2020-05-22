@@ -8,12 +8,12 @@ export const setResult = (result) => ({
   result,
 });
 
-export const resetDataApiResponsesReducer = () => ({
-  type: "RESET_REDUCER_DATA_API_RESULT",
+export const resetDataApiResponses = () => ({
+  type: "RESET_DATA_API_RESULT",
 });
 
 export default {
   setBundleId,
   setResult,
-  resetDataApiResponsesReducer,
+  resetDataApiResponses,
 };

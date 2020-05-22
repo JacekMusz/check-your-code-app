@@ -1,5 +1,4 @@
 import React from "react";
-import classNames from "classnames";
 
 const GetAnalysis = (props) => {
   //Destructuring props
@@ -25,10 +24,13 @@ const GetAnalysis = (props) => {
 
   return (
     <div className="step-three">
-      <h3>Results of analysis: </h3>
+      <h3 className="step-three__title">Results of analysis: </h3>
       <br />
       <div className="suggestion-list">{result()}</div>
-      <button onClick={() => props.dataStep.handleReset()}>
+      <button
+        className="reset-button"
+        onClick={() => props.dataStep.handleReset()}
+      >
         Reset and try again
       </button>
     </div>
