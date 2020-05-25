@@ -752,8 +752,8 @@
             transform: translateX(0);
   }
   50% {
-    background-image: -webkit-gradient(linear, left top, right top, color-stop(#493fa3, #c03da3), to(black));
-    background-image: linear-gradient(to right, #c03da3 #493fa3, black);
+    background-image: -webkit-gradient(linear, left top, right top, from(#c03da3), color-stop(#493fa3), to(black));
+    background-image: linear-gradient(to right, #c03da3, #493fa3, black);
     -webkit-transform: translateX(calc(-80vw + 110px));
             transform: translateX(calc(-80vw + 110px));
   }
@@ -785,8 +785,8 @@
             transform: translateX(0);
   }
   50% {
-    background-image: -webkit-gradient(linear, left top, right top, color-stop(#493fa3, #c03da3), to(black));
-    background-image: linear-gradient(to right, #c03da3 #493fa3, black);
+    background-image: -webkit-gradient(linear, left top, right top, from(#c03da3), color-stop(#493fa3), to(black));
+    background-image: linear-gradient(to right, #c03da3, #493fa3, black);
     -webkit-transform: translateX(calc(-80vw + 110px));
             transform: translateX(calc(-80vw + 110px));
   }
@@ -1237,6 +1237,7 @@
   padding-top: 15%;
   font-size: 16px;
   color: #c03da3;
+  font-weight: bold;
 }
 
 .others-technologies__title {
@@ -1699,33 +1700,61 @@
   }
 }
 
+.to-small-screen-notification {
+  display: none;
+}
+
+@media (max-width: 1024px), (max-height: 600px) {
+  .to-small-screen-notification {
+    display: block;
+    min-width: 100vw;
+    min-height: 100vh;
+    color: white;
+    background-color: black;
+    padding: 20px;
+  }
+  .to-small-screen-notification__title {
+    margin-top: 200px;
+    width: 100%;
+    text-align: center;
+  }
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: "Oxanium", cursive;
 }
 
-#root {
+html {
   background-color: black;
+  min-height: 100vh;
+  min-width: 90%;
 }
 
 .app {
-  position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  top: 0;
-  width: 100%;
-  text-align: center;
-  background-color: black;
-  overflow: hidden;
+  display: none;
+}
+
+@media (min-width: 1024px) and (min-height: 600px) {
+  .app {
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    background-color: black;
+    overflow: hidden;
+  }
 }
 
 .app__editor-and-panel-wrapper {

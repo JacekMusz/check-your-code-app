@@ -1,0 +1,16 @@
+.to-small-screen-notification {
+  display: none;
+  @media (max-width: 1024px), (max-height: 600px) {
+    display: block;
+    min-width: 100vw;
+    min-height: 100vh;
+    color: white;
+    background-color: black;
+    padding: 20px;
+    &__title {
+      margin-top: 200px;
+      width: 100%;
+      text-align: center;
+    }
+  }
+}

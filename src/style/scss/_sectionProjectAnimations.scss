@@ -114,7 +114,8 @@
   50% {
     background-image: linear-gradient(
       to right,
-      $color-pink $color-purple,
+      $color-pink,
+      $color-purple,
       black
     );
     transform: translateX(calc(-80vw + 110px));

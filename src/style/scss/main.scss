@@ -10,25 +10,31 @@
 @import "_modalAppTechnology.scss";
 @import "_sectionAuthor.scss";
 @import "_sideBar.scss";
+@import "_toSmallScreenNotification.scss";
 
 * {
   box-sizing: border-box;
   font-family: "Oxanium", cursive;
 }
 
-#root {
+html {
   background-color: black;
+  min-height: 100vh;
+  min-width: 90%;
 }
 .app {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  top: 0;
-  width: 100%;
-  text-align: center;
-  background-color: black;
-  overflow: hidden;
+  display: none;
+  @media (min-width: 1024px) and (min-height: 600px) {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    background-color: black;
+    overflow: hidden;
+  }
 }
 
 .app__editor-and-panel-wrapper {
