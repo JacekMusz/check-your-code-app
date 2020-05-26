@@ -1704,7 +1704,7 @@
   display: none;
 }
 
-@media (max-width: 1024px), (max-height: 600px) {
+@media (max-width: 1023px), (max-height: 500px) {
   .to-small-screen-notification {
     display: block;
     min-width: 100vw;
@@ -1736,7 +1736,7 @@ html {
   display: none;
 }
 
-@media (min-width: 1024px) and (min-height: 600px) {
+@media (min-width: 1023px) and (min-height: 500px) {
   .app {
     position: absolute;
     display: -webkit-box;

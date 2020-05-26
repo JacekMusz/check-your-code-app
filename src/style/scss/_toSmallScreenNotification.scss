@@ -1,6 +1,6 @@
 .to-small-screen-notification {
   display: none;
-  @media (max-width: 1024px), (max-height: 600px) {
+  @media (max-width: 1023px), (max-height: 500px) {
     display: block;
     min-width: 100vw;
     min-height: 100vh;

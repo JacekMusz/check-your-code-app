@@ -115,8 +115,8 @@ const SectionTechnology = () => {
           </div>
           <div className="article-technology__paragraph-two">
             {" "}
-            Moreover DeepCode's algorithms can finds critical vulnerabilities
-            that other automated code reviews don't. Such as: cross-site
+            Moreover DeepCode's algorithms can find critical vulnerabilities
+            that other automated code reviews can't. Such as: cross-site
             scripting, path traversal or SQL injection. <br />
             Now you can write a better code using the knowladge of the global
             comunnity.

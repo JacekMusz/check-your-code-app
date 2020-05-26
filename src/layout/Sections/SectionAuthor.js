@@ -90,14 +90,15 @@ const SectionAuthor = () => {
             </p>
             <p ref={secondParagraph} className="author-info__job-info">
               {" "}
-              I'm a junior front-end Developer since October 2019 when I got my
-              first commercial job in Warsaw.
+              I've been a junior front-end Developer since October 2019 when I
+              got my first commercial job in Warsaw.
               <br />
-              Currently I'm responsible for building kind of an interface which
-              will be the web tool to menage and create dialogs for voicebots.
+              Currently I'm responsible for building a sort of an interface
+              which will be the web tool to menage and create dialogs for
+              voicebots.
             </p>
             <p ref={thirdParagraph} className="author-info__about-app">
-              This app is non-profit project made for improve my programming
+              This app is non-profit project made to improve my programming
               skills :)
             </p>
           </div>

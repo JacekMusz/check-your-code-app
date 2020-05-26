@@ -9,13 +9,13 @@ const SectionProject = () => {
       <div className="articles">
         <div className="articles__article">
           <div className="article__text">
-            Would you ever considered that artificial inteligence could help you
+            Have you ever considered that artificial inteligence could help you
             make better code ? Now it's possible with{" "}
             <a target="blank" href="http://deepcode.ai">
               Deep Code.
             </a>{" "}
-            Arificial Inteligence can make automated code review based on
-            bestpracitses from around the world.
+            Arificial Inteligence can do automated code review based on best
+            pracitses from around the world.
           </div>
           <div className="article__img"></div>
         </div>
@@ -23,7 +23,7 @@ const SectionProject = () => {
           <div className="article__img"></div>
           <div className="article__text">
             Make smile every senior developer in your team. Don't waste their
-            time for your code review. Make code review on your own :)
+            time on your code review. Do code review on your own :)
           </div>
         </div>
       </div>
